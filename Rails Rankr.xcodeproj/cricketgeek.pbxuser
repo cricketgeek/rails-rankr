@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 981}}";
+			sepNavSelRange = "{221, 0}";
+			sepNavVisRange = "{32, 660}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* Rails Rankr */ = {
+		activeExec = 0;
+		executables = (
+			F1DEDFD10F884F0000F567F2 /* Rails Rankr */,
+		);
+	};
+	28216C950DB411BC00E5133A /* FirstViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 451}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 241}";
+		};
+	};
+	28216C960DB411BC00E5133A /* FirstViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {912, 1254}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{3, 549}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = F1DEDFD10F884F0000F567F2 /* Rails Rankr */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* Rails Rankr */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* Rails Rankr */,
+		);
+		breakpoints = (
+			F1F3A0540F92C4B200B1FC8A /* FavoritesViewController.m:34 */,
+		);
+		codeSenseManager = F1DEDFEA0F884F0600F567F2 /* Code sense */;
+		executables = (
+			F1DEDFD10F884F0000F567F2 /* Rails Rankr */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					622,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 261483002;
+			PBXWorkspaceStateSaveDate = 261483002;
+		};
+		perUserProjectItems = {
+			F14995660F95F7AD009852FB /* PBXTextBookmark */ = F14995660F95F7AD009852FB /* PBXTextBookmark */;
+			F1DEE0A20F88617700F567F2 /* PBXTextBookmark */ = F1DEE0A20F88617700F567F2 /* PBXTextBookmark */;
+			F1DEE0A30F88617700F567F2 /* PBXTextBookmark */ = F1DEE0A30F88617700F567F2 /* PBXTextBookmark */;
+			F1DEE0A40F88617700F567F2 /* PBXTextBookmark */ = F1DEE0A40F88617700F567F2 /* PBXTextBookmark */;
+			F1DEE0A50F88617700F567F2 /* PBXTextBookmark */ = F1DEE0A50F88617700F567F2 /* PBXTextBookmark */;
+			F1DEE0A60F88617700F567F2 /* PBXTextBookmark */ = F1DEE0A60F88617700F567F2 /* PBXTextBookmark */;
+			F1DEE0AF0F88617700F567F2 /* PBXTextBookmark */ = F1DEE0AF0F88617700F567F2 /* PBXTextBookmark */;
+			F1DEE0B80F88635100F567F2 /* PBXTextBookmark */ = F1DEE0B80F88635100F567F2 /* PBXTextBookmark */;
+			F1DEE0C80F88635100F567F2 /* PBXTextBookmark */ = F1DEE0C80F88635100F567F2 /* PBXTextBookmark */;
+			F1DEE0D50F88639500F567F2 /* PBXTextBookmark */ = F1DEE0D50F88639500F567F2 /* PBXTextBookmark */;
+			F1F3A02F0F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A02F0F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0300F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0300F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0310F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0310F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0320F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0320F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0330F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0330F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0340F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0340F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0350F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0350F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0360F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0360F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0380F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0380F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0390F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0390F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A03C0F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A03C0F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A03D0F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A03D0F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0400F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0400F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0410F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0410F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0420F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0420F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0430F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0430F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0440F92C47A00B1FC8A /* PBXTextBookmark */ = F1F3A0440F92C47A00B1FC8A /* PBXTextBookmark */;
+			F1F3A0A20F92C7F400B1FC8A /* PBXTextBookmark */ = F1F3A0A20F92C7F400B1FC8A /* PBXTextBookmark */;
+			F1F3A0A30F92C7F400B1FC8A /* PBXTextBookmark */ = F1F3A0A30F92C7F400B1FC8A /* PBXTextBookmark */;
+			F1F3A0B70F92D3B200B1FC8A /* PBXTextBookmark */ = F1F3A0B70F92D3B200B1FC8A /* PBXTextBookmark */;
+			F1F3A0B80F92D3B200B1FC8A /* PBXTextBookmark */ = F1F3A0B80F92D3B200B1FC8A /* PBXTextBookmark */;
+			F1F3A0B90F92D3B200B1FC8A /* PBXTextBookmark */ = F1F3A0B90F92D3B200B1FC8A /* PBXTextBookmark */;
+			F1F3A0BC0F92D3B200B1FC8A /* PBXTextBookmark */ = F1F3A0BC0F92D3B200B1FC8A /* PBXTextBookmark */;
+			F1F3A0BD0F92D3B200B1FC8A /* PBXTextBookmark */ = F1F3A0BD0F92D3B200B1FC8A /* PBXTextBookmark */;
+			F1F3A0E60F92D86B00B1FC8A /* PBXTextBookmark */ = F1F3A0E60F92D86B00B1FC8A /* PBXTextBookmark */;
+		};
+		sourceControlManager = F1DEDFE90F884F0600F567F2 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	F14995660F95F7AD009852FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */;
+		name = "FavoritesViewController.m: 49";
+		rLen = 0;
+		rLoc = 1447;
+		rType = 0;
+		vrLen = 466;
+		vrLoc = 1358;
+	};
+	F1DEDFD10F884F0000F567F2 /* Rails Rankr */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Rails Rankr";
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	F1DEDFE90F884F0600F567F2 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	F1DEDFEA0F884F0600F567F2 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 451}}";
+			sepNavSelRange = "{363, 0}";
+			sepNavVisRange = "{0, 424}";
+		};
+	};
+	F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1371, 3591}}";
+			sepNavSelRange = "{734, 48}";
+			sepNavVisRange = "{582, 214}";
+		};
+	};
+	F1DEDFF80F88562E00F567F2 /* FavoritesViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 451}}";
+			sepNavSelRange = "{245, 176}";
+			sepNavVisRange = "{0, 427}";
+		};
+	};
+	F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2300, 3940}}";
+			sepNavSelRange = "{1447, 0}";
+			sepNavVisRange = "{1358, 466}";
+		};
+	};
+	F1DEE0090F8856D300F567F2 /* Coder.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 748}}";
+			sepNavSelRange = "{277, 0}";
+			sepNavVisRange = "{285, 756}";
+		};
+	};
+	F1DEE00A0F8856D300F567F2 /* Coder.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 521}}";
+			sepNavSelRange = "{217, 138}";
+			sepNavVisRange = "{15, 526}";
+		};
+	};
+	F1DEE00E0F8856FF00F567F2 /* Connection.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1198, 2786}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{2611, 866}";
+		};
+	};
+	F1DEE0100F8856FF00F567F2 /* ConnectionDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 1869}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 387}";
+		};
+	};
+	F1DEE0240F8856FF00F567F2 /* ObjectiveResourceDateFormatter.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 1185}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 543}";
+		};
+	};
+	F1DEE0520F8856FF00F567F2 /* ObjectiveResourceConfig.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 1090}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{696, 643}";
+		};
+	};
+	F1DEE0A20F88617700F567F2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */;
+		name = "TopCitiesViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 254;
+		vrLoc = 0;
+	};
+	F1DEE0A30F88617700F567F2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEDFF80F88562E00F567F2 /* FavoritesViewController.h */;
+		name = "FavoritesViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 254;
+		vrLoc = 0;
+	};
+	F1DEE0A40F88617700F567F2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */;
+		name = "FavoritesViewController.m: 93";
+		rLen = 0;
+		rLoc = 3403;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 1790;
+	};
+	F1DEE0A50F88617700F567F2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE00A0F8856D300F567F2 /* Coder.m */;
+		name = "Coder.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 535;
+		vrLoc = 0;
+	};
+	F1DEE0A60F88617700F567F2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0090F8856D300F567F2 /* Coder.h */;
+		name = "Coder.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 459;
+		vrLoc = 0;
+	};
+	F1DEE0AF0F88617700F567F2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */;
+		name = "TopCitiesViewController.m: 12";
+		rLen = 17;
+		rLoc = 374;
+		rType = 0;
+		vrLen = 516;
+		vrLoc = 0;
+	};
+	F1DEE0B20F88626E00F567F2 /* Company.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 482}}";
+			sepNavSelRange = "{513, 0}";
+			sepNavVisRange = "{0, 513}";
+		};
+	};
+	F1DEE0B30F88626E00F567F2 /* Company.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 451}}";
+			sepNavSelRange = "{137, 0}";
+			sepNavVisRange = "{0, 269}";
+		};
+	};
+	F1DEE0B80F88635100F567F2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */;
+		name = "TopCompaniesViewController.h: 17";
+		rLen = 0;
+		rLoc = 363;
+		rType = 0;
+		vrLen = 424;
+		vrLoc = 0;
+	};
+	F1DEE0C80F88635100F567F2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0B20F88626E00F567F2 /* Company.h */;
+		name = "City.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 213;
+		vrLoc = 0;
+	};
+	F1DEE0D50F88639500F567F2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0B30F88626E00F567F2 /* Company.m */;
+		name = "Company.m: 13";
+		rLen = 0;
+		rLoc = 263;
+		rType = 0;
+		vrLen = 191;
+		vrLoc = 0;
+	};
+	F1F3A02F0F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28216C960DB411BC00E5133A /* FirstViewController.m */;
+		name = "FirstViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 549;
+		vrLoc = 3;
+	};
+	F1F3A0300F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28216C950DB411BC00E5133A /* FirstViewController.h */;
+		name = "FirstViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 241;
+		vrLoc = 0;
+	};
+	F1F3A0310F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0520F8856FF00F567F2 /* ObjectiveResourceConfig.m */;
+		name = "ObjectiveResourceConfig.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 643;
+		vrLoc = 696;
+	};
+	F1F3A0320F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0240F8856FF00F567F2 /* ObjectiveResourceDateFormatter.m */;
+		name = "ObjectiveResourceDateFormatter.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 543;
+		vrLoc = 0;
+	};
+	F1F3A0330F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0100F8856FF00F567F2 /* ConnectionDelegate.m */;
+		name = "ConnectionDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 387;
+		vrLoc = 0;
+	};
+	F1F3A0340F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE00E0F8856FF00F567F2 /* Connection.m */;
+		name = "Connection.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 866;
+		vrLoc = 2611;
+	};
+	F1F3A0350F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */;
+		name = "Rails_RankrAppDelegate.m: 10";
+		rLen = 0;
+		rLoc = 221;
+		rType = 0;
+		vrLen = 660;
+		vrLoc = 32;
+	};
+	F1F3A0360F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEDFF80F88562E00F567F2 /* FavoritesViewController.h */;
+		name = "FavoritesViewController.h: 13";
+		rLen = 176;
+		rLoc = 245;
+		rType = 0;
+		vrLen = 427;
+		vrLoc = 0;
+	};
+	F1F3A0380F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */;
+		name = "TopCompaniesViewController.m: 13";
+		rLen = 0;
+		rLoc = 270;
+		rType = 0;
+		vrLen = 474;
+		vrLoc = 158;
+	};
+	F1F3A0390F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0B20F88626E00F567F2 /* Company.h */;
+		name = "Company.h: 25";
+		rLen = 0;
+		rLoc = 513;
+		rType = 0;
+		vrLen = 513;
+		vrLoc = 0;
+	};
+	F1F3A03C0F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28216C960DB411BC00E5133A /* FirstViewController.m */;
+		name = "FirstViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 549;
+		vrLoc = 3;
+	};
+	F1F3A03D0F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28216C950DB411BC00E5133A /* FirstViewController.h */;
+		name = "FirstViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 241;
+		vrLoc = 0;
+	};
+	F1F3A0400F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */;
+		name = "Rails_RankrAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 0;
+	};
+	F1F3A0410F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0520F8856FF00F567F2 /* ObjectiveResourceConfig.m */;
+		name = "ObjectiveResourceConfig.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 643;
+		vrLoc = 696;
+	};
+	F1F3A0420F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0240F8856FF00F567F2 /* ObjectiveResourceDateFormatter.m */;
+		name = "ObjectiveResourceDateFormatter.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 543;
+		vrLoc = 0;
+	};
+	F1F3A0430F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0100F8856FF00F567F2 /* ConnectionDelegate.m */;
+		name = "ConnectionDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 387;
+		vrLoc = 0;
+	};
+	F1F3A0440F92C47A00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE00E0F8856FF00F567F2 /* Connection.m */;
+		name = "Connection.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 866;
+		vrLoc = 2611;
+	};
+	F1F3A0540F92C4B200B1FC8A /* FavoritesViewController.m:34 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */;
+		functionName = "-loadCoders";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 34;
+		location = "Rails Rankr";
+		modificationTime = 261281415.888624;
+		state = 2;
+	};
+	F1F3A0A20F92C7F400B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE00A0F8856D300F567F2 /* Coder.m */;
+		name = "Coder.m: 14";
+		rLen = 138;
+		rLoc = 217;
+		rType = 0;
+		vrLen = 526;
+		vrLoc = 15;
+	};
+	F1F3A0A30F92C7F400B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0090F8856D300F567F2 /* Coder.h */;
+		name = "Coder.h: 15";
+		rLen = 0;
+		rLoc = 277;
+		rType = 0;
+		vrLen = 756;
+		vrLoc = 285;
+	};
+	F1F3A0AF0F92C9DA00B1FC8A /* CoderCell.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 451}}";
+			sepNavSelRange = "{454, 0}";
+			sepNavVisRange = "{0, 461}";
+		};
+	};
+	F1F3A0B00F92C9DA00B1FC8A /* CoderCell.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 769}}";
+			sepNavSelRange = "{718, 0}";
+			sepNavVisRange = "{169, 570}";
+		};
+	};
+	F1F3A0B70F92D3B200B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1F3A0AF0F92C9DA00B1FC8A /* CoderCell.h */;
+		name = "CoderCell.h: 20";
+		rLen = 0;
+		rLoc = 454;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 0;
+	};
+	F1F3A0B80F92D3B200B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEE0B30F88626E00F567F2 /* Company.m */;
+		name = "Company.m: 7";
+		rLen = 0;
+		rLoc = 137;
+		rType = 0;
+		vrLen = 269;
+		vrLoc = 0;
+	};
+	F1F3A0B90F92D3B200B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1F3A0B00F92C9DA00B1FC8A /* CoderCell.m */;
+		name = "CoderCell.m: 35";
+		rLen = 0;
+		rLoc = 718;
+		rType = 0;
+		vrLen = 570;
+		vrLoc = 169;
+	};
+	F1F3A0BC0F92D3B200B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1F3A0AF0F92C9DA00B1FC8A /* CoderCell.h */;
+		name = "CoderCell.h: 20";
+		rLen = 0;
+		rLoc = 454;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 0;
+	};
+	F1F3A0BD0F92D3B200B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1F3A0B00F92C9DA00B1FC8A /* CoderCell.m */;
+		name = "CoderCell.m: 13";
+		rLen = 0;
+		rLoc = 240;
+		rType = 0;
+		vrLen = 526;
+		vrLoc = 0;
+	};
+	F1F3A0E60F92D86B00B1FC8A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */;
+		name = "FavoritesViewController.m: 49";
+		rLen = 0;
+		rLoc = 1447;
+		rType = 0;
+		vrLen = 483;
+		vrLoc = 1341;
+	};
+}

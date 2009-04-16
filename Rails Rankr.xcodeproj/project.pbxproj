@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* Rails_RankrAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		28216C970DB411BC00E5133A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* FirstViewController.m */; };
+		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
+		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		F1DEDFF70F88561400F567F2 /* TopCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */; };
+		F1DEDFFA0F88562E00F567F2 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */; };
+		F1DEE00B0F8856D300F567F2 /* Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE00A0F8856D300F567F2 /* Coder.m */; };
+		F1DEE0550F8856FF00F567F2 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE00E0F8856FF00F567F2 /* Connection.m */; };
+		F1DEE0560F8856FF00F567F2 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0100F8856FF00F567F2 /* ConnectionDelegate.m */; };
+		F1DEE0570F8856FF00F567F2 /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0120F8856FF00F567F2 /* NSHTTPURLResponse+Error.m */; };
+		F1DEE0580F8856FF00F567F2 /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0140F8856FF00F567F2 /* NSMutableURLRequest+ResponseType.m */; };
+		F1DEE0590F8856FF00F567F2 /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0160F8856FF00F567F2 /* NSObject+ObjectiveResource.m */; };
+		F1DEE05A0F8856FF00F567F2 /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE01C0F8856FF00F567F2 /* NSString+InflectionSupport.m */; };
+		F1DEE05B0F8856FF00F567F2 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE01E0F8856FF00F567F2 /* NSData+Additions.m */; };
+		F1DEE05C0F8856FF00F567F2 /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0200F8856FF00F567F2 /* NSObject+PropertySupport.m */; };
+		F1DEE05D0F8856FF00F567F2 /* NSString+GSub.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0220F8856FF00F567F2 /* NSString+GSub.m */; };
+		F1DEE05E0F8856FF00F567F2 /* ObjectiveResourceDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0240F8856FF00F567F2 /* ObjectiveResourceDateFormatter.m */; };
+		F1DEE05F0F8856FF00F567F2 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0290F8856FF00F567F2 /* NSObject+SBJSON.m */; };
+		F1DEE0600F8856FF00F567F2 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE02B0F8856FF00F567F2 /* NSString+SBJSON.m */; };
+		F1DEE0610F8856FF00F567F2 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE02D0F8856FF00F567F2 /* SBJSON.m */; };
+		F1DEE0620F8856FF00F567F2 /* NSDictionary+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0330F8856FF00F567F2 /* NSDictionary+JSONSerializableSupport.m */; };
+		F1DEE0630F8856FF00F567F2 /* NSObject+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0350F8856FF00F567F2 /* NSObject+JSONSerializableSupport.m */; };
+		F1DEE0640F8856FF00F567F2 /* NSDate+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0370F8856FF00F567F2 /* NSDate+Serialize.m */; };
+		F1DEE0650F8856FF00F567F2 /* NSDictionary+KeyTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0390F8856FF00F567F2 /* NSDictionary+KeyTranslation.m */; };
+		F1DEE0660F8856FF00F567F2 /* NSObject+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE03B0F8856FF00F567F2 /* NSObject+Serialize.m */; };
+		F1DEE0670F8856FF00F567F2 /* NSString+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE03D0F8856FF00F567F2 /* NSString+Serialize.m */; };
+		F1DEE0680F8856FF00F567F2 /* FromXMLElementDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0410F8856FF00F567F2 /* FromXMLElementDelegate.m */; };
+		F1DEE0690F8856FF00F567F2 /* NSArray+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0430F8856FF00F567F2 /* NSArray+XMLSerializableSupport.m */; };
+		F1DEE06A0F8856FF00F567F2 /* NSDate+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0450F8856FF00F567F2 /* NSDate+XMLSerializableSupport.m */; };
+		F1DEE06B0F8856FF00F567F2 /* NSDictionary+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0470F8856FF00F567F2 /* NSDictionary+XMLSerializableSupport.m */; };
+		F1DEE06C0F8856FF00F567F2 /* NSNull+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0490F8856FF00F567F2 /* NSNull+XMLSerializableSupport.m */; };
+		F1DEE06D0F8856FF00F567F2 /* NSObject+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE04B0F8856FF00F567F2 /* NSObject+XMLSerializableSupport.m */; };
+		F1DEE06E0F8856FF00F567F2 /* NSString+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE04D0F8856FF00F567F2 /* NSString+XMLSerializableSupport.m */; };
+		F1DEE06F0F8856FF00F567F2 /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0520F8856FF00F567F2 /* ObjectiveResourceConfig.m */; };
+		F1DEE0700F8856FF00F567F2 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0540F8856FF00F567F2 /* Response.m */; };
+		F1DEE0B40F88626E00F567F2 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0B30F88626E00F567F2 /* Company.m */; };
+		F1F3A0B10F92C9DA00B1FC8A /* CoderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A0B00F92C9DA00B1FC8A /* CoderCell.m */; };
+		F1F3A0B50F92CF6100B1FC8A /* CoderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F3A0B40F92CF6100B1FC8A /* CoderCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* Rails_RankrAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rails_RankrAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rails_RankrAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Rails Rankr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rails Rankr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28216C950DB411BC00E5133A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		28216C960DB411BC00E5133A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
+		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AB4B0D9B1048005BE974 /* Rails_Rankr_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rails_Rankr_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Rails_Rankr-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Rails_Rankr-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopCompaniesViewController.h; sourceTree = "<group>"; };
+		F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopCompaniesViewController.m; sourceTree = "<group>"; };
+		F1DEDFF80F88562E00F567F2 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		F1DEE0090F8856D300F567F2 /* Coder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coder.h; sourceTree = "<group>"; };
+		F1DEE00A0F8856D300F567F2 /* Coder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coder.m; sourceTree = "<group>"; };
+		F1DEE00D0F8856FF00F567F2 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
+		F1DEE00E0F8856FF00F567F2 /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
+		F1DEE00F0F8856FF00F567F2 /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
+		F1DEE0100F8856FF00F567F2 /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDelegate.m; sourceTree = "<group>"; };
+		F1DEE0110F8856FF00F567F2 /* NSHTTPURLResponse+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHTTPURLResponse+Error.h"; sourceTree = "<group>"; };
+		F1DEE0120F8856FF00F567F2 /* NSHTTPURLResponse+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHTTPURLResponse+Error.m"; sourceTree = "<group>"; };
+		F1DEE0130F8856FF00F567F2 /* NSMutableURLRequest+ResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+ResponseType.h"; sourceTree = "<group>"; };
+		F1DEE0140F8856FF00F567F2 /* NSMutableURLRequest+ResponseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+ResponseType.m"; sourceTree = "<group>"; };
+		F1DEE0150F8856FF00F567F2 /* NSObject+ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ObjectiveResource.h"; sourceTree = "<group>"; };
+		F1DEE0160F8856FF00F567F2 /* NSObject+ObjectiveResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectiveResource.m"; sourceTree = "<group>"; };
+		F1DEE0190F8856FF00F567F2 /* CoreSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSupport.h; sourceTree = "<group>"; };
+		F1DEE01B0F8856FF00F567F2 /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InflectionSupport.h"; sourceTree = "<group>"; };
+		F1DEE01C0F8856FF00F567F2 /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InflectionSupport.m"; sourceTree = "<group>"; };
+		F1DEE01D0F8856FF00F567F2 /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Additions.h"; sourceTree = "<group>"; };
+		F1DEE01E0F8856FF00F567F2 /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Additions.m"; sourceTree = "<group>"; };
+		F1DEE01F0F8856FF00F567F2 /* NSObject+PropertySupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertySupport.h"; sourceTree = "<group>"; };
+		F1DEE0200F8856FF00F567F2 /* NSObject+PropertySupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropertySupport.m"; sourceTree = "<group>"; };
+		F1DEE0210F8856FF00F567F2 /* NSString+GSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GSub.h"; sourceTree = "<group>"; };
+		F1DEE0220F8856FF00F567F2 /* NSString+GSub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GSub.m"; sourceTree = "<group>"; };
+		F1DEE0230F8856FF00F567F2 /* ObjectiveResourceDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveResourceDateFormatter.h; sourceTree = "<group>"; };
+		F1DEE0240F8856FF00F567F2 /* ObjectiveResourceDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceDateFormatter.m; sourceTree = "<group>"; };
+		F1DEE0250F8856FF00F567F2 /* ObjectiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveSupport.h; sourceTree = "<group>"; };
+		F1DEE0270F8856FF00F567F2 /* JSONFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONFramework.h; sourceTree = "<group>"; };
+		F1DEE0280F8856FF00F567F2 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		F1DEE0290F8856FF00F567F2 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		F1DEE02A0F8856FF00F567F2 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		F1DEE02B0F8856FF00F567F2 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		F1DEE02C0F8856FF00F567F2 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		F1DEE02D0F8856FF00F567F2 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		F1DEE0300F8856FF00F567F2 /* JSONSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSerializable.h; sourceTree = "<group>"; };
+		F1DEE0310F8856FF00F567F2 /* JSONSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSerializableSupport.h; sourceTree = "<group>"; };
+		F1DEE0320F8856FF00F567F2 /* NSDictionary+JSONSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONSerializableSupport.h"; sourceTree = "<group>"; };
+		F1DEE0330F8856FF00F567F2 /* NSDictionary+JSONSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONSerializableSupport.m"; sourceTree = "<group>"; };
+		F1DEE0340F8856FF00F567F2 /* NSObject+JSONSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSONSerializableSupport.h"; sourceTree = "<group>"; };
+		F1DEE0350F8856FF00F567F2 /* NSObject+JSONSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSONSerializableSupport.m"; sourceTree = "<group>"; };
+		F1DEE0360F8856FF00F567F2 /* NSDate+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Serialize.h"; sourceTree = "<group>"; };
+		F1DEE0370F8856FF00F567F2 /* NSDate+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Serialize.m"; sourceTree = "<group>"; };
+		F1DEE0380F8856FF00F567F2 /* NSDictionary+KeyTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+KeyTranslation.h"; sourceTree = "<group>"; };
+		F1DEE0390F8856FF00F567F2 /* NSDictionary+KeyTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+KeyTranslation.m"; sourceTree = "<group>"; };
+		F1DEE03A0F8856FF00F567F2 /* NSObject+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Serialize.h"; sourceTree = "<group>"; };
+		F1DEE03B0F8856FF00F567F2 /* NSObject+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Serialize.m"; sourceTree = "<group>"; };
+		F1DEE03C0F8856FF00F567F2 /* NSString+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Serialize.h"; sourceTree = "<group>"; };
+		F1DEE03D0F8856FF00F567F2 /* NSString+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Serialize.m"; sourceTree = "<group>"; };
+		F1DEE03E0F8856FF00F567F2 /* Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serialize.h; sourceTree = "<group>"; };
+		F1DEE0400F8856FF00F567F2 /* FromXMLElementDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FromXMLElementDelegate.h; sourceTree = "<group>"; };
+		F1DEE0410F8856FF00F567F2 /* FromXMLElementDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FromXMLElementDelegate.m; sourceTree = "<group>"; };
+		F1DEE0420F8856FF00F567F2 /* NSArray+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		F1DEE0430F8856FF00F567F2 /* NSArray+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		F1DEE0440F8856FF00F567F2 /* NSDate+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		F1DEE0450F8856FF00F567F2 /* NSDate+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		F1DEE0460F8856FF00F567F2 /* NSDictionary+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		F1DEE0470F8856FF00F567F2 /* NSDictionary+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		F1DEE0480F8856FF00F567F2 /* NSNull+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		F1DEE0490F8856FF00F567F2 /* NSNull+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		F1DEE04A0F8856FF00F567F2 /* NSObject+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		F1DEE04B0F8856FF00F567F2 /* NSObject+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		F1DEE04C0F8856FF00F567F2 /* NSString+XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLSerializableSupport.h"; sourceTree = "<group>"; };
+		F1DEE04D0F8856FF00F567F2 /* NSString+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLSerializableSupport.m"; sourceTree = "<group>"; };
+		F1DEE04E0F8856FF00F567F2 /* XMLSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLSerializable.h; sourceTree = "<group>"; };
+		F1DEE04F0F8856FF00F567F2 /* XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLSerializableSupport.h; sourceTree = "<group>"; };
+		F1DEE0500F8856FF00F567F2 /* ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveResource.h; sourceTree = "<group>"; };
+		F1DEE0510F8856FF00F567F2 /* ObjectiveResourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveResourceConfig.h; sourceTree = "<group>"; };
+		F1DEE0520F8856FF00F567F2 /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceConfig.m; sourceTree = "<group>"; };
+		F1DEE0530F8856FF00F567F2 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
+		F1DEE0540F8856FF00F567F2 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
+		F1DEE0B20F88626E00F567F2 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		F1DEE0B30F88626E00F567F2 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		F1F3A0AF0F92C9DA00B1FC8A /* CoderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderCell.h; sourceTree = "<group>"; };
+		F1F3A0B00F92C9DA00B1FC8A /* CoderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderCell.m; sourceTree = "<group>"; };
+		F1F3A0B40F92CF6100B1FC8A /* CoderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoderCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE0090F8856D300F567F2 /* Coder.h */,
+				F1DEE00A0F8856D300F567F2 /* Coder.m */,
+				28216C950DB411BC00E5133A /* FirstViewController.h */,
+				28216C960DB411BC00E5133A /* FirstViewController.m */,
+				1D3623240D0F684500981E51 /* Rails_RankrAppDelegate.h */,
+				1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */,
+				F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */,
+				F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */,
+				F1DEDFF80F88562E00F567F2 /* FavoritesViewController.h */,
+				F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */,
+				F1DEE0B20F88626E00F567F2 /* Company.h */,
+				F1DEE0B30F88626E00F567F2 /* Company.m */,
+				F1F3A0AF0F92C9DA00B1FC8A /* CoderCell.h */,
+				F1F3A0B00F92C9DA00B1FC8A /* CoderCell.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Rails Rankr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Rails Rankr */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE00C0F8856FF00F567F2 /* objective_resource-library */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = "Rails Rankr";
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AB4B0D9B1048005BE974 /* Rails_Rankr_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Rails_Rankr-Info.plist */,
+				F1F3A0B40F92CF6100B1FC8A /* CoderCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765070DF74369002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1DEE00C0F8856FF00F567F2 /* objective_resource-library */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE00D0F8856FF00F567F2 /* Connection.h */,
+				F1DEE00E0F8856FF00F567F2 /* Connection.m */,
+				F1DEE00F0F8856FF00F567F2 /* ConnectionDelegate.h */,
+				F1DEE0100F8856FF00F567F2 /* ConnectionDelegate.m */,
+				F1DEE0110F8856FF00F567F2 /* NSHTTPURLResponse+Error.h */,
+				F1DEE0120F8856FF00F567F2 /* NSHTTPURLResponse+Error.m */,
+				F1DEE0130F8856FF00F567F2 /* NSMutableURLRequest+ResponseType.h */,
+				F1DEE0140F8856FF00F567F2 /* NSMutableURLRequest+ResponseType.m */,
+				F1DEE0150F8856FF00F567F2 /* NSObject+ObjectiveResource.h */,
+				F1DEE0160F8856FF00F567F2 /* NSObject+ObjectiveResource.m */,
+				F1DEE0170F8856FF00F567F2 /* objective_support */,
+				F1DEE0500F8856FF00F567F2 /* ObjectiveResource.h */,
+				F1DEE0510F8856FF00F567F2 /* ObjectiveResourceConfig.h */,
+				F1DEE0520F8856FF00F567F2 /* ObjectiveResourceConfig.m */,
+				F1DEE0530F8856FF00F567F2 /* Response.h */,
+				F1DEE0540F8856FF00F567F2 /* Response.m */,
+			);
+			path = "objective_resource-library";
+			sourceTree = "<group>";
+		};
+		F1DEE0170F8856FF00F567F2 /* objective_support */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE0180F8856FF00F567F2 /* Core */,
+				F1DEE0260F8856FF00F567F2 /* json-framework */,
+				F1DEE02E0F8856FF00F567F2 /* Serialization */,
+			);
+			path = objective_support;
+			sourceTree = "<group>";
+		};
+		F1DEE0180F8856FF00F567F2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE0190F8856FF00F567F2 /* CoreSupport.h */,
+				F1DEE01A0F8856FF00F567F2 /* Inflections */,
+				F1DEE01D0F8856FF00F567F2 /* NSData+Additions.h */,
+				F1DEE01E0F8856FF00F567F2 /* NSData+Additions.m */,
+				F1DEE01F0F8856FF00F567F2 /* NSObject+PropertySupport.h */,
+				F1DEE0200F8856FF00F567F2 /* NSObject+PropertySupport.m */,
+				F1DEE0210F8856FF00F567F2 /* NSString+GSub.h */,
+				F1DEE0220F8856FF00F567F2 /* NSString+GSub.m */,
+				F1DEE0230F8856FF00F567F2 /* ObjectiveResourceDateFormatter.h */,
+				F1DEE0240F8856FF00F567F2 /* ObjectiveResourceDateFormatter.m */,
+				F1DEE0250F8856FF00F567F2 /* ObjectiveSupport.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F1DEE01A0F8856FF00F567F2 /* Inflections */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE01B0F8856FF00F567F2 /* NSString+InflectionSupport.h */,
+				F1DEE01C0F8856FF00F567F2 /* NSString+InflectionSupport.m */,
+			);
+			path = Inflections;
+			sourceTree = "<group>";
+		};
+		F1DEE0260F8856FF00F567F2 /* json-framework */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE0270F8856FF00F567F2 /* JSONFramework.h */,
+				F1DEE0280F8856FF00F567F2 /* NSObject+SBJSON.h */,
+				F1DEE0290F8856FF00F567F2 /* NSObject+SBJSON.m */,
+				F1DEE02A0F8856FF00F567F2 /* NSString+SBJSON.h */,
+				F1DEE02B0F8856FF00F567F2 /* NSString+SBJSON.m */,
+				F1DEE02C0F8856FF00F567F2 /* SBJSON.h */,
+				F1DEE02D0F8856FF00F567F2 /* SBJSON.m */,
+			);
+			path = "json-framework";
+			sourceTree = "<group>";
+		};
+		F1DEE02E0F8856FF00F567F2 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE02F0F8856FF00F567F2 /* JSON */,
+				F1DEE0360F8856FF00F567F2 /* NSDate+Serialize.h */,
+				F1DEE0370F8856FF00F567F2 /* NSDate+Serialize.m */,
+				F1DEE0380F8856FF00F567F2 /* NSDictionary+KeyTranslation.h */,
+				F1DEE0390F8856FF00F567F2 /* NSDictionary+KeyTranslation.m */,
+				F1DEE03A0F8856FF00F567F2 /* NSObject+Serialize.h */,
+				F1DEE03B0F8856FF00F567F2 /* NSObject+Serialize.m */,
+				F1DEE03C0F8856FF00F567F2 /* NSString+Serialize.h */,
+				F1DEE03D0F8856FF00F567F2 /* NSString+Serialize.m */,
+				F1DEE03E0F8856FF00F567F2 /* Serialize.h */,
+				F1DEE03F0F8856FF00F567F2 /* XML */,
+			);
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		F1DEE02F0F8856FF00F567F2 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE0300F8856FF00F567F2 /* JSONSerializable.h */,
+				F1DEE0310F8856FF00F567F2 /* JSONSerializableSupport.h */,
+				F1DEE0320F8856FF00F567F2 /* NSDictionary+JSONSerializableSupport.h */,
+				F1DEE0330F8856FF00F567F2 /* NSDictionary+JSONSerializableSupport.m */,
+				F1DEE0340F8856FF00F567F2 /* NSObject+JSONSerializableSupport.h */,
+				F1DEE0350F8856FF00F567F2 /* NSObject+JSONSerializableSupport.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		F1DEE03F0F8856FF00F567F2 /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE0400F8856FF00F567F2 /* FromXMLElementDelegate.h */,
+				F1DEE0410F8856FF00F567F2 /* FromXMLElementDelegate.m */,
+				F1DEE0420F8856FF00F567F2 /* NSArray+XMLSerializableSupport.h */,
+				F1DEE0430F8856FF00F567F2 /* NSArray+XMLSerializableSupport.m */,
+				F1DEE0440F8856FF00F567F2 /* NSDate+XMLSerializableSupport.h */,
+				F1DEE0450F8856FF00F567F2 /* NSDate+XMLSerializableSupport.m */,
+				F1DEE0460F8856FF00F567F2 /* NSDictionary+XMLSerializableSupport.h */,
+				F1DEE0470F8856FF00F567F2 /* NSDictionary+XMLSerializableSupport.m */,
+				F1DEE0480F8856FF00F567F2 /* NSNull+XMLSerializableSupport.h */,
+				F1DEE0490F8856FF00F567F2 /* NSNull+XMLSerializableSupport.m */,
+				F1DEE04A0F8856FF00F567F2 /* NSObject+XMLSerializableSupport.h */,
+				F1DEE04B0F8856FF00F567F2 /* NSObject+XMLSerializableSupport.m */,
+				F1DEE04C0F8856FF00F567F2 /* NSString+XMLSerializableSupport.h */,
+				F1DEE04D0F8856FF00F567F2 /* NSString+XMLSerializableSupport.m */,
+				F1DEE04E0F8856FF00F567F2 /* XMLSerializable.h */,
+				F1DEE04F0F8856FF00F567F2 /* XMLSerializableSupport.h */,
+			);
+			path = XML;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Rails Rankr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Rails Rankr" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rails Rankr";
+			productName = "Rails Rankr";
+			productReference = 1D6058910D05DD3D006BFB54 /* Rails Rankr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Rails Rankr" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Rails Rankr */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Rails Rankr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
+				F1F3A0B50F92CF6100B1FC8A /* CoderCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* Rails_RankrAppDelegate.m in Sources */,
+				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
+				F1DEDFF70F88561400F567F2 /* TopCompaniesViewController.m in Sources */,
+				F1DEDFFA0F88562E00F567F2 /* FavoritesViewController.m in Sources */,
+				F1DEE00B0F8856D300F567F2 /* Coder.m in Sources */,
+				F1DEE0550F8856FF00F567F2 /* Connection.m in Sources */,
+				F1DEE0560F8856FF00F567F2 /* ConnectionDelegate.m in Sources */,
+				F1DEE0570F8856FF00F567F2 /* NSHTTPURLResponse+Error.m in Sources */,
+				F1DEE0580F8856FF00F567F2 /* NSMutableURLRequest+ResponseType.m in Sources */,
+				F1DEE0590F8856FF00F567F2 /* NSObject+ObjectiveResource.m in Sources */,
+				F1DEE05A0F8856FF00F567F2 /* NSString+InflectionSupport.m in Sources */,
+				F1DEE05B0F8856FF00F567F2 /* NSData+Additions.m in Sources */,
+				F1DEE05C0F8856FF00F567F2 /* NSObject+PropertySupport.m in Sources */,
+				F1DEE05D0F8856FF00F567F2 /* NSString+GSub.m in Sources */,
+				F1DEE05E0F8856FF00F567F2 /* ObjectiveResourceDateFormatter.m in Sources */,
+				F1DEE05F0F8856FF00F567F2 /* NSObject+SBJSON.m in Sources */,
+				F1DEE0600F8856FF00F567F2 /* NSString+SBJSON.m in Sources */,
+				F1DEE0610F8856FF00F567F2 /* SBJSON.m in Sources */,
+				F1DEE0620F8856FF00F567F2 /* NSDictionary+JSONSerializableSupport.m in Sources */,
+				F1DEE0630F8856FF00F567F2 /* NSObject+JSONSerializableSupport.m in Sources */,
+				F1DEE0640F8856FF00F567F2 /* NSDate+Serialize.m in Sources */,
+				F1DEE0650F8856FF00F567F2 /* NSDictionary+KeyTranslation.m in Sources */,
+				F1DEE0660F8856FF00F567F2 /* NSObject+Serialize.m in Sources */,
+				F1DEE0670F8856FF00F567F2 /* NSString+Serialize.m in Sources */,
+				F1DEE0680F8856FF00F567F2 /* FromXMLElementDelegate.m in Sources */,
+				F1DEE0690F8856FF00F567F2 /* NSArray+XMLSerializableSupport.m in Sources */,
+				F1DEE06A0F8856FF00F567F2 /* NSDate+XMLSerializableSupport.m in Sources */,
+				F1DEE06B0F8856FF00F567F2 /* NSDictionary+XMLSerializableSupport.m in Sources */,
+				F1DEE06C0F8856FF00F567F2 /* NSNull+XMLSerializableSupport.m in Sources */,
+				F1DEE06D0F8856FF00F567F2 /* NSObject+XMLSerializableSupport.m in Sources */,
+				F1DEE06E0F8856FF00F567F2 /* NSString+XMLSerializableSupport.m in Sources */,
+				F1DEE06F0F8856FF00F567F2 /* ObjectiveResourceConfig.m in Sources */,
+				F1DEE0700F8856FF00F567F2 /* Response.m in Sources */,
+				F1DEE0B40F88626E00F567F2 /* Company.m in Sources */,
+				F1F3A0B10F92C9DA00B1FC8A /* CoderCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Rails_Rankr_Prefix.pch;
+				INFOPLIST_FILE = "Rails_Rankr-Info.plist";
+				PRODUCT_NAME = "Rails Rankr";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Rails_Rankr_Prefix.pch;
+				INFOPLIST_FILE = "Rails_Rankr-Info.plist";
+				PRODUCT_NAME = "Rails Rankr";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Rails Rankr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Rails Rankr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
