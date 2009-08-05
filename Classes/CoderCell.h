@@ -10,13 +10,17 @@
 
 
 @interface CoderCell : UITableViewCell {
-  IBOutlet UILabel* nameLabel;
-  IBOutlet UILabel* rankLabel;
-  IBOutlet UILabel* cityLabel;
+  UILabel* nameLabel;
+  UILabel* rankLabel;
+  UILabel* railsRankPointsLabel;
+  UILabel* cityLabel;
+  UIImageView* profileImage;
 }
 
-@property(nonatomic, retain) UILabel* nameLabel;
-@property(nonatomic, retain) UILabel* rankLabel;
-@property(nonatomic, retain) UILabel* cityLabel;
+@property(nonatomic, retain) IBOutlet  UILabel* nameLabel;
+@property(nonatomic, retain) IBOutlet UILabel* rankLabel;
+@property(nonatomic, retain) IBOutlet UILabel* cityLabel;
+@property (nonatomic, retain) IBOutlet UIImageView* profileImage;
+@property (nonatomic, retain) IBOutlet UILabel *railsRankPointsLabel;
 
 @end

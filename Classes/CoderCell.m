@@ -10,14 +10,15 @@
 
 
 @implementation CoderCell
-@synthesize nameLabel, rankLabel, cityLabel;
 
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
-        // Initialization code
-    }
-    return self;
-}
+@synthesize nameLabel, rankLabel, cityLabel, profileImage, railsRankPointsLabel;
+
+//- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
+//    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+//        // Initialization code
+//    }
+//    return self;
+//}
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -32,6 +33,7 @@
     [super dealloc];
     [nameLabel release];
     [rankLabel release];
+    [railsRankPointsLabel release];
     [cityLabel release];
 }
 

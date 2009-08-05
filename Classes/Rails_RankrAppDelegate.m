@@ -17,7 +17,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     //Configure ObjectiveResource
-    [ObjectiveResourceConfig setSite:@"http://www.railsrankings.com/"];
+    [ObjectiveResourceConfig setSite:@"http://localhost:3000/"];
     // use json
     [ObjectiveResourceConfig setResponseType:JSONResponse];
     // Add the tab bar controller's current view as a subview of the window
