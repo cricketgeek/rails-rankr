@@ -11,11 +11,11 @@
 #import "Response.h"
 #import "Connection.h"
 #import "Coder.h"
-
+#import "ObjectiveSupport.h"
 
 @implementation CoderResultsViewController
 
-@synthesize resultsTableView, searchPredicate, coders, lastSearchString;
+@synthesize resultsTableView, searchPredicate, coders, lastSearchString, actionSheet;
 
 -(NSArray*)searchResults {
   //  if(self.searchPredicate) {
@@ -28,11 +28,55 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  //NSLog(@"I scrolled bitch! offset now %f height now %f", scrollView.contentOffset.y,scrollView.contentSize.height);
-  //NSLog(@"must now be further down than %f",(290.0f * pageNumber));
-  if( (scrollView.contentOffset.y > (290.0f*pageNumber)) && ([self.coders count] < 150)){
-    pageNumber += 1;
-    [self getNextPageOfCoderData];
+  NSLog(@"I scrolled bitch! offset now %f height now %f", scrollView.contentOffset.y,scrollView.contentSize.height);
+  if( (scrollView.contentOffset.y > (scrollView.contentSize.height - 320.0f)) && ([[self resultsForTableView:(UITableView*)scrollView] count] < 200)){
+    if(!gettingDataNow) {
+      [self incrementCurrentPageNumber:(UITableView*)scrollView];
+      [self getNextPageOfCoderData:(UITableView*)scrollView];     
+    }
+  }
+}
+
+// This callback fakes progress via setProgress:
+- (void) incrementBar: (id) timer
+{
+  amountDone += incrementalAmount;
+  [progressView setProgress: (amountDone / totalWorkToBeDone)];
+  if (amountDone > totalWorkToBeDone)
+  {
+    [self.actionSheet dismissWithClickedButtonIndex:0
+     animated:YES];
+    self.actionSheet = nil;
+    [timer invalidate];
+    progressBarDisplayed = NO;
+  }
+}
+
+// Load the progress bar onto an action sheet backing
+-(void)showProgressIndicator:(BOOL)fast andLength:(NSInteger)lengthOfTime
+{
+  if(!progressBarDisplayed) {
+    progressBarDisplayed = YES;
+    totalWorkToBeDone = lengthOfTime;
+    incrementalAmount = fast ? 2.0f : 1.0f;
+    amountDone = 0.0f;
+    self.actionSheet = [[[UIActionSheet alloc]
+                         initWithTitle:@"Downloading data. Please Wait\n\n\n"
+                         delegate:nil cancelButtonTitle:nil destructiveButtonTitle: nil
+                         otherButtonTitles: nil] autorelease];
+    progressView = [[UIProgressView alloc]
+                    initWithFrame:CGRectMake(0.0f, 40.0f, 220.0f, 90.0f)];
+    [progressView setProgressViewStyle: UIProgressViewStyleDefault];
+    [actionSheet addSubview:progressView];
+    [progressView release];
+    // Create the demonstration updates
+    [progressView setProgress:(amountDone = 0.0f)];
+    [NSTimer scheduledTimerWithTimeInterval: 0.5 target: self
+                                   selector:@selector(incrementBar:) userInfo: nil repeats: YES];
+    [actionSheet showInView:self.view];
+    progressView.center = CGPointMake(actionSheet.center.x,
+                                      progressView.center.y);
+    
   }
 }
 
@@ -40,23 +84,46 @@
   return (table == self.resultsTableView) ? self.coders : self.searchResults;
 }
 
+-(NSInteger)currentPageNumber:(UITableView*)aTableView {
+  return (aTableView == self.resultsTableView) ? pageNumber : searchPageNumber;
+}
+
+-(void)incrementCurrentPageNumber:(UITableView*)aTableView {
+  if(aTableView == self.resultsTableView){
+    pageNumber += 1;
+  }
+  else {
+    searchPageNumber += 1; 
+  }
+}
+
 -(void)getAllCoderData{
+  [self showProgressIndicator:YES andLength:6];
   self.coders = [NSMutableArray arrayWithArray:[Coder findAllRemote]];
   NSLog(@"found %d coders",[self.coders count]);
 }
 
--(void)getNextPageOfCoderData {
-  NSString *coderPath = [NSString stringWithFormat:@"%@coders%@?page=%dsearch=%@",
+-(void)getNextPageOfCoderData:(UITableView*)aTableView {
+  gettingDataNow = YES;
+  UIApplication *app = [UIApplication sharedApplication];
+  app.networkActivityIndicatorVisible = YES;
+  
+  NSLog(@"getting more data");
+  NSInteger pageNumberToUse = [self currentPageNumber:aTableView];
+  NSString* queryString = lastSearchString ? [NSString stringWithFormat:@"page=%d&search=%@",pageNumberToUse,lastSearchString] : [NSString stringWithFormat:@"page=%d",pageNumberToUse];
+  
+  NSString *coderPath = [NSString stringWithFormat:@"%@coders%@?%@",
                          [Coder getRemoteSite],
                          [Coder getRemoteProtocolExtension],
-                         pageNumber,
-                         lastSearchString];
+                         queryString];
   
   //send the response
   Response *res = [Connection get:coderPath];
   [self.coders addObjectsFromArray:[Coder fromJSONData:res.body]];
   NSLog(@"now have %d coders after scrolling to page %d",[self.coders count],pageNumber);
-  [self.resultsTableView reloadData];
+  [aTableView reloadData];
+  gettingDataNow = NO;
+  app.networkActivityIndicatorVisible = NO;
 }
 
 -(void)refreshData {
@@ -78,8 +145,14 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
   [super viewDidLoad];
+  progressBarDisplayed = NO;
+  gettingDataNow = NO;
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
                                                                    target:self action:@selector(refreshData)];
+  
+//  UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain
+//                                                                   target:self action:@selector(refreshData)];
+  
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTableView setRowHeight:60.0f];
   [self.searchDisplayController.searchResultsTableView setRowHeight:60.0f];
@@ -129,37 +202,19 @@
   
   if (cell == nil) {
     cell = (CoderCell*)[[UITableViewCell alloc] initWithNibName:[NSString stringWithFormat:@"CoderCell"] reuseIdentifier:[NSString stringWithFormat:@"Coder"]];
-    //cell = [self createCoderCellFromNib];
+    
+    [cell retain];
   }
   
   Coder* coder = ((Coder *)[[self resultsForTableView:atableView] objectAtIndex:indexPath.row]);
   cell.nameLabel.text = coder.fullName;
-  cell.rankLabel.text = coder.rank;
+  cell.rankLabel.text = coder.railsrank;
   cell.cityLabel.text = coder.city;
   cell.railsRankPointsLabel.text = coder.fullRank; 
-  CGSize image_size = {50.0f, 50.0f};
-  UIImage* profile_image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [NSString stringWithFormat:@"%@",coder.imagePath]]]];
-  cell.profileImage.image = [UIImage imageOfSize:image_size fromImage:profile_image];
+  //CGSize image_size = {50.0f, 50.0f};
+  //UIImage* profile_image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [NSString stringWithFormat:@"%@",coder.imagePath]]]];
+  //cell.profileImage.image = [UIImage imageOfSize:image_size fromImage:profile_image];
   return cell;
-}
-
-- (CoderCell*)createCoderCellFromNib {
-  
-  NSArray* nibContents = [[NSBundle mainBundle]
-                          loadNibNamed:@"CoderCell" owner:self options:nil];
-  NSEnumerator *nibEnumerator = [nibContents objectEnumerator];
-  CoderCell* coderCell = nil;
-  NSObject* nibItem = nil;
-  while ( (nibItem = [nibEnumerator nextObject]) != nil) {
-    if ( [nibItem isKindOfClass: [CoderCell class]]) {
-      coderCell = (CoderCell*) nibItem;
-      if ([coderCell.reuseIdentifier isEqualToString: @"Coder" ])
-        break; // we have a winner
-      else
-        coderCell = nil;
-    }
-  }
-  return coderCell;
 }
 
 - (void)tableView:(UITableView *)atableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -171,28 +226,13 @@
 }
 
 
-/*
+
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
  // Return NO if you do not want the specified item to be editable.
  return YES;
  }
- */
-
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
  
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
- }   
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }   
- }
- */
 
 
 /*
@@ -219,7 +259,8 @@
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-  if([searchString length] > 0) {
+  searchPageNumber = 1;
+  if([searchString length] > 2) {
     NSString *coderPath = [NSString stringWithFormat:@"%@coders%@?search=%@",
                            [Coder getRemoteSite],
                            [Coder getRemoteProtocolExtension],

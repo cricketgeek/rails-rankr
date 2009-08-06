@@ -13,12 +13,12 @@
 
 @synthesize nameLabel, rankLabel, cityLabel, profileImage, railsRankPointsLabel;
 
-//- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-//    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
-//        // Initialization code
-//    }
-//    return self;
-//}
+- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+        // Initialization code
+    }
+    return self;
+}
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

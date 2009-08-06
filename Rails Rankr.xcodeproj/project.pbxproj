@@ -11,9 +11,11 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		28216C970DB411BC00E5133A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* FirstViewController.m */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		F181B199102B42D700E06C6B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F181B198102B42D700E06C6B /* CoreData.framework */; };
+		F1D5C96C102B0C740061B50B /* profile_small.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D5C96B102B0C740061B50B /* profile_small.png */; };
+		F1D5CA2B102B2A260061B50B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D5CA2A102B2A260061B50B /* icon.png */; };
 		F1DEDFF70F88561400F567F2 /* TopCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */; };
 		F1DEDFFA0F88562E00F567F2 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */; };
 		F1DEE00B0F8856D300F567F2 /* Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE00A0F8856D300F567F2 /* Coder.m */; };
@@ -57,7 +59,6 @@
 		F1EDF45B1029C46300A6C475 /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EDF45A1029C46300A6C475 /* SplashView.xib */; };
 		F1EDF45E1029C60500A6C475 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F1EDF45D1029C60500A6C475 /* profile.png */; };
 		F1EDF4631029C6A500A6C475 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F1EDF4621029C6A500A6C475 /* Default.png */; };
-		F1EDF4651029C6C000A6C475 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1EDF4641029C6C000A6C475 /* icon.png */; };
 		F1EDF4E41029E37E00A6C475 /* UITableViewCell+CustomNib.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EDF4E31029E37E00A6C475 /* UITableViewCell+CustomNib.m */; };
 		F1EDF6751029F9F300A6C475 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EDF6731029F9F300A6C475 /* UIImage+Resizing.m */; };
 		F1F3A0B10F92C9DA00B1FC8A /* CoderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A0B00F92C9DA00B1FC8A /* CoderCell.m */; };
@@ -70,19 +71,20 @@
 		1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rails_RankrAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Rails Rankr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rails Rankr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28216C950DB411BC00E5133A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		28216C960DB411BC00E5133A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* Rails_Rankr_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rails_Rankr_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Rails_Rankr-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Rails_Rankr-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopCompaniesViewController.h; sourceTree = "<group>"; };
-		F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopCompaniesViewController.m; sourceTree = "<group>"; };
-		F1DEDFF80F88562E00F567F2 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
-		F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
-		F1DEE0090F8856D300F567F2 /* Coder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coder.h; sourceTree = "<group>"; };
-		F1DEE00A0F8856D300F567F2 /* Coder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coder.m; sourceTree = "<group>"; };
+		F181B198102B42D700E06C6B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F1D5C96B102B0C740061B50B /* profile_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_small.png; sourceTree = "<group>"; };
+		F1D5CA2A102B2A260061B50B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopCompaniesViewController.h; path = Classes/TopCompaniesViewController.h; sourceTree = "<group>"; };
+		F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopCompaniesViewController.m; path = Classes/TopCompaniesViewController.m; sourceTree = "<group>"; };
+		F1DEDFF80F88562E00F567F2 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesViewController.h; path = Classes/FavoritesViewController.h; sourceTree = "<group>"; };
+		F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesViewController.m; path = Classes/FavoritesViewController.m; sourceTree = "<group>"; };
+		F1DEE0090F8856D300F567F2 /* Coder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coder.h; path = Classes/Coder.h; sourceTree = "<group>"; };
+		F1DEE00A0F8856D300F567F2 /* Coder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coder.m; path = Classes/Coder.m; sourceTree = "<group>"; };
 		F1DEE00D0F8856FF00F567F2 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
 		F1DEE00E0F8856FF00F567F2 /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
 		F1DEE00F0F8856FF00F567F2 /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
@@ -148,8 +150,8 @@
 		F1DEE0520F8856FF00F567F2 /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceConfig.m; sourceTree = "<group>"; };
 		F1DEE0530F8856FF00F567F2 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
 		F1DEE0540F8856FF00F567F2 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
-		F1DEE0B20F88626E00F567F2 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
-		F1DEE0B30F88626E00F567F2 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		F1DEE0B20F88626E00F567F2 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Company.h; path = Classes/Company.h; sourceTree = "<group>"; };
+		F1DEE0B30F88626E00F567F2 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Company.m; path = Classes/Company.m; sourceTree = "<group>"; };
 		F1EDF4461029C3A100A6C475 /* CoderResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderResultsViewController.h; sourceTree = "<group>"; };
 		F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderResultsViewController.m; sourceTree = "<group>"; };
 		F1EDF4481029C3A100A6C475 /* CoderResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoderResultsViewController.xib; sourceTree = "<group>"; };
@@ -165,7 +167,6 @@
 		F1EDF45A1029C46300A6C475 /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		F1EDF45D1029C60500A6C475 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		F1EDF4621029C6A500A6C475 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		F1EDF4641029C6C000A6C475 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F1EDF4DD1029E1EB00A6C475 /* UITableViewCell+CustomNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+CustomNib.h"; sourceTree = "<group>"; };
 		F1EDF4E31029E37E00A6C475 /* UITableViewCell+CustomNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+CustomNib.m"; sourceTree = "<group>"; };
 		F1EDF6731029F9F300A6C475 /* UIImage+Resizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
@@ -183,6 +184,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				F181B199102B42D700E06C6B /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,18 +196,8 @@
 			children = (
 				F1EDF6731029F9F300A6C475 /* UIImage+Resizing.m */,
 				F1EDF6741029F9F300A6C475 /* UIImage+Resizing.h */,
-				F1DEE0090F8856D300F567F2 /* Coder.h */,
-				F1DEE00A0F8856D300F567F2 /* Coder.m */,
-				28216C950DB411BC00E5133A /* FirstViewController.h */,
-				28216C960DB411BC00E5133A /* FirstViewController.m */,
 				1D3623240D0F684500981E51 /* Rails_RankrAppDelegate.h */,
 				1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */,
-				F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */,
-				F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */,
-				F1DEDFF80F88562E00F567F2 /* FavoritesViewController.h */,
-				F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */,
-				F1DEE0B20F88626E00F567F2 /* Company.h */,
-				F1DEE0B30F88626E00F567F2 /* Company.m */,
 				F1F3A0AF0F92C9DA00B1FC8A /* CoderCell.h */,
 				F1F3A0B00F92C9DA00B1FC8A /* CoderCell.m */,
 				F1EDF4461029C3A100A6C475 /* CoderResultsViewController.h */,
@@ -237,6 +229,8 @@
 		29B97314FDCFA39411CA2CEA /* Rails Rankr */ = {
 			isa = PBXGroup;
 			children = (
+				F181B197102B42B600E06C6B /* Models */,
+				F181B196102B429400E06C6B /* Old Stuff */,
 				F1DEE00C0F8856FF00F567F2 /* objective_resource-library */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -259,7 +253,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F1EDF4641029C6C000A6C475 /* icon.png */,
+				F1D5CA2A102B2A260061B50B /* icon.png */,
+				F1D5C96B102B0C740061B50B /* profile_small.png */,
 				F1EDF4621029C6A500A6C475 /* Default.png */,
 				F1EDF45D1029C60500A6C475 /* profile.png */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
@@ -273,11 +268,34 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F181B198102B42D700E06C6B /* CoreData.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F181B196102B429400E06C6B /* Old Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */,
+				F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */,
+				F1DEDFF80F88562E00F567F2 /* FavoritesViewController.h */,
+				F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */,
+			);
+			name = "Old Stuff";
+			sourceTree = "<group>";
+		};
+		F181B197102B42B600E06C6B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE0090F8856D300F567F2 /* Coder.h */,
+				F1DEE00A0F8856D300F567F2 /* Coder.m */,
+				F1DEE0B20F88626E00F567F2 /* Company.h */,
+				F1DEE0B30F88626E00F567F2 /* Company.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		F1DEE00C0F8856FF00F567F2 /* objective_resource-library */ = {
@@ -459,7 +477,8 @@
 				F1EDF45B1029C46300A6C475 /* SplashView.xib in Resources */,
 				F1EDF45E1029C60500A6C475 /* profile.png in Resources */,
 				F1EDF4631029C6A500A6C475 /* Default.png in Resources */,
-				F1EDF4651029C6C000A6C475 /* icon.png in Resources */,
+				F1D5C96C102B0C740061B50B /* profile_small.png in Resources */,
+				F1D5CA2B102B2A260061B50B /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +491,6 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* Rails_RankrAppDelegate.m in Sources */,
-				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
 				F1DEDFF70F88561400F567F2 /* TopCompaniesViewController.m in Sources */,
 				F1DEDFFA0F88562E00F567F2 /* FavoritesViewController.m in Sources */,
 				F1DEE00B0F8856D300F567F2 /* Coder.m in Sources */,
@@ -522,6 +540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Christian Jones (8NKE9JCJS2)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -529,6 +548,7 @@
 				GCC_PREFIX_HEADER = Rails_Rankr_Prefix.pch;
 				INFOPLIST_FILE = "Rails_Rankr-Info.plist";
 				PRODUCT_NAME = "Rails Rankr";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BEC1ACD0-570F-4B2E-8CFD-A3C9AE7AB1EA";
 			};
 			name = Debug;
 		};

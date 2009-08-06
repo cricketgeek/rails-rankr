@@ -12,7 +12,7 @@
 
 @implementation Coder
 @synthesize coderId, fullName, firstName, lastName, city, companyName, fullRank, 
-            rank, railsRank, githubWatchers, imagePath;
+            rank, railsrank, githubWatchers, imagePath;
 
 - (NSString *)fullName {
 	return [NSString stringWithFormat:@"%@ %@",firstName,lastName];
