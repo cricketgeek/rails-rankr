@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="166"/>
+			<integer value="106"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -52,6 +52,10 @@
 				<object class="IBUINavigationController" key="IBUISelectedViewController" id="506044558">
 					<object class="IBUITabBarItem" key="IBUITabBarItem" id="670759854">
 						<string key="IBUITitle">Favorites</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">heart.png</string>
+						</object>
 						<reference key="IBUITabBar"/>
 					</object>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -107,6 +111,10 @@
 					<object class="IBUINavigationController" id="950412231">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="283820075">
 							<string key="IBUITitle">Companies</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">suitcase.png</string>
+							</object>
 							<reference key="IBUITabBar"/>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -515,7 +523,7 @@
 					<string key="className">CityResultsViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">refreshData:</string>
+						<string key="NS.key.0">refreshData</string>
 						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -529,10 +537,19 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">CoderFavoritesViewController</string>
-					<string key="superclassName">UIViewController</string>
+					<string key="superclassName">BaseResultsViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">addFav:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSMutableArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>addFav:</string>
+							<string>refreshData</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">resultsTable</string>
@@ -547,7 +564,7 @@
 					<string key="className">CoderResultsViewController</string>
 					<string key="superclassName">BaseResultsViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">refreshData:</string>
+						<string key="NS.key.0">refreshData</string>
 						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -563,7 +580,7 @@
 					<string key="className">CompanyResultsViewController</string>
 					<string key="superclassName">UITableViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">refreshData:</string>
+						<string key="NS.key.0">refreshData</string>
 						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">

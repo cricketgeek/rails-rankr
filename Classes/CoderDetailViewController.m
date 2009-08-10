@@ -9,10 +9,10 @@
 #import "CoderDetailViewController.h"
 #import "TwoLabelTableCell.h"
 #import "UITableViewCell+CustomNib.h"
-
+#import "UIWebImageView.h"
 @implementation CoderDetailViewController
 
-@synthesize coder, coderName, wwrRank, githubWatchers, railsRank, railsRankingsPoints, city, detailTableView;
+@synthesize coder, coderName, wwrRank, githubWatchers, railsRank, railsRankingsPoints, city, detailTableView,wwrProfileUrlButton,githubProfileUrlButton,recommendWWRButton;;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -23,6 +23,18 @@
  return self;
  }
  */
+
+-(IBAction)goToWWRProfile:(id)sender{
+    NSLog(@"going to WWR profile for %@",self.coder.fullName);
+}
+
+-(IBAction)goToGithubProfile:(id)sender {
+  NSLog(@"going to github profile for %@",self.coder.fullName);  
+}
+
+-(IBAction)recommendOnWWR:(id)sender {
+  NSLog(@"recommending %@",self.coder.fullName);
+}
 
 
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -40,7 +52,24 @@
   self.railsRank.text = self.coder.railsrank;
   self.wwrRank.text = self.coder.rank;
   self.railsRankingsPoints.text = self.coder.fullRank;
+  self.githubWatchers.text = self.coder.githubWatchers;
   
+  //[self.detailTableView setBackground:[UIImage imageNamed:@"background_profile.png"]];
+  NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
+  NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
+  NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
+  if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
+    NSLog(@"just using background here now");
+  }
+  else{
+    NSString *url = [[NSString alloc] initWithString:coder.imagePath];
+    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(20,21,82,85) andUrl:url];
+    webImage.tag = 57;
+    [self.view addSubview:webImage];
+  }
+  
+  //[[(Rails_RankrAppDelegate*)[UIApplication sharedApplication] tabBarController] 
+  //[self.recommendWWRButton setText:[NSString stringWithFormat:@"recommend %@",self.coder.fullName]];
 }
 
 #pragma mark Table view methods

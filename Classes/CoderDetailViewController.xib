@@ -50,21 +50,6 @@
 							<string key="NSResourceName">background_profile.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="966601325">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">-2147483360</int>
-						<string key="NSFrame">{{19, 22}, {82, 85}}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIAutoresizesSubviews">NO</bool>
-						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<int key="IBUIContentMode">4</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">profile.png</string>
-						</object>
-					</object>
 					<object class="IBUIButton" id="648899535">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
@@ -153,8 +138,12 @@
 					<object class="IBUITableView" id="210437073">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{20, 120}, {280, 133}}</string>
+						<string key="NSFrame">{{20, 120}, {280, 198}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">2</int>
+							<bytes key="NSRGB">MC45MzcyNTQ5NyAwLjk4MDM5MjIyIDAuOTg4MjM1MzUAA</bytes>
+						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -358,6 +347,73 @@
 					</object>
 					<int key="connectionID">23</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">wwrProfileUrlButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="648899535"/>
+					</object>
+					<int key="connectionID">24</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">githubProfileUrlButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="165374838"/>
+					</object>
+					<int key="connectionID">25</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">recommendWWRButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="106780672"/>
+					</object>
+					<int key="connectionID">26</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">goToWWRProfile:</string>
+						<reference key="source" ref="648899535"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">27</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">goToGithubProfile:</string>
+						<reference key="source" ref="165374838"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">28</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">recommendOnWWR:</string>
+						<reference key="source" ref="106780672"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">29</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">dataSource</string>
+						<reference key="source" ref="210437073"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">30</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="210437073"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">31</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -382,7 +438,6 @@
 							<reference ref="674016984"/>
 							<reference ref="101677020"/>
 							<reference ref="866875918"/>
-							<reference ref="966601325"/>
 							<reference ref="210437073"/>
 							<reference ref="796597874"/>
 							<reference ref="281780647"/>
@@ -400,11 +455,6 @@
 						<int key="objectID">-2</int>
 						<reference key="object" ref="975951072"/>
 						<reference key="parent" ref="317526666"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">5</int>
-						<reference key="object" ref="966601325"/>
-						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">6</int>
@@ -482,7 +532,6 @@
 					<string>14.IBPluginDependency</string>
 					<string>15.IBPluginDependency</string>
 					<string>17.IBPluginDependency</string>
-					<string>5.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
@@ -493,7 +542,6 @@
 					<string>CoderDetailViewController</string>
 					<string>UIResponder</string>
 					<string>{{271, 742}, {320, 480}}</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -528,7 +576,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">23</int>
+			<int key="maxID">32</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -536,6 +584,21 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CoderDetailViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSMutableArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>goToGithubProfile:</string>
+							<string>goToWWRProfile:</string>
+							<string>recommendOnWWR:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
@@ -543,9 +606,13 @@
 							<string>city</string>
 							<string>coderName</string>
 							<string>detailTableView</string>
+							<string>githubProfileUrlButton</string>
 							<string>githubWatchers</string>
+							<string>profileImage</string>
 							<string>railsRank</string>
 							<string>railsRankingsPoints</string>
+							<string>recommendWWRButton</string>
+							<string>wwrProfileUrlButton</string>
 							<string>wwrRank</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -553,9 +620,13 @@
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UITableView</string>
+							<string>UIButton</string>
+							<string>UILabel</string>
+							<string>UIImageView</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
-							<string>UILabel</string>
+							<string>UIButton</string>
+							<string>UIButton</string>
 							<string>UILabel</string>
 						</object>
 					</object>

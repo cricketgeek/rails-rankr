@@ -18,6 +18,9 @@
   UILabel* railsRank;
   UILabel* city;
   UITableView* detailTableView;
+  UIButton* wwrProfileUrlButton;
+  UIButton* githubProfileUrlButton;
+  UIButton* recommendWWRButton;
 }
 
 @property (nonatomic, retain) Coder *coder;
@@ -28,5 +31,12 @@
 @property (nonatomic, retain) IBOutlet UILabel *railsRankingsPoints;
 @property (nonatomic, retain) IBOutlet UILabel *city;
 @property (nonatomic, retain) IBOutlet UITableView *detailTableView;
+@property (nonatomic, retain) IBOutlet UIButton *wwrProfileUrlButton;
+@property (nonatomic, retain) IBOutlet UIButton *githubProfileUrlButton;
+@property (nonatomic, retain) IBOutlet UIButton *recommendWWRButton;
+
+-(IBAction)goToWWRProfile:(id)sender;
+-(IBAction)goToGithubProfile:(id)sender;
+-(IBAction)recommendOnWWR:(id)sender;
 
 @end

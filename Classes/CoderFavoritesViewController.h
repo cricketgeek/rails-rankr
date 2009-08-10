@@ -13,7 +13,10 @@
 #import "ASINetworkQueue.h"
 #import "BaseResultsViewController.h"
 
-@interface CoderFavoritesViewController : BaseResultsViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface CoderFavoritesViewController : BaseResultsViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
+	NSFetchedResultsController *fetchedResultsController;
+	NSManagedObjectContext *managedObjectContext;
+  NSManagedObjectContext *addingManagedObjectContext;  
   UITableView* resultsTable;
   NSMutableArray* data;
   NSInteger pageNumber;
@@ -22,6 +25,9 @@
   UIApplication *app;    
 }
 
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSManagedObjectContext *addingManagedObjectContext;
 @property (nonatomic, retain) IBOutlet UITableView *resultsTable;
 @property (nonatomic, retain) NSMutableArray *data;
 
