@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0663299F1030782900D3D668 /* rr_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0663299E1030782900D3D668 /* rr_icon.png */; };
 		1D3623260D0F684500981E51 /* Rails_RankrAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0663299E1030782900D3D668 /* rr_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rr_icon.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Rails_RankrAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rails_RankrAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rails_RankrAppDelegate.m; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0663299E1030782900D3D668 /* rr_icon.png */,
 				F181B24C102B664D00E06C6B /* bg_searchcell.png */,
 				F181B24D102B664D00E06C6B /* btn_github.png */,
 				F181B24E102B664D00E06C6B /* btn_recommend.png */,
@@ -444,6 +447,7 @@
 				F181BFE7102F41AF00E06C6B /* CompanyCell.xib in Resources */,
 				F1A523B5102FB69500F72FE1 /* TwoLabelTableCell.xib in Resources */,
 				F1A523B7102FB6B800F72FE1 /* LabelAndLinkTableCell.xib in Resources */,
+				0663299F1030782900D3D668 /* rr_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
