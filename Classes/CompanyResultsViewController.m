@@ -23,7 +23,7 @@
   app = [UIApplication sharedApplication];
 }
 
--(IBAction)refreshData:(id)sender {
+-(IBAction)refreshData {
   pageNumber = (int)1;
   [self grabCodersInTheBackground];
   [self.resultsTable reloadData];

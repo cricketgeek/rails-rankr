@@ -12,6 +12,7 @@
 #import "CJSONDeserializer.h"
 #import "Coder.h"
 #import "Company.h"
+#import "City.h"
 
 @implementation ASIHTTPRequestJSON
 
@@ -52,6 +53,23 @@
     NSLog(@"company is %@",new_coder.name);
     [responseCollection addObject:new_coder];
     [new_coder release];
+  }
+	return responseCollection;
+}
+
+-(NSMutableArray*)getCityCollection {
+	responseCollection	= [[NSMutableArray alloc] init];
+  NSError* errorForJSON;
+  NSMutableDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:[self responseData] error:&errorForJSON];
+  NSLog(@"dict is : %@", [dict class]);
+  NSLog(@"dict is : %@",dict);
+  NSLog(@"allkeys count: %d", [[dict allKeys] count]);
+  for (NSDictionary* object in [dict objectForKey:[[dict allKeys] objectAtIndex:0]]) {
+    NSDictionary* coderDict = (NSDictionary*)[object objectForKey:@"coder"];
+    City* new_city = [[City alloc] initWithDictionary:coderDict];
+    NSLog(@"city is %@",new_city.name);
+    [responseCollection addObject:new_city];
+    [new_city release];
   }
 	return responseCollection;
 }

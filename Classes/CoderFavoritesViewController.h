@@ -11,12 +11,12 @@
 #import "UITableViewCell+CustomNib.h"
 #import "ASIHTTPRequest+JSON.h"
 #import "ASINetworkQueue.h"
+#import "BaseResultsViewController.h"
 
-@interface CoderFavoritesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface CoderFavoritesViewController : BaseResultsViewController <UITableViewDelegate, UITableViewDataSource> {
   UITableView* resultsTable;
   NSMutableArray* data;
   NSInteger pageNumber;
-  BOOL gettingDataNow;
   ASINetworkQueue *networkQueue;
   UIProgressView *progressView;
   UIApplication *app;    
@@ -26,6 +26,8 @@
 @property (nonatomic, retain) NSMutableArray *data;
 
 -(IBAction)addFav:(id)sender;
+- (void)grabCodersInTheBackground;
+-(IBAction)refreshData;
 
 
 @end

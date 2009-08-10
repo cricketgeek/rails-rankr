@@ -25,7 +25,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *resultsTable;
 @property (nonatomic, retain) NSMutableArray *data;
 
--(IBAction)refreshData:(id)sender;
+-(IBAction)refreshData;
 - (void)grabCodersInTheBackground;
 -(NSInteger)currentPageNumber:(UITableView*)aTableView;
 

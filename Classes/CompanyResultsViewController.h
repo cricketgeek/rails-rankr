@@ -11,6 +11,8 @@
 #import "UIImage+Resizing.h"
 #import "UITableViewCell+CustomNib.h"
 
+@class ASINetworkQueue;
+
 @interface CompanyResultsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
   UITableView* resultsTable;
   NSMutableArray* data;
@@ -27,7 +29,7 @@
 @property (nonatomic, retain) NSMutableArray *data;
 @property (nonatomic, retain) NSString *lastSearchString;
 
--(IBAction)refreshData:(id)sender;
+-(IBAction)refreshData;
 - (void)grabCodersInTheBackground;
 -(NSInteger)currentPageNumber:(UITableView*)aTableView;
 

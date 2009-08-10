@@ -46,6 +46,6 @@
 -(NSInteger)currentPageNumber:(UITableView*)aTableView;
 -(void)incrementCurrentPageNumber:(UITableView*)aTableView;
 -(void)showProgressIndicator:(BOOL)fast andLength:(NSInteger)lengthOfTime;
--(IBAction)refreshData:(id)sender;
+-(IBAction)refreshData;
 
 @end

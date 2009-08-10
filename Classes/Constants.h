@@ -8,7 +8,7 @@
 
 //#import <Foundation/Foundation.h>
 
-#define HOST_SERVER @"http://railsrankings.com/"
+#define HOST_SERVER @"http://localhost:3000/"
 
 //@interface Constants : NSObject {
 //

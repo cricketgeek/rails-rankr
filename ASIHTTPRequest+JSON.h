@@ -17,5 +17,6 @@
 @property(nonatomic,retain) NSMutableArray	*responseCollection;
 -(NSMutableArray*)getCoderCollection;
 -(NSMutableArray*)getCompanyCollection;
+-(NSMutableArray*)getCityCollection;
 
 @end

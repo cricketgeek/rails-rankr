@@ -5,10 +5,10 @@
 //  Created by Mark Jones on 8/5/09.
 //  Copyright 2009 Geordie Enterprises LLC. All rights reserved.
 //
-#import "ASIHTTPRequest+JSON.h"
-#import "ASINetworkQueue.h"
 #import "CoderResultsViewController.h"
 #import "CoderDetailViewController.h"
+#import "ASIHTTPRequest+JSON.h"
+#import "ASINetworkQueue.h"
 #import "Coder.h"
 #import "UIWebImageView.h"
 #import "Constants.h"
@@ -23,7 +23,7 @@
   app = [UIApplication sharedApplication];
 }
 
--(IBAction)refreshData:(id)sender {
+-(IBAction)refreshData {
   pageNumber = (int)1;
   [self grabCodersInTheBackground];
   [self.resultsTableView reloadData];
