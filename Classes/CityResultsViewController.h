@@ -7,10 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImage+Resizing.h"
+#import "UITableViewCell+CustomNib.h"
+#import "ASIHTTPRequest+JSON.h"
+#import "ASINetworkQueue.h"
 
-
-@interface CityResultsViewController : UIViewController {
-
+@interface CityResultsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+  UITableView* resultsTable;
+  NSMutableArray* data;
+  NSInteger pageNumber;
+  BOOL gettingDataNow;
+  ASINetworkQueue *networkQueue;
+  UIProgressView *progressView;
+  UIApplication *app;    
 }
+
+@property (nonatomic, retain) IBOutlet UITableView *resultsTable;
+@property (nonatomic, retain) NSMutableArray *data;
+
+-(IBAction)refreshData:(id)sender;
+- (void)grabCodersInTheBackground;
+-(NSInteger)currentPageNumber:(UITableView*)aTableView;
 
 @end

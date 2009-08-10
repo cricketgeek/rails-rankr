@@ -7,9 +7,25 @@
 //
 
 #import "CoderFavoritesViewController.h"
+#import "Constants.h"
 
 
 @implementation CoderFavoritesViewController
+
+@synthesize resultsTable, data;
+
+- (void)awakeFromNib
+{
+	networkQueue = [[ASINetworkQueue alloc] init];
+  app = [UIApplication sharedApplication];
+}
+
+-(IBAction)addFav:(id)sender {
+  
+  
+  
+}
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.

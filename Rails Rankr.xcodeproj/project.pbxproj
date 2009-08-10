@@ -49,9 +49,8 @@
 		F1A523B7102FB6B800F72FE1 /* LabelAndLinkTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A523B6102FB6B800F72FE1 /* LabelAndLinkTableCell.xib */; };
 		F1A523BE102FB84300F72FE1 /* TwoLabelTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A523BD102FB84300F72FE1 /* TwoLabelTableCell.m */; };
 		F1A524B010308A9D00F72FE1 /* CityResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A524AE10308A9D00F72FE1 /* CityResultsViewController.m */; };
-		F1A524B110308A9D00F72FE1 /* CityResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A524AF10308A9D00F72FE1 /* CityResultsViewController.xib */; };
 		F1A524B510308AB300F72FE1 /* CoderFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A524B310308AB300F72FE1 /* CoderFavoritesViewController.m */; };
-		F1A524B610308AB300F72FE1 /* CoderFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A524B410308AB300F72FE1 /* CoderFavoritesViewController.xib */; };
+		F1A524DE10308E5500F72FE1 /* CoderCoreModels.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = F1A524DD10308E5500F72FE1 /* CoderCoreModels.xcdatamodel */; };
 		F1D5C96C102B0C740061B50B /* profile_small.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D5C96B102B0C740061B50B /* profile_small.png */; };
 		F1D5CA2B102B2A260061B50B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D5CA2A102B2A260061B50B /* icon.png */; };
 		F1DEDFF70F88561400F567F2 /* TopCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEDFF60F88561400F567F2 /* TopCompaniesViewController.m */; };
@@ -148,6 +147,7 @@
 		F1A524B210308AB300F72FE1 /* CoderFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderFavoritesViewController.h; sourceTree = "<group>"; };
 		F1A524B310308AB300F72FE1 /* CoderFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderFavoritesViewController.m; sourceTree = "<group>"; };
 		F1A524B410308AB300F72FE1 /* CoderFavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoderFavoritesViewController.xib; sourceTree = "<group>"; };
+		F1A524DD10308E5500F72FE1 /* CoderCoreModels.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = CoderCoreModels.xcdatamodel; sourceTree = "<group>"; };
 		F1D5C96B102B0C740061B50B /* profile_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_small.png; sourceTree = "<group>"; };
 		F1D5CA2A102B2A260061B50B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F1DEDFF50F88561400F567F2 /* TopCompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopCompaniesViewController.h; path = Classes/TopCompaniesViewController.h; sourceTree = "<group>"; };
@@ -301,6 +301,7 @@
 				F181BFE6102F41AF00E06C6B /* CompanyCell.xib */,
 				F1A523B4102FB69500F72FE1 /* TwoLabelTableCell.xib */,
 				F1A523B6102FB6B800F72FE1 /* LabelAndLinkTableCell.xib */,
+				F1A524DD10308E5500F72FE1 /* CoderCoreModels.xcdatamodel */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -517,6 +518,7 @@
 				F1A523BE102FB84300F72FE1 /* TwoLabelTableCell.m in Sources */,
 				F1A524B010308A9D00F72FE1 /* CityResultsViewController.m in Sources */,
 				F1A524B510308AB300F72FE1 /* CoderFavoritesViewController.m in Sources */,
+				F1A524DE10308E5500F72FE1 /* CoderCoreModels.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

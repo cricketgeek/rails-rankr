@@ -7,10 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImage+Resizing.h"
+#import "UITableViewCell+CustomNib.h"
+#import "ASIHTTPRequest+JSON.h"
+#import "ASINetworkQueue.h"
 
-
-@interface CoderFavoritesViewController : UIViewController {
-
+@interface CoderFavoritesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+  UITableView* resultsTable;
+  NSMutableArray* data;
+  NSInteger pageNumber;
+  BOOL gettingDataNow;
+  ASINetworkQueue *networkQueue;
+  UIProgressView *progressView;
+  UIApplication *app;    
 }
+
+@property (nonatomic, retain) IBOutlet UITableView *resultsTable;
+@property (nonatomic, retain) NSMutableArray *data;
+
+-(IBAction)addFav:(id)sender;
+
 
 @end
