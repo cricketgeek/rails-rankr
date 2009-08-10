@@ -77,7 +77,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	NSLog(@"Fininshed Loading...");
 	UIImage* rawImage = [[UIImage alloc] initWithData:self.imageData];
-  CGSize image_size = {50.0f, 50.0f};
+  CGSize image_size = {60.0f, 60.0f};
 	self.loadedImage =[UIImage imageOfSize:image_size fromImage:rawImage];
 	
 	//[self setAlpha:0];
