@@ -7,7 +7,6 @@
 //
 
 #import "Rails_RankrAppDelegate.h"
-#import "ObjectiveResource.h"
 
 @implementation Rails_RankrAppDelegate
 
@@ -16,10 +15,6 @@
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    //Configure ObjectiveResource
-    [ObjectiveResourceConfig setSite:@"http://railsrankings.com/"];
-    // use json
-    [ObjectiveResourceConfig setResponseType:JSONResponse];
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:tabBarController.view];
 }

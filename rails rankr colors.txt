@@ -1,0 +1,13 @@
+rails rankr color
+
+blue text - 46 68 121
+unavailable - 184 87 87
+
+Green available - 119 185 87
+
+label text - 2 2 2
+
+profile numbers besides rails rank points - 88 88 88
+
+stretch one pixel to give you flexible badges on a row
+stretchableLeftCap

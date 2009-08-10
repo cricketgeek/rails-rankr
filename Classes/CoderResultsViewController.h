@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseResultsViewController.h"
 #import "CoderCell.h"
 #import "UIImage+Resizing.h"
 #import "UITableViewCell+CustomNib.h"
 
-@interface CoderResultsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+
+@class ASINetworkQueue;
+
+@interface CoderResultsViewController : BaseResultsViewController < UITableViewDataSource, UITableViewDelegate > {
   NSMutableArray *coders;
   UITableView *resultsTableView;
   NSPredicate *searchPredicate;
@@ -23,9 +27,10 @@
   float incrementalAmount;
   float amountDone;
   BOOL progressBarDisplayed;
-  BOOL gettingDataNow;
+  ASINetworkQueue *networkQueue;
   UIProgressView *progressView;
   UIActionSheet *actionSheet;
+  UIApplication *app;
 }
 
 @property (nonatomic, retain) NSMutableArray *coders;
@@ -37,8 +42,10 @@
 
 -(NSArray*)resultsForTableView:(UITableView*)table;
 -(void)getNextPageOfCoderData:(UITableView*)aTableView;
+- (void)grabCodersInTheBackground;
 -(NSInteger)currentPageNumber:(UITableView*)aTableView;
 -(void)incrementCurrentPageNumber:(UITableView*)aTableView;
 -(void)showProgressIndicator:(BOOL)fast andLength:(NSInteger)lengthOfTime;
+-(IBAction)refreshData:(id)sender;
 
 @end

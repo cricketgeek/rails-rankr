@@ -7,10 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "BaseResultsViewController.h"
+#import "UIImage+Resizing.h"
+#import "UITableViewCell+CustomNib.h"
 
-
-@interface CompanyResultsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-
+@interface CompanyResultsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
+  UITableView* resultsTable;
+  NSMutableArray* data;
+  NSInteger pageNumber;
+  NSInteger searchPageNumber;
+  BOOL gettingDataNow;
+  ASINetworkQueue *networkQueue;
+  UIProgressView *progressView;
+  UIApplication *app;  
+  NSString *lastSearchString;  
 }
+
+@property (nonatomic, retain) IBOutlet UITableView *resultsTable;
+@property (nonatomic, retain) NSMutableArray *data;
+@property (nonatomic, retain) NSString *lastSearchString;
+
+-(IBAction)refreshData:(id)sender;
+- (void)grabCodersInTheBackground;
+-(NSInteger)currentPageNumber:(UITableView*)aTableView;
 
 @end

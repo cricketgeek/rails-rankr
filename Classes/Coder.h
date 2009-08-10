@@ -6,7 +6,6 @@
 //  Copyright 2009 Geordie Enterprises LLC. All rights reserved.
 //
 
-#import "ObjectiveResource.h"
 
 @interface Coder : NSObject {
 	NSString	* coderId;
@@ -20,6 +19,8 @@
 	NSString	* lastName;
 	NSString	* githubWatchers;
   NSString  * imagePath;
+  NSString  * website;
+  BOOL available;
 	
 }
 
@@ -34,5 +35,9 @@
 @property (nonatomic , retain) NSString * railsrank;
 @property (nonatomic , retain) NSString * githubWatchers;
 @property (nonatomic , retain) NSString * imagePath;
+@property (nonatomic, retain) NSString *website;
+@property (nonatomic, assign) BOOL available;
+
+-(NSString*)availabilityDescription;
 
 @end

@@ -8,17 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface Company : NSObject {
   NSString	* name;
   NSString	* points;
   NSString  * rank;
   NSString	* githubWatchers;    
+  NSString  * numberOfCoders;
 }
 
 @property (nonatomic , retain) NSString	* name;
 @property (nonatomic , retain) NSString	* points;
 @property (nonatomic , retain) NSString	* rank;
 @property (nonatomic , retain) NSString	* githubWatchers;
+@property (nonatomic, retain) NSString *numberOfCoders;
 
 @end

@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">768</int>
-		<string key="IBDocument.SystemVersion">9J61</string>
+		<string key="IBDocument.SystemVersion">9L30</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.46</string>
+		<string key="IBDocument.AppKitVersion">949.54</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="129"/>
+			<integer value="130"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -69,9 +69,10 @@
 						<object class="IBUIViewController" id="255477182">
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="695317428">
 								<reference key="IBUINavigationBar"/>
-								<string key="IBUITitle">Home</string>
+								<string key="IBUITitle">Rails Rankr</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="630192085"/>
+							<string key="IBUINibName">CoderResultsViewController</string>
 						</object>
 					</object>
 				</object>
@@ -100,6 +101,7 @@
 									<string key="IBUITitle">Company Search</string>
 								</object>
 								<reference key="IBUIParentViewController" ref="950412231"/>
+								<string key="IBUINibName">CompanyResultsViewController</string>
 							</object>
 						</object>
 					</object>
@@ -298,7 +300,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIApplication</string>
 					<string>UIResponder</string>
-					<string>{{270, 592}, {320, 480}}</string>
+					<string>{{270, 376}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{0, 1065}, {320, 480}}</string>
@@ -354,8 +356,16 @@
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
-					<string key="className">CoderResultsViewController</string>
+					<string key="className">BaseResultsViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Classes/BaseResultsViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">CoderResultsViewController</string>
+					<string key="superclassName">BaseResultsViewController</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">resultsTableView</string>
 						<string key="NS.object.0">UITableView</string>
@@ -367,52 +377,14 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">CompanyResultsViewController</string>
-					<string key="superclassName">UIViewController</string>
+					<string key="superclassName">UITableViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">resultsTable</string>
+						<string key="NS.object.0">UITableView</string>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/CompanyResultsViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">objective_resource-library/NSObject+ObjectiveResource.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">objective_resource-library/objective_support/Core/NSObject+PropertySupport.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">objective_resource-library/objective_support/Serialization/JSON/NSObject+JSONSerializableSupport.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">objective_resource-library/objective_support/Serialization/NSObject+Serialize.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">objective_resource-library/objective_support/Serialization/XML/NSObject+XMLSerializableSupport.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">objective_resource-library/objective_support/json-framework/NSObject+SBJSON.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

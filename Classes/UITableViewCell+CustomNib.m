@@ -11,7 +11,7 @@
 @implementation UITableViewCell(CustomNib)
 
 - (id)initWithNibName:(NSString*)nibName reuseIdentifier:(NSString *)reuseIdentifier{
-	if (self = [self initWithFrame:CGRectZero reuseIdentifier:reuseIdentifier]) {
+	if (self = [self initWithStyle:UITableViewStylePlain reuseIdentifier:reuseIdentifier]) {
 		NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil];
 		for(id currentObject in topLevelObjects) {
 			if([currentObject isKindOfClass:[self class]])	{
