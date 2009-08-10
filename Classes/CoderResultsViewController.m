@@ -239,6 +239,7 @@
   cell.rankLabel.text = coder.railsrank;
   cell.cityLabel.text = coder.city;
   cell.railsRankPointsLabel.text = coder.fullRank; 
+  cell.profileImage.image = [UIImage imageNamed:@"profile_small.png"];
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
   NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];

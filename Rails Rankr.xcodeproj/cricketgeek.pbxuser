@@ -30,7 +30,7 @@
 		);
 		breakpoints = (
 			F1F3A0540F92C4B200B1FC8A /* FavoritesViewController.m:1 */,
-			F181BFB8102E4EE700E06C6B /* CoderResultsViewController.m:262 */,
+			F181BFB8102E4EE700E06C6B /* CoderResultsViewController.m:263 */,
 			F181C077102F48E100E06C6B /* CoderResultsViewController.m:188 */,
 			F1A524311030677600F72FE1 /* CoderResultsViewController.m:146 */,
 			F1A524411030693000F72FE1 /* ASIHTTPRequest+JSON.m:31 */,
@@ -725,6 +725,13 @@
 			F1A5247E10306BD100F72FE1 /* PBXTextBookmark */ = F1A5247E10306BD100F72FE1 /* PBXTextBookmark */;
 			F1A5247F10306BD100F72FE1 /* PBXTextBookmark */ = F1A5247F10306BD100F72FE1 /* PBXTextBookmark */;
 			F1A5248010306BD100F72FE1 /* PBXTextBookmark */ = F1A5248010306BD100F72FE1 /* PBXTextBookmark */;
+			F1A524851030786400F72FE1 /* PBXTextBookmark */ = F1A524851030786400F72FE1 /* PBXTextBookmark */;
+			F1A524861030786400F72FE1 /* PBXTextBookmark */ = F1A524861030786400F72FE1 /* PBXTextBookmark */;
+			F1A524871030786400F72FE1 /* PBXTextBookmark */ = F1A524871030786400F72FE1 /* PBXTextBookmark */;
+			F1A524881030786400F72FE1 /* PBXTextBookmark */ = F1A524881030786400F72FE1 /* PBXTextBookmark */;
+			F1A524891030786400F72FE1 /* PBXTextBookmark */ = F1A524891030786400F72FE1 /* PBXTextBookmark */;
+			F1A5248A1030786400F72FE1 /* PBXTextBookmark */ = F1A5248A1030786400F72FE1 /* PBXTextBookmark */;
+			F1A5248B1030786400F72FE1 /* PBXTextBookmark */ = F1A5248B1030786400F72FE1 /* PBXTextBookmark */;
 			F1D5C9A0102B128F0061B50B = F1D5C9A0102B128F0061B50B /* PBXTextBookmark */;
 			F1EDF48B1029D72900A6C475 = F1EDF48B1029D72900A6C475 /* PBXTextBookmark */;
 			F1EDF49B1029D72900A6C475 = F1EDF49B1029D72900A6C475 /* PBXTextBookmark */;
@@ -738,7 +745,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 256";
 		rLen = 0;
-		rLoc = 9447;
+		rLoc = 9518;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 9052;
@@ -758,7 +765,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 218";
 		rLen = 23;
-		rLoc = 8987;
+		rLoc = 9058;
 		rType = 0;
 		vrLen = 1429;
 		vrLoc = 0;
@@ -778,7 +785,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 218";
 		rLen = 23;
-		rLoc = 8987;
+		rLoc = 9058;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 374;
@@ -848,7 +855,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 229";
 		rLen = 0;
-		rLoc = 9446;
+		rLoc = 9517;
 		rType = 0;
 		vrLen = 1552;
 		vrLoc = 8347;
@@ -1193,7 +1200,7 @@
 		isa = PBXTextBookmark;
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 186";
-		rLen = 2287;
+		rLen = 2358;
 		rLoc = 7161;
 		rType = 0;
 		vrLen = 734;
@@ -1254,7 +1261,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 229";
 		rLen = 0;
-		rLoc = 9446;
+		rLoc = 9517;
 		rType = 0;
 		vrLen = 522;
 		vrLoc = 0;
@@ -1284,7 +1291,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 229";
 		rLen = 0;
-		rLoc = 9446;
+		rLoc = 9517;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 9889;
@@ -1384,7 +1391,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 232";
 		rLen = 0;
-		rLoc = 9446;
+		rLoc = 9517;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 8116;
@@ -1394,7 +1401,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 232";
 		rLen = 0;
-		rLoc = 9446;
+		rLoc = 9517;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 8116;
@@ -1404,7 +1411,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 232";
 		rLen = 0;
-		rLoc = 9446;
+		rLoc = 9517;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 8116;
@@ -1414,7 +1421,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 232";
 		rLen = 0;
-		rLoc = 9446;
+		rLoc = 9517;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 8116;
@@ -1424,7 +1431,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 232";
 		rLen = 0;
-		rLoc = 9446;
+		rLoc = 9517;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 8116;
@@ -1434,7 +1441,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 232";
 		rLen = 0;
-		rLoc = 9446;
+		rLoc = 9517;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 8116;
@@ -1504,7 +1511,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 222";
 		rLen = 23;
-		rLoc = 8987;
+		rLoc = 9058;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 7519;
@@ -1673,7 +1680,7 @@
 		isa = PBXTextBookmark;
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 184";
-		rLen = 2287;
+		rLen = 2358;
 		rLoc = 7161;
 		rType = 0;
 		vrLen = 1047;
@@ -1693,7 +1700,7 @@
 		isa = PBXTextBookmark;
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 184";
-		rLen = 2287;
+		rLen = 2358;
 		rLoc = 7161;
 		rType = 0;
 		vrLen = 997;
@@ -1726,8 +1733,8 @@
 	F181BC48102CCB8E00E06C6B /* ASIHTTPRequest+JSON.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1405.43, 1500}}";
-			sepNavSelRange = "{372, 0}";
-			sepNavVisRange = "{315, 1612}";
+			sepNavSelRange = "{810, 0}";
+			sepNavVisRange = "{315, 1640}";
 		};
 	};
 	F181BC51102CCB8E00E06C6B /* ASIFormDataRequest.m */ = {
@@ -1782,7 +1789,7 @@
 		isa = PBXTextBookmark;
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 184";
-		rLen = 2287;
+		rLen = 2358;
 		rLoc = 7161;
 		rType = 0;
 		vrLen = 1051;
@@ -2773,7 +2780,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 284";
 		rLen = 0;
-		rLoc = 9983;
+		rLoc = 10054;
 		rType = 0;
 		vrLen = 1441;
 		vrLoc = 5136;
@@ -2793,7 +2800,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 284";
 		rLen = 0;
-		rLoc = 9983;
+		rLoc = 10054;
 		rType = 0;
 		vrLen = 1115;
 		vrLoc = 4172;
@@ -3223,7 +3230,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 235";
 		rLen = 0;
-		rLoc = 8924;
+		rLoc = 8995;
 		rType = 0;
 		vrLen = 1115;
 		vrLoc = 4172;
@@ -3328,7 +3335,7 @@
 		vrLen = 1026;
 		vrLoc = 155;
 	};
-	F181BFB8102E4EE700E06C6B /* CoderResultsViewController.m:262 */ = {
+	F181BFB8102E4EE700E06C6B /* CoderResultsViewController.m:263 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3340,7 +3347,7 @@
 		functionName = "-tableView:didSelectRowAtIndexPath:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 262;
+		lineNumber = 263;
 		location = "Rails Rankr";
 		modificationTime = 271608784.848135;
 		state = 1;
@@ -4029,11 +4036,11 @@
 		delayBeforeContinue = 0;
 		fileReference = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		functionName = "-viewDidLoad";
-		hitCount = 0;
+		hitCount = 1;
 		ignoreCount = 0;
 		lineNumber = 188;
 		location = "Rails Rankr";
-		modificationTime = 271608784.848224;
+		modificationTime = 271608796.974382;
 		state = 1;
 	};
 	F181C07D102F4A5E00E06C6B /* PBXTextBookmark */ = {
@@ -4759,7 +4766,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 243";
 		rLen = 0;
-		rLoc = 8924;
+		rLoc = 8995;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 6943;
@@ -4829,7 +4836,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 241";
 		rLen = 0;
-		rLoc = 8924;
+		rLoc = 8995;
 		rType = 0;
 		vrLen = 1948;
 		vrLoc = 7247;
@@ -4839,7 +4846,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 276";
 		rLen = 0;
-		rLoc = 10277;
+		rLoc = 10348;
 		rType = 0;
 		vrLen = 1154;
 		vrLoc = 9115;
@@ -4849,7 +4856,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 276";
 		rLen = 0;
-		rLoc = 10277;
+		rLoc = 10348;
 		rType = 0;
 		vrLen = 1948;
 		vrLoc = 7247;
@@ -4859,7 +4866,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 276";
 		rLen = 0;
-		rLoc = 10277;
+		rLoc = 10348;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 0;
@@ -4879,7 +4886,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 276";
 		rLen = 0;
-		rLoc = 10277;
+		rLoc = 10348;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 0;
@@ -4969,7 +4976,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 241";
 		rLen = 0;
-		rLoc = 8924;
+		rLoc = 8995;
 		rType = 0;
 		vrLen = 1628;
 		vrLoc = 7059;
@@ -4989,7 +4996,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 242";
 		rLen = 0;
-		rLoc = 8408;
+		rLoc = 8479;
 		rType = 0;
 		vrLen = 1772;
 		vrLoc = 7226;
@@ -5009,7 +5016,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 244";
 		rLen = 0;
-		rLoc = 8553;
+		rLoc = 8624;
 		rType = 0;
 		vrLen = 1881;
 		vrLoc = 7226;
@@ -5028,7 +5035,7 @@
 		isa = PBXTextBookmark;
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		rLen = 0;
-		rLoc = 245;
+		rLoc = 246;
 		rType = 1;
 	};
 	F1A52355102F939600F72FE1 /* PBXTextBookmark */ = {
@@ -5036,7 +5043,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 244";
 		rLen = 0;
-		rLoc = 8553;
+		rLoc = 8624;
 		rType = 0;
 		vrLen = 1426;
 		vrLoc = 5522;
@@ -5056,7 +5063,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 242";
 		rLen = 0;
-		rLoc = 8408;
+		rLoc = 8479;
 		rType = 0;
 		vrLen = 1448;
 		vrLoc = 5525;
@@ -5076,7 +5083,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 242";
 		rLen = 0;
-		rLoc = 8405;
+		rLoc = 8476;
 		rType = 0;
 		vrLen = 2163;
 		vrLoc = 7329;
@@ -5116,7 +5123,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 249";
 		rLen = 41;
-		rLoc = 8744;
+		rLoc = 8815;
 		rType = 0;
 		vrLen = 1953;
 		vrLoc = 7444;
@@ -5126,7 +5133,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 242";
 		rLen = 0;
-		rLoc = 8405;
+		rLoc = 8476;
 		rType = 0;
 		vrLen = 1448;
 		vrLoc = 5525;
@@ -5146,7 +5153,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 250";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8908;
 		rType = 0;
 		vrLen = 2125;
 		vrLoc = 7329;
@@ -5176,7 +5183,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 250";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8908;
 		rType = 0;
 		vrLen = 2068;
 		vrLoc = 7386;
@@ -5196,7 +5203,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 249";
 		rLen = 0;
-		rLoc = 8785;
+		rLoc = 8856;
 		rType = 0;
 		vrLen = 1984;
 		vrLoc = 7386;
@@ -5216,7 +5223,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 251";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8908;
 		rType = 0;
 		vrLen = 2011;
 		vrLoc = 7386;
@@ -5236,7 +5243,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 251";
 		rLen = 57;
-		rLoc = 8863;
+		rLoc = 8934;
 		rType = 0;
 		vrLen = 1953;
 		vrLoc = 7444;
@@ -5256,7 +5263,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 249";
 		rLen = 41;
-		rLoc = 8744;
+		rLoc = 8815;
 		rType = 0;
 		vrLen = 1953;
 		vrLoc = 7444;
@@ -5276,7 +5283,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 249";
 		rLen = 0;
-		rLoc = 8785;
+		rLoc = 8856;
 		rType = 0;
 		vrLen = 1955;
 		vrLoc = 7444;
@@ -5296,7 +5303,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 243";
 		rLen = 0;
-		rLoc = 8409;
+		rLoc = 8480;
 		rType = 0;
 		vrLen = 2070;
 		vrLoc = 7329;
@@ -5313,7 +5320,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 249";
 		rLen = 0;
-		rLoc = 8785;
+		rLoc = 8856;
 		rType = 0;
 		vrLen = 1448;
 		vrLoc = 5525;
@@ -5333,7 +5340,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 243";
 		rLen = 0;
-		rLoc = 8409;
+		rLoc = 8480;
 		rType = 0;
 		vrLen = 2070;
 		vrLoc = 7329;
@@ -5362,7 +5369,7 @@
 		isa = PBXTextBookmark;
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		rLen = 0;
-		rLoc = 245;
+		rLoc = 246;
 		rType = 1;
 	};
 	F1A52381102FAACD00F72FE1 /* PBXTextBookmark */ = {
@@ -5380,7 +5387,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 243";
 		rLen = 0;
-		rLoc = 8409;
+		rLoc = 8480;
 		rType = 0;
 		vrLen = 2013;
 		vrLoc = 7386;
@@ -5390,7 +5397,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 243";
 		rLen = 0;
-		rLoc = 8409;
+		rLoc = 8480;
 		rType = 0;
 		vrLen = 2013;
 		vrLoc = 7386;
@@ -5407,7 +5414,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 243";
 		rLen = 0;
-		rLoc = 8409;
+		rLoc = 8480;
 		rType = 0;
 		vrLen = 2013;
 		vrLoc = 7386;
@@ -5447,7 +5454,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 244";
 		rLen = 42;
-		rLoc = 8514;
+		rLoc = 8585;
 		rType = 0;
 		vrLen = 2159;
 		vrLoc = 7329;
@@ -5497,7 +5504,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 244";
 		rLen = 42;
-		rLoc = 8514;
+		rLoc = 8585;
 		rType = 0;
 		vrLen = 2159;
 		vrLoc = 7329;
@@ -6278,7 +6285,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 279";
 		rLen = 0;
-		rLoc = 10048;
+		rLoc = 10119;
 		rType = 0;
 		vrLen = 1053;
 		vrLoc = 9518;
@@ -6388,7 +6395,7 @@
 		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		name = "CoderResultsViewController.m: 279";
 		rLen = 0;
-		rLoc = 10048;
+		rLoc = 10119;
 		rType = 0;
 		vrLen = 1053;
 		vrLoc = 9518;
@@ -6463,11 +6470,11 @@
 		delayBeforeContinue = 0;
 		fileReference = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
 		functionName = "-grabCodersInTheBackground";
-		hitCount = 0;
+		hitCount = 1;
 		ignoreCount = 0;
 		lineNumber = 146;
 		location = "Rails Rankr";
-		modificationTime = 271608784.848263;
+		modificationTime = 271608790.015185;
 		state = 1;
 	};
 	F1A524331030677800F72FE1 /* PBXTextBookmark */ = {
@@ -6557,11 +6564,11 @@
 		delayBeforeContinue = 0;
 		fileReference = F181BC48102CCB8E00E06C6B /* ASIHTTPRequest+JSON.m */;
 		functionName = "-getCoderCollection";
-		hitCount = 0;
+		hitCount = 1;
 		ignoreCount = 0;
 		lineNumber = 31;
 		location = "Rails Rankr";
-		modificationTime = 271608784.848334;
+		modificationTime = 271608800.783661;
 		state = 1;
 	};
 	F1A524421030693B00F72FE1 /* PBXTextBookmark */ = {
@@ -7016,6 +7023,76 @@
 		vrLen = 284;
 		vrLoc = 0;
 	};
+	F1A524851030786400F72FE1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F181C11E102F837300E06C6B /* Constants.h */;
+		name = "Constants.h: 11";
+		rLen = 0;
+		rLoc = 227;
+		rType = 0;
+		vrLen = 284;
+		vrLoc = 0;
+	};
+	F1A524861030786400F72FE1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F181BC48102CCB8E00E06C6B /* ASIHTTPRequest+JSON.m */;
+		name = "ASIHTTPRequest+JSON.m: 31";
+		rLen = 0;
+		rLoc = 810;
+		rType = 0;
+		vrLen = 1640;
+		vrLoc = 315;
+	};
+	F1A524871030786400F72FE1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
+		name = "CoderResultsViewController.m: 146";
+		rLen = 0;
+		rLoc = 4922;
+		rType = 0;
+		vrLen = 1365;
+		vrLoc = 5795;
+	};
+	F1A524881030786400F72FE1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F181C11E102F837300E06C6B /* Constants.h */;
+		name = "Constants.h: 11";
+		rLen = 0;
+		rLoc = 227;
+		rType = 0;
+		vrLen = 284;
+		vrLoc = 0;
+	};
+	F1A524891030786400F72FE1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
+		name = "CoderResultsViewController.m: 146";
+		rLen = 0;
+		rLoc = 4922;
+		rType = 0;
+		vrLen = 1365;
+		vrLoc = 5795;
+	};
+	F1A5248A1030786400F72FE1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F181BC48102CCB8E00E06C6B /* ASIHTTPRequest+JSON.m */;
+		name = "ASIHTTPRequest+JSON.m: 31";
+		rLen = 0;
+		rLoc = 810;
+		rType = 0;
+		vrLen = 1640;
+		vrLoc = 315;
+	};
+	F1A5248B1030786400F72FE1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */;
+		name = "CoderResultsViewController.m: 243";
+		rLen = 0;
+		rLoc = 8250;
+		rType = 0;
+		vrLen = 2016;
+		vrLoc = 7372;
+	};
 	F1D5C9A0102B128F0061B50B /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = F1EDF4511029C3CC00A6C475 /* CompanyResultsViewController.m */;
@@ -7131,9 +7208,9 @@
 	};
 	F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2021.13, 7950}}";
-			sepNavSelRange = "{4922, 0}";
-			sepNavVisRange = "{5459, 1437}";
+			sepNavIntBoundsRect = "{{0, 0}, {2021.13, 7500}}";
+			sepNavSelRange = "{8250, 0}";
+			sepNavVisRange = "{7372, 2016}";
 		};
 	};
 	F1EDF44B1029C3AE00A6C475 /* CoderDetailViewController.h */ = {
