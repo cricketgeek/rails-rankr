@@ -262,8 +262,10 @@
   Coder* coder = [[self resultsForTableView:atableView] objectAtIndex:indexPath.row];
   CoderDetailViewController *coderDetailViewController = [[CoderDetailViewController alloc] initWithNibName:@"CoderDetailViewController" bundle:nil];
   coderDetailViewController.coder = coder;
-  [self.navigationController pushViewController:coderDetailViewController animated:YES];
-  [coderDetailViewController release];
+  
+  [self.parentViewController presentModalViewController:coderDetailViewController animated:YES];
+  //[self.navigationController pushViewController:coderDetailViewController animated:YES];
+  //[coderDetailViewController release];
 }
 
 - (void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)searchText {

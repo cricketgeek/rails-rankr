@@ -23,9 +23,13 @@
  return self;
  }
  */
+-(IBAction)close {
+  [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
 
 -(IBAction)goToWWRProfile:(id)sender{
     NSLog(@"going to WWR profile for %@",self.coder.fullName);
+    
 }
 
 -(IBAction)goToGithubProfile:(id)sender {
@@ -40,7 +44,10 @@
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
  [super viewDidLoad];
+   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain
+                                                                    target:self action:@selector(close)];
    
+   self.navigationItem.rightBarButtonItem = refreshButton; 
  }
 
 
@@ -63,7 +70,7 @@
   }
   else{
     NSString *url = [[NSString alloc] initWithString:coder.imagePath];
-    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(20,21,82,85) andUrl:url];
+    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(17,80,82,85) andUrl:url];
     webImage.tag = 57;
     [self.view addSubview:webImage];
   }

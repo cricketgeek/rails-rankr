@@ -38,5 +38,6 @@
 -(IBAction)goToWWRProfile:(id)sender;
 -(IBAction)goToGithubProfile:(id)sender;
 -(IBAction)recommendOnWWR:(id)sender;
+-(IBAction)close;
 
 @end
