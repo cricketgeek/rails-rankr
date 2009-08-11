@@ -83,7 +83,7 @@
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
 	[networkQueue setDelegate:self];
   self.data = [[NSMutableArray alloc] initWithCapacity:10];
-  [self grabCodersInTheBackground];
+  
   
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
                                                                    target:self action:@selector(refreshData)];

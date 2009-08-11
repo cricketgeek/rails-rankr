@@ -59,7 +59,7 @@
   }
   else{
     NSString *url = [[NSString alloc] initWithString:coder.imagePath];
-    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(18,22,82,85) andUrl:url];
+    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(15,19,82,85) andUrl:url];
     webImage.tag = 57;
     [self.view addSubview:webImage];
   }

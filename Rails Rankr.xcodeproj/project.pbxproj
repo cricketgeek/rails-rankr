@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0663299F1030782900D3D668 /* rr_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0663299E1030782900D3D668 /* rr_icon.png */; };
+		06B103AC1030FDD400921A10 /* wwr_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B103A91030FDD400921A10 /* wwr_icon.png */; };
+		06B103AD1030FDD400921A10 /* profile_photobg.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B103AA1030FDD400921A10 /* profile_photobg.png */; };
+		06B103AE1030FDD400921A10 /* github_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B103AB1030FDD400921A10 /* github_icon.png */; };
+		06B103B41031091B00921A10 /* rank_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B103B31031091B00921A10 /* rank_arrow.png */; };
 		1D3623260D0F684500981E51 /* Rails_RankrAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -79,6 +83,10 @@
 
 /* Begin PBXFileReference section */
 		0663299E1030782900D3D668 /* rr_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rr_icon.png; sourceTree = "<group>"; };
+		06B103A91030FDD400921A10 /* wwr_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wwr_icon.png; sourceTree = "<group>"; };
+		06B103AA1030FDD400921A10 /* profile_photobg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_photobg.png; sourceTree = "<group>"; };
+		06B103AB1030FDD400921A10 /* github_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github_icon.png; sourceTree = "<group>"; };
+		06B103B31031091B00921A10 /* rank_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank_arrow.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Rails_RankrAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rails_RankrAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Rails_RankrAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rails_RankrAppDelegate.m; sourceTree = "<group>"; };
@@ -286,6 +294,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				06B103B31031091B00921A10 /* rank_arrow.png */,
+				06B103A91030FDD400921A10 /* wwr_icon.png */,
+				06B103AA1030FDD400921A10 /* profile_photobg.png */,
+				06B103AB1030FDD400921A10 /* github_icon.png */,
 				F1A5252D1030954700F72FE1 /* heart.png */,
 				F1A5252E1030954700F72FE1 /* suitcase.png */,
 				0663299E1030782900D3D668 /* rr_icon.png */,
@@ -482,6 +494,10 @@
 				F1A525301030954700F72FE1 /* suitcase.png in Resources */,
 				F1613F731030BE32005DDC51 /* CityResultsViewController.xib in Resources */,
 				F16140261030C3E4005DDC51 /* CoderFavoritesViewController.xib in Resources */,
+				06B103AC1030FDD400921A10 /* wwr_icon.png in Resources */,
+				06B103AD1030FDD400921A10 /* profile_photobg.png in Resources */,
+				06B103AE1030FDD400921A10 /* github_icon.png in Resources */,
+				06B103B41031091B00921A10 /* rank_arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
