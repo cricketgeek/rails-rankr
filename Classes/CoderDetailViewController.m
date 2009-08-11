@@ -14,26 +14,18 @@
 
 @synthesize coder, coderName, wwrRank, githubWatchers, railsRank, railsRankingsPoints, city, detailTableView,wwrProfileUrlButton,githubProfileUrlButton,recommendWWRButton;;
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
- - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
- if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
- // Custom initialization
- }
- return self;
- }
- */
 -(IBAction)close {
   [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction)goToWWRProfile:(id)sender{
     NSLog(@"going to WWR profile for %@",self.coder.fullName);
-    
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.coder.wwrProfileUrl]];
 }
 
 -(IBAction)goToGithubProfile:(id)sender {
-  NSLog(@"going to github profile for %@",self.coder.fullName);  
+  NSLog(@"going to github profile for %@",self.coder.fullName);
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.coder.githubUrl]];  
 }
 
 -(IBAction)recommendOnWWR:(id)sender {
@@ -44,10 +36,7 @@
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
  [super viewDidLoad];
-   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain
-                                                                    target:self action:@selector(close)];
-   
-   self.navigationItem.rightBarButtonItem = refreshButton; 
+  [self.detailTableView setBackgroundColor:[UIColor clearColor]];
  }
 
 
@@ -61,7 +50,7 @@
   self.railsRankingsPoints.text = self.coder.fullRank;
   self.githubWatchers.text = self.coder.githubWatchers;
   
-  //[self.detailTableView setBackground:[UIImage imageNamed:@"background_profile.png"]];
+
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
   NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
   NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
@@ -70,13 +59,11 @@
   }
   else{
     NSString *url = [[NSString alloc] initWithString:coder.imagePath];
-    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(17,80,82,85) andUrl:url];
+    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(18,22,82,85) andUrl:url];
     webImage.tag = 57;
     [self.view addSubview:webImage];
   }
   
-  //[[(Rails_RankrAppDelegate*)[UIApplication sharedApplication] tabBarController] 
-  //[self.recommendWWRButton setText:[NSString stringWithFormat:@"recommend %@",self.coder.fullName]];
 }
 
 #pragma mark Table view methods
@@ -108,11 +95,24 @@
       break;
     case 1:
       cell.leftLabel.text = [[NSString alloc] initWithString:@"Website"];
-      cell.rightLabel.text = [self.coder website];
+      if([[self.coder website] isKindOfClass:[NSString class]]){
+        cell.rightLabel.text = [self.coder website];        
+      }
+      else {
+        cell.rightLabel.text = [NSString string];
+      }
       break;
     case 2:
       cell.leftLabel.text = [[NSString alloc] initWithString:@"Availability"];
-      cell.rightLabel.text = [self.coder availabilityDescription];      
+      cell.rightLabel.text = [self.coder availabilityDescription];
+      if(coder.available){
+        [cell.rightLabel setTextColor:[UIColor colorWithRed:0.24 green:0.87 blue:0.15 alpha:1.0]];
+      }
+      else{
+        [cell.rightLabel setTextColor:[UIColor colorWithRed:0.85 green:0.3 blue:0.2 alpha:1.0]];
+        
+      }
+        
     default:
       break;
   }

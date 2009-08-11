@@ -15,7 +15,7 @@
 
 @implementation CoderResultsViewController
 
-@synthesize resultsTableView, searchPredicate, coders, lastSearchString, actionSheet;
+@synthesize resultsTableView, searchPredicate, coders, coderSearchResults, lastSearchString, actionSheet;
 
 - (void)awakeFromNib
 {
@@ -30,13 +30,7 @@
 }
 
 -(NSArray*)searchResults {
-  //  if(self.searchPredicate) {
-  //    NSArray* coderSearchResults = [[NSArray arrayWithArray:self.coders] filteredArrayUsingPredicate:self.searchPredicate];
-  //    return coderSearchResults;
-  //  }
-  //  else {
-  return self.coders; 
-  //  }
+  return self.coderSearchResults;      
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -93,7 +87,7 @@
 }
 
 -(NSArray*)resultsForTableView:(UITableView*)table {
-  return (table == self.resultsTableView) ? self.coders : self.searchResults;
+  return (table == self.resultsTableView) ? self.coders : self.coderSearchResults;
 }
 
 -(NSInteger)currentPageNumber:(UITableView*)aTableView {
@@ -143,6 +137,7 @@
 {
 	ASIHTTPRequestJSON *request;
   NSLog(@"hitting: %@coders.json",HOST_SERVER);
+  
 	request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders.json",HOST_SERVER]]] autorelease];
 	[networkQueue addOperation:request];
   [networkQueue go];
@@ -150,8 +145,18 @@
 
 - (void)requestDone:(ASIHTTPRequestJSON *)request
 {
-  [self.coders addObjectsFromArray:[request getCoderCollection]];
-  NSLog(@"now we have %d",[self.coders count]);
+  if(searching) {
+    [self.coderSearchResults addObjectsFromArray:[request getCoderCollection]];
+    NSLog(@"now we have %d coders from search",[self.coderSearchResults count]);
+    newSearchResults = YES;
+    [self.searchDisplayController.searchResultsTableView reloadData];
+  }
+  else {
+    [self.coders addObjectsFromArray:[request getCoderCollection]];
+    NSLog(@"now we have %d coders",[self.coders count]);
+  }
+  
+  
   [self.resultsTableView reloadData];
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
@@ -170,12 +175,14 @@
   [super viewDidLoad];
   progressBarDisplayed = NO;
   gettingDataNow = NO;
+  newSearchResults = NO;
   
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
 	[networkQueue setDelegate:self];
   self.coders = [[NSMutableArray alloc] initWithCapacity:10];
+  self.coderSearchResults = [[NSMutableArray alloc] initWithCapacity:10];
   pageNumber = (int)1;  
   [self grabCodersInTheBackground];
   
@@ -263,9 +270,8 @@
   CoderDetailViewController *coderDetailViewController = [[CoderDetailViewController alloc] initWithNibName:@"CoderDetailViewController" bundle:nil];
   coderDetailViewController.coder = coder;
   
-  [self.parentViewController presentModalViewController:coderDetailViewController animated:YES];
-  //[self.navigationController pushViewController:coderDetailViewController animated:YES];
-  //[coderDetailViewController release];
+  [self.navigationController pushViewController:coderDetailViewController animated:YES];
+  [coderDetailViewController release];
 }
 
 - (void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)searchText {
@@ -273,27 +279,35 @@
   self.searchPredicate = [NSPredicate predicateWithFormat:@"fullName BEGINSWITH %@",searchText];
 }
 
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+  searching = NO;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+  searchPageNumber = 1;
+    NSString *coderPath = [NSString stringWithFormat:@"%@coders.json?search=%@",
+                           HOST_SERVER,
+                           self.lastSearchString];  
+    ASIHTTPRequestJSON *request;
+    request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:coderPath]] autorelease];
+    [networkQueue addOperation:request];
+    [networkQueue go];
+    searching = YES;
+  newSearchResults = YES;
+}
+
 #pragma mark -
 #pragma mark UISearchDisplayController Delegate Methods
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-  searchPageNumber = 1;
-  if([searchString length] > 2) {
-    NSString *coderPath = [NSString stringWithFormat:@"%@coders.json?search=%@",
-                           HOST_SERVER,
-                           searchString];  
-    ASIHTTPRequestJSON *request;
-    request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:coderPath]] autorelease];
-    [networkQueue addOperation:request];
-    [networkQueue go];
+  if(newSearchResults) {
+    newSearchResults = NO;
     return YES;
-    
   }
   else {
     return NO;
   }
-  
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption

@@ -71,21 +71,21 @@
 
 // NSURLConnection Delegate Methods //
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSMutableData *)data {
-	NSLog(@"Recieving Data...");
+	//NSLog(@"Recieving Data...");
 	[[self imageData] appendData:data];
 }
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	NSLog(@"Fininshed Loading...");
+	//NSLog(@"Fininshed Loading...");
 	UIImage* rawImage = [[UIImage alloc] initWithData:self.imageData];
-  CGSize image_size = {60.0f, 60.0f};
+  CGSize image_size = {62.0f, 62.0f};
 	self.loadedImage =[UIImage imageOfSize:image_size fromImage:rawImage];
 	
-	//[self setAlpha:0];
+	[self setAlpha:0];
 	[UIView beginAnimations:nil	context:NULL];
-	[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self cache:YES];
+	//[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self cache:YES];
 	
 	[UIView setAnimationDuration:1.0];
-	//[self setAlpha:1.0];
+	[self setAlpha:1.0];
 	[UIView commitAnimations];
 	
 	self.image			 = self.loadedImage;

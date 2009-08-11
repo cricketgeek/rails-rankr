@@ -23,36 +23,25 @@
 
 @synthesize company,companyTitle,numberOfCodersLabel,rankLabel,totalPointsLabel,resultsTable, data;
 
-
-- (void)awakeFromNib
-{
-	networkQueue = [[ASINetworkQueue alloc] init];
-  app = [UIApplication sharedApplication];
-}
-
 -(IBAction)refreshData:(id)sender {
   [self grabCodersInTheBackground];
   [self.resultsTable reloadData];
 }
-
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
 
 #pragma mark -
 #pragma mark ASIHTTPRequestJSON methods
 
 - (void)grabCodersInTheBackground
 {
-	ASIHTTPRequestJSON *request;
-	request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders.json?search=%@",HOST_SERVER,self.company.name]]] autorelease];
-	[networkQueue addOperation:request];
+  NSLog(@"Making a request to %@",[NSString stringWithFormat:@"%@coders.json?search=%@",HOST_SERVER,self.company.name]);
+	
+  NSString *coderPath = [NSString stringWithFormat:@"%@coders.json?search=%@",
+                         HOST_SERVER,
+                         self.company.name];  
+  ASIHTTPRequestJSON *request;
+  request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:coderPath]] autorelease]; 
+  
+  [networkQueue addOperation:request];
   [networkQueue go];
 }
 
@@ -76,11 +65,13 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  networkQueue = [[ASINetworkQueue alloc] init];
+  app = [UIApplication sharedApplication];
   self.companyTitle.text = self.company.name;
   self.totalPointsLabel.text = self.company.points;
   self.rankLabel.text = self.company.rank;
-  self.numberOfCodersLabel.text = self.company.numberOfCoders;
+  self.numberOfCodersLabel.text = [NSString stringWithFormat:@"%@ coders",self.company.numberOfCoders];
   
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
@@ -94,18 +85,18 @@
   
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTable setRowHeight:62.0f];
-  //[self.searchDisplayController.searchResultsTableView setRowHeight:60.0f];
+
   
 }
 
 
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 
 #pragma mark Table view methods
@@ -124,7 +115,11 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   
   CoderCell *cell = (CoderCell*)[atableView
-                                     dequeueReusableCellWithIdentifier:@"Coder" ];
+                                 dequeueReusableCellWithIdentifier:@"Coder" ];
+  
+  if (cell == nil) {
+    cell = (CoderCell*)[[UITableViewCell alloc] initWithNibName:[NSString stringWithFormat:@"CoderCell"] reuseIdentifier:[NSString stringWithFormat:@"Coder"]];
+  }
   
   Coder* coder = ((Coder *)[self.data objectAtIndex:indexPath.row]);
   cell.nameLabel.text = coder.fullName;
@@ -144,9 +139,7 @@
     NSString *url = [[NSString alloc] initWithString:coder.imagePath];
     UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,58,58) andUrl:url];
     webImage.tag = 57;
-    //CGSize image_size = {50.0f, 50.0f};
     [cell.profileImage addSubview:webImage];
-    //cell.profileImage.image = [UIImage imageOfSize:image_size fromImage:profile_image];
   }
   return cell;
 }
@@ -155,6 +148,8 @@
   Coder* coder = [self.data objectAtIndex:indexPath.row];
   CoderDetailViewController *coderDetailViewController = [[CoderDetailViewController alloc] initWithNibName:@"CoderDetailViewController" bundle:nil];
   coderDetailViewController.coder = coder;
+  
+  //[self.parentViewController presentModalViewController:coderDetailViewController animated:YES];
   [self.navigationController pushViewController:coderDetailViewController animated:YES];
   [coderDetailViewController release];
 }
@@ -162,7 +157,7 @@
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+  [super didReceiveMemoryWarning];
 	
 	// Release any cached data, images, etc that aren't in use.
 }
@@ -174,7 +169,9 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+  [company release];
+  [data release];
+  [super dealloc];
 }
 
 

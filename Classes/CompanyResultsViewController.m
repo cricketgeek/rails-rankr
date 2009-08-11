@@ -174,7 +174,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   Company* company = [data objectAtIndex:indexPath.row];
-  CompanyDetailViewController *companyDetailViewController = [[CompanyDetailViewController alloc] initWithNibName:@"CoderDetailViewController" bundle:nil];
+  CompanyDetailViewController *companyDetailViewController = [[CompanyDetailViewController alloc] initWithNibName:@"CompanyDetailViewController" bundle:nil];
   companyDetailViewController.company = company;
   [self.navigationController pushViewController:companyDetailViewController animated:YES];
   [companyDetailViewController release];

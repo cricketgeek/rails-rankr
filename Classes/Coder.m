@@ -9,17 +9,25 @@
 #import "Coder.h"
 
 @implementation Coder
-@synthesize coderId, fullName, firstName, lastName, city, companyName, fullRank, 
-rank, railsrank, githubWatchers, imagePath, website, available;
+@synthesize coderId, fullName, wholeName, firstName, lastName, city, companyName, fullRank, 
+rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, githubUrl;
 
 - (NSString *)fullName {
-	return [NSString stringWithFormat:@"%@ %@",firstName,lastName];
+  if([self.wholeName isKindOfClass:[NSString class]]) {
+    return [NSString stringWithFormat:@"%@",self.wholeName];
+  }
+  else {
+    return [NSString stringWithFormat:@"%@ %@",firstName,lastName];    
+  }
 }
 
 - (id)initWithDictionary:(NSDictionary*)dict {
   if((self = [super init])) {
     self.coderId = [dict objectForKey:@"id"];
+    self.wwrProfileUrl = [dict objectForKey:@"profile_url"];
+    self.githubUrl = [dict objectForKey:@"github_url"];
     self.firstName = [dict objectForKey:@"first_name"];
+    self.wholeName = [dict objectForKey:@"whole_name"];
     self.lastName = [dict objectForKey:@"last_name"];
     self.railsrank = [(NSNumber*)[dict objectForKey:@"railsrank"] stringValue];
     self.rank = [(NSNumber*)[dict objectForKey:@"rank"] stringValue];
@@ -35,8 +43,18 @@ rank, railsrank, githubWatchers, imagePath, website, available;
   
 }
 
+-(NSString*)wwrRecommendUrl{
+  return [NSString stringWithFormat:@"",self.wwrProfileUrl];
+}
+
 -(NSString*)availabilityDescription {
-  return [[NSString alloc] initWithString:@"Available"];
+  if(self.available) {
+    return [[NSString alloc] initWithString:@"Available"];    
+  }
+  else {
+    return [[NSString alloc] initWithString:@"Quite busy, sorry"];
+  }
+
 }
 
 @end

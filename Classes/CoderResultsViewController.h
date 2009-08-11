@@ -15,11 +15,13 @@
 
 @class ASINetworkQueue;
 
-@interface CoderResultsViewController : BaseResultsViewController < UITableViewDataSource, UITableViewDelegate > {
+@interface CoderResultsViewController : BaseResultsViewController < UITableViewDataSource, UITableViewDelegate> {
   NSMutableArray *coders;
   UITableView *resultsTableView;
   NSPredicate *searchPredicate;
   NSArray *searchResults;
+  NSMutableArray* coderSearchResults;
+  BOOL newSearchResults;
   NSInteger pageNumber;
   NSInteger searchPageNumber;
   NSString *lastSearchString;
@@ -31,9 +33,11 @@
   UIProgressView *progressView;
   UIActionSheet *actionSheet;
   UIApplication *app;
+  BOOL searching;
 }
 
 @property (nonatomic, retain) NSMutableArray *coders;
+@property (nonatomic, retain) NSMutableArray *coderSearchResults;
 @property (nonatomic, retain) IBOutlet UITableView *resultsTableView;
 @property (nonatomic, copy) NSPredicate *searchPredicate;
 @property (nonatomic, readonly) NSArray *searchResults;

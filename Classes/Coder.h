@@ -10,6 +10,7 @@
 @interface Coder : NSObject {
 	NSString	* coderId;
 	NSString	* fullName;
+  NSString  * wholeName;
 	NSString	* city;
 	NSString	* rank;
 	NSString	* fullRank;
@@ -20,12 +21,17 @@
 	NSString	* githubWatchers;
   NSString  * imagePath;
   NSString  * website;
+  NSString  * wwrProfileUrl;
+  NSString  * githubUrl;
   BOOL available;
 	
 }
 
+@property (nonatomic, retain) NSString *wwrProfileUrl;
+@property (nonatomic, retain) NSString *githubUrl;
 @property (nonatomic , retain) NSString	* coderId;
 @property (nonatomic , retain) NSString	* fullName;
+@property (nonatomic, retain) NSString  * wholeName;
 @property (nonatomic , retain) NSString	* firstName;
 @property (nonatomic , retain) NSString	* lastName;
 @property (nonatomic , retain) NSString	* city;
