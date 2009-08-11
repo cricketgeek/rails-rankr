@@ -285,14 +285,14 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
   searchPageNumber = 1;
-    NSString *coderPath = [NSString stringWithFormat:@"%@coders.json?search=%@",
-                           HOST_SERVER,
-                           self.lastSearchString];  
-    ASIHTTPRequestJSON *request;
-    request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:coderPath]] autorelease];
-    [networkQueue addOperation:request];
-    [networkQueue go];
-    searching = YES;
+  NSString *coderPath = [NSString stringWithFormat:@"%@coders.json?search=%@",
+                         HOST_SERVER,
+                         [self.lastSearchString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];  
+  ASIHTTPRequestJSON *request;
+  request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:coderPath]] autorelease];
+  [networkQueue addOperation:request];
+  [networkQueue go];
+  searching = YES;
   newSearchResults = YES;
 }
 

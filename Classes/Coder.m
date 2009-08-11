@@ -10,7 +10,7 @@
 
 @implementation Coder
 @synthesize coderId, fullName, wholeName, firstName, lastName, city, companyName, fullRank, 
-rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, githubUrl;
+rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, githubUrl, updatedAt;
 
 - (NSString *)fullName {
   if([self.wholeName isKindOfClass:[NSString class]]) {
@@ -23,7 +23,8 @@ rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, g
 
 - (id)initWithDictionary:(NSDictionary*)dict {
   if((self = [super init])) {
-    self.coderId = [dict objectForKey:@"id"];
+    self.coderId = [(NSNumber*)[dict objectForKey:@"id"] stringValue];
+    self.updatedAt = [dict objectForKey:@"updated_at"];
     self.wwrProfileUrl = [dict objectForKey:@"profile_url"];
     self.githubUrl = [dict objectForKey:@"github_url"];
     self.firstName = [dict objectForKey:@"first_name"];
@@ -43,8 +44,22 @@ rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, g
   
 }
 
+-(BOOL)hasWWRUrl {
+  return [self.wwrProfileUrl isKindOfClass:[NSString class]] ? YES : NO;
+}
+
 -(NSString*)wwrRecommendUrl{
-  return [NSString stringWithFormat:@"",self.wwrProfileUrl];
+  
+  /*http://www.workingwithrails.com/recommendation/new/person/6415-john-nunemaker
+  http://www.workingwithrails.com/person/6415-john-nunemaker
+  */
+  
+  if([self.wwrProfileUrl isKindOfClass:[NSString class]]) {
+    return [self.wwrProfileUrl stringByReplacingCharactersInRange:NSMakeRange(31,8) withString:@"/recommendation/new/person/"];    
+  }
+  else {
+    return [NSString string];
+  }
 }
 
 -(NSString*)availabilityDescription {

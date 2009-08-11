@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoderDetailViewController.h"
+#import "CoderFavoritesViewController.h"
+#import "Constants.h"
 
 @interface Rails_RankrAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;

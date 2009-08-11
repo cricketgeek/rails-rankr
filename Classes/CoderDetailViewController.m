@@ -10,16 +10,17 @@
 #import "TwoLabelTableCell.h"
 #import "UITableViewCell+CustomNib.h"
 #import "UIWebImageView.h"
+#import "Rails_RankrAppDelegate.h"
+#import "CoreCoder.h"
+
+
 @implementation CoderDetailViewController
 
 @synthesize coder, coderName, wwrRank, githubWatchers, railsRank, railsRankingsPoints, city, detailTableView,wwrProfileUrlButton,githubProfileUrlButton,recommendWWRButton;;
-
--(IBAction)close {
-  [self.parentViewController dismissModalViewControllerAnimated:YES];
-}
+@synthesize fetchedResultsController, managedObjectContext, addingManagedObjectContext;
 
 -(IBAction)goToWWRProfile:(id)sender{
-    NSLog(@"going to WWR profile for %@",self.coder.fullName);
+  NSLog(@"going to WWR profile for %@",self.coder.fullName);
   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.coder.wwrProfileUrl]];
 }
 
@@ -30,14 +31,51 @@
 
 -(IBAction)recommendOnWWR:(id)sender {
   NSLog(@"recommending %@",self.coder.fullName);
+  if([self.coder hasWWRUrl]) {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[self.coder wwrRecommendUrl]]]; 
+  }
 }
 
 
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
- - (void)viewDidLoad {
- [super viewDidLoad];
+-(IBAction)saveAsFavorite {  
+  CoreCoder* coreCoder = (CoreCoder *)[NSEntityDescription insertNewObjectForEntityForName:@"CoreCoder" inManagedObjectContext:[self managedObjectContext]];  
+  coreCoder.fullName = self.coder.fullName;
+  coreCoder.coder_id = self.coder.coderId;
+  coreCoder.githubUrl = self.coder.githubUrl;
+  coreCoder.githubWatchers = self.coder.githubWatchers;
+  coreCoder.railsRank = self.coder.railsrank;
+  coreCoder.railsRankPoints = self.coder.fullRank;
+  coreCoder.wwrRank = self.coder.rank;
+  coreCoder.firstName = self.coder.firstName;
+  coreCoder.lastName = self.coder.lastName;
+  coreCoder.webSite = self.coder.website;
+  coreCoder.company = self.coder.companyName;
+  coreCoder.imagePath = self.coder.imagePath;
+  coreCoder.updatedAt = [NSDate date];
+  coreCoder.wwrProfileUrl = self.coder.wwrProfileUrl;
+  
+  NSError *error;
+  if (![[self managedObjectContext] save:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);  // Fail
+  }
+  else {
+    //turn fav button into unfavorite
+    NSLog(@"saved favorite");
+  }
+
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+  [super viewDidLoad];
   [self.detailTableView setBackgroundColor:[UIColor clearColor]];
- }
+  Rails_RankrAppDelegate* delegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
+  self.managedObjectContext = delegate.managedObjectContext;
+  
+  UIBarButtonItem *addFavButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"heart.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(saveAsFavorite)]; 
+  self.navigationItem.rightBarButtonItem = addFavButton; 
+}
 
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -50,7 +88,6 @@
   self.railsRankingsPoints.text = self.coder.fullRank;
   self.githubWatchers.text = self.coder.githubWatchers;
   
-
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
   NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
   NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
@@ -82,7 +119,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   
   TwoLabelTableCell *cell = (TwoLabelTableCell*)[atableView
-                                 dequeueReusableCellWithIdentifier:@"CoderDetails" ];
+                                                 dequeueReusableCellWithIdentifier:@"CoderDetails" ];
   
   if (cell == nil) {
     cell = (TwoLabelTableCell*)[[UITableViewCell alloc] initWithNibName:[NSString stringWithFormat:@"TwoLabelTableCell"] reuseIdentifier:[NSString stringWithFormat:@"CoderDetails"]];
@@ -112,7 +149,7 @@
         [cell.rightLabel setTextColor:[UIColor colorWithRed:0.85 green:0.3 blue:0.2 alpha:1.0]];
         
       }
-        
+      
     default:
       break;
   }

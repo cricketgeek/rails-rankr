@@ -13,8 +13,8 @@
 @synthesize window;
 @synthesize tabBarController;
 
-
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
+  
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:tabBarController.view];
 }
@@ -92,7 +92,7 @@
     return persistentStoreCoordinator;
   }
 	
-  NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"CoreKids.sqlite"]];
+  NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: [NSString stringWithFormat:@"CoreCoders_%@.sqlite",APP_VERSION]]];
 	
 	NSError *error;
   persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];

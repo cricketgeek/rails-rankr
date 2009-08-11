@@ -23,6 +23,7 @@
   NSString  * website;
   NSString  * wwrProfileUrl;
   NSString  * githubUrl;
+  NSString    * updatedAt;
   BOOL available;
 	
 }
@@ -43,7 +44,10 @@
 @property (nonatomic , retain) NSString * imagePath;
 @property (nonatomic, retain) NSString *website;
 @property (nonatomic, assign) BOOL available;
+@property (nonatomic, retain) NSString *updatedAt;
 
 -(NSString*)availabilityDescription;
+-(BOOL)hasWWRUrl;
+-(NSString*)wwrRecommendUrl;
 
 @end

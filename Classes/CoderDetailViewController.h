@@ -21,7 +21,15 @@
   UIButton* wwrProfileUrlButton;
   UIButton* githubProfileUrlButton;
   UIButton* recommendWWRButton;
+  
+	NSFetchedResultsController *fetchedResultsController;
+	NSManagedObjectContext *managedObjectContext;
+  NSManagedObjectContext *addingManagedObjectContext;    
 }
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSManagedObjectContext *addingManagedObjectContext;
 
 @property (nonatomic, retain) Coder *coder;
 @property (nonatomic, retain) IBOutlet UILabel *coderName;
@@ -38,6 +46,6 @@
 -(IBAction)goToWWRProfile:(id)sender;
 -(IBAction)goToGithubProfile:(id)sender;
 -(IBAction)recommendOnWWR:(id)sender;
--(IBAction)close;
+-(IBAction)saveAsFavorite;
 
 @end

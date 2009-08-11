@@ -31,7 +31,6 @@
 @property (nonatomic, retain) IBOutlet UITableView *resultsTable;
 @property (nonatomic, retain) NSMutableArray *data;
 
--(IBAction)addFav:(id)sender;
 - (void)grabCodersInTheBackground;
 -(IBAction)refreshData;
 
