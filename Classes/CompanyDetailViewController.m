@@ -23,7 +23,7 @@
 
 @synthesize company,companyTitle,numberOfCodersLabel,rankLabel,totalPointsLabel,resultsTable, data;
 
--(IBAction)refreshData:(id)sender {
+-(IBAction)refreshData {
   [self grabCodersInTheBackground];
   [self.resultsTable reloadData];
 }

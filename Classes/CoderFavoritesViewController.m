@@ -98,7 +98,7 @@
     }
   }
   
-  //[self.resultsTable reloadData];
+  [self.resultsTable reloadData];
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
 }
@@ -122,6 +122,19 @@
 }
 */
 
+-(void)viewWillAppear:(BOOL)animated {
+  
+  NSError* error;
+  if([[self fetchedResultsController] performFetch:&error]) {
+    NSLog(@"got results from core data");
+    [self grabCodersInTheBackground];
+  }
+  else {
+    NSLog(@"somefink went wrong Horace!");
+  }
+  
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -135,21 +148,13 @@
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
                                                                    target:self action:@selector(refreshData)];
   
-  self.navigationItem.rightBarButtonItem = refreshButton; 
+  self.navigationItem.rightBarButtonItem = refreshButton;
+  self.navigationItem.leftBarButtonItem = self.editButtonItem;
   [self.resultsTable setRowHeight:62.0f];
-  //[self.searchDisplayController.searchResultsTableView setRowHeight:60.0f];
   pageNumber = (int)1;
   
   Rails_RankrAppDelegate* delegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
   self.managedObjectContext = delegate.managedObjectContext;
-  NSError* error;
-  if([[self fetchedResultsController] performFetch:&error]) {
-    NSLog(@"got results from core data");
-    [self grabCodersInTheBackground];
-  }
-  else {
-    NSLog(@"somefink went wrong Horace!");
-  }
 }
 
 #pragma mark -
