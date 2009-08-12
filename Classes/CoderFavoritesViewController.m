@@ -278,7 +278,7 @@
 	[fetchRequest setEntity:entity];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"railsRank" ascending:YES];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"railsRankPoints" ascending:NO];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];
@@ -293,9 +293,6 @@
 	[fetchRequest release];
 	[sortDescriptor release];
 	[sortDescriptors release];
-	
-  NSLog(@"is there data %@",[(CoreCoder*)[[self fetchedResultsController] objectAtIndexPath:0] fullName]);
-
 	return fetchedResultsController;
 }    
 

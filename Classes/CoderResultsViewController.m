@@ -185,19 +185,14 @@
   self.coderSearchResults = [[NSMutableArray alloc] initWithCapacity:10];
   pageNumber = (int)1;  
   [self grabCodersInTheBackground];
-  
-  
-//  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
-//                                                                   target:self action:@selector(refreshData)];
+    
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                 target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTableView setRowHeight:64.0f];
   [self.searchDisplayController.searchResultsTableView setRowHeight:64.0f];
-  
 }
-
 
 /*
  // Override to allow orientations other than the default portrait orientation.
@@ -209,8 +204,7 @@
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
-  [super didReceiveMemoryWarning];
-	
+  [super didReceiveMemoryWarning];	
 	// Release any cached data, images, etc that aren't in use.
 }
 
@@ -218,7 +212,6 @@
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
-
 
 #pragma mark Table view methods
 
