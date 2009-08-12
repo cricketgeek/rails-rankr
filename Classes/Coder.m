@@ -48,6 +48,10 @@ rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, g
   return [self.wwrProfileUrl isKindOfClass:[NSString class]] ? YES : NO;
 }
 
+-(BOOL)hasWebSite {
+  return [self.website isKindOfClass:[NSString class]] ? YES : NO;
+}
+
 -(NSString*)wwrRecommendUrl{
   
   /*http://www.workingwithrails.com/recommendation/new/person/6415-john-nunemaker

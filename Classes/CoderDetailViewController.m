@@ -63,7 +63,7 @@
     //turn fav button into unfavorite
     NSLog(@"saved favorite");
   }
-
+  
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -133,7 +133,8 @@
     case 1:
       cell.leftLabel.text = [[NSString alloc] initWithString:@"Website"];
       if([[self.coder website] isKindOfClass:[NSString class]]){
-        cell.rightLabel.text = [self.coder website];        
+        cell.rightLabel.text = [self.coder website];    
+        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
       }
       else {
         cell.rightLabel.text = [NSString string];
@@ -155,6 +156,15 @@
   }
   return cell;
 }
+
+- (void)tableView:(UITableView *)atableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  if(indexPath.row == 1) {
+    if([self.coder hasWebSite]) {
+      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[self.coder website]]]; 
+    }
+  }
+}
+
 /*
  // Override to allow orientations other than the default portrait orientation.
  - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

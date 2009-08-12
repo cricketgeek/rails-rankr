@@ -48,6 +48,7 @@
 
 -(NSString*)availabilityDescription;
 -(BOOL)hasWWRUrl;
+-(BOOL)hasWebSite;
 -(NSString*)wwrRecommendUrl;
 
 @end
