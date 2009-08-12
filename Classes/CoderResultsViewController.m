@@ -187,12 +187,14 @@
   [self grabCodersInTheBackground];
   
   
-  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
-                                                                   target:self action:@selector(refreshData)];
+//  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
+//                                                                   target:self action:@selector(refreshData)];
+  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+                                                target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton; 
-  [self.resultsTableView setRowHeight:62.0f];
-  [self.searchDisplayController.searchResultsTableView setRowHeight:62.0f];
+  [self.resultsTableView setRowHeight:64.0f];
+  [self.searchDisplayController.searchResultsTableView setRowHeight:64.0f];
   
 }
 
@@ -262,7 +264,19 @@
     [cell.profileImage addSubview:webImage];
     //cell.profileImage.image = [UIImage imageOfSize:image_size fromImage:profile_image];
   }
+  cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+  
   return cell;
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+  
+  Coder* coder = [[self resultsForTableView:tableView] objectAtIndex:indexPath.row];
+  CoderDetailViewController *coderDetailViewController = [[CoderDetailViewController alloc] initWithNibName:@"CoderDetailViewController" bundle:nil];
+  coderDetailViewController.coder = coder;
+  
+  [self.navigationController pushViewController:coderDetailViewController animated:YES];
+  [coderDetailViewController release]; 
 }
 
 - (void)tableView:(UITableView *)atableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -11,3 +11,19 @@ profile numbers besides rails rank points - 88 88 88
 
 stretch one pixel to give you flexible badges on a row
 stretchableLeftCap
+
+
+TabBar
+  -- coders and Cities
+
+coder detail
+  -- profile image a bit left?
+  -- favorite button image sucks
+     -- would like something that pulsates while it saves? at least changes color after saved and disables button
+     
+company detail
+  -- some sort of border between details and table
+  
+
+  
+  

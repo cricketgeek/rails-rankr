@@ -96,7 +96,7 @@
   }
   else{
     NSString *url = [[NSString alloc] initWithString:coder.imagePath];
-    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(15,19,82,85) andUrl:url];
+    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(20,23,82,84) andUrl:url];
     webImage.tag = 57;
     [self.view addSubview:webImage];
   }
@@ -143,7 +143,7 @@
       cell.leftLabel.text = [[NSString alloc] initWithString:@"Availability"];
       cell.rightLabel.text = [self.coder availabilityDescription];
       if(coder.available){
-        [cell.rightLabel setTextColor:[UIColor colorWithRed:0.24 green:0.87 blue:0.15 alpha:1.0]];
+        [cell.rightLabel setTextColor:[UIColor colorWithRed:0.063 green:.392 blue:0.020 alpha:1.0]];
       }
       else{
         [cell.rightLabel setTextColor:[UIColor colorWithRed:0.85 green:0.3 blue:0.2 alpha:1.0]];

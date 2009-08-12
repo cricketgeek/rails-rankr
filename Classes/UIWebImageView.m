@@ -22,7 +22,7 @@
 	if (self = [super initWithFrame:frame]) {
 		self.imageUrl							= url;
 		self.contentMode					= UIViewContentModeScaleAspectFit;
-		self.backgroundColor      = [UIColor blackColor];
+		self.backgroundColor      = [UIColor lightGrayColor];
 		self.frameRect						= frame;
 		[self initRequest];
 	}

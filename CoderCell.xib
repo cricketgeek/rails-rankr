@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">768</int>
-		<string key="IBDocument.SystemVersion">9J61</string>
+		<string key="IBDocument.SystemVersion">9L30</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.46</string>
+		<string key="IBDocument.AppKitVersion">949.54</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -44,7 +44,7 @@
 							<object class="IBUIImageView" id="144026957">
 								<reference key="NSNextResponder" ref="626518750"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{0, -2}, {355, 64}}</string>
+								<string key="NSFrameSize">{355, 64}</string>
 								<reference key="NSSuperview" ref="626518750"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -125,7 +125,7 @@
 							<object class="IBUIImageView" id="455899946">
 								<reference key="NSNextResponder" ref="626518750"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{57, 4}, {59, 52}}</string>
+								<string key="NSFrame">{{56, 6}, {59, 52}}</string>
 								<reference key="NSSuperview" ref="626518750"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIAutoresizesSubviews">NO</bool>
@@ -169,7 +169,7 @@
 								</object>
 							</object>
 						</object>
-						<string key="NSFrameSize">{305, 62}</string>
+						<string key="NSFrameSize">{323, 63}</string>
 						<reference key="NSSuperview" ref="1031906343"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -181,7 +181,7 @@
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 					</object>
 				</object>
-				<string key="NSFrameSize">{338, 63}</string>
+				<string key="NSFrameSize">{323, 64}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
@@ -189,7 +189,6 @@
 				</object>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<int key="IBUISeparatorStyle">1</int>
-				<int key="IBUIAccessoryType">2</int>
 				<reference key="IBUIContentView" ref="626518750"/>
 				<object class="NSFont" key="IBUIFont">
 					<string key="NSName">Helvetica</string>
@@ -339,7 +338,7 @@
 					<string>UIResponder</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>CoderCell</string>
-					<string>{{397, 747}, {338, 63}}</string>
+					<string>{{397, 746}, {323, 64}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

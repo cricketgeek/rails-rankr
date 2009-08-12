@@ -35,9 +35,9 @@
 {
   NSLog(@"Making a request to %@",[NSString stringWithFormat:@"%@coders.json?search=%@",HOST_SERVER,self.company.name]);
 	
-  NSString *coderPath = [NSString stringWithFormat:@"%@coders.json?search=%@",
+  NSString *coderPath = [[NSString stringWithFormat:@"%@coders.json?search=%@",
                          HOST_SERVER,
-                         self.company.name];  
+                         self.company.name] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];  
   ASIHTTPRequestJSON *request;
   request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:coderPath]] autorelease]; 
   

@@ -149,7 +149,7 @@
                                                                    target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton;
-  self.navigationItem.leftBarButtonItem = self.editButtonItem;
+  //self.navigationItem.leftBarButtonItem = self.editButtonItem;
   [self.resultsTable setRowHeight:62.0f];
   pageNumber = (int)1;
   
@@ -163,7 +163,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)atableView {
     return [[self.fetchedResultsController sections] count];
 }
-
 
 - (NSInteger)tableView:(UITableView *)atableView
  numberOfRowsInSection:(NSInteger)section {
@@ -180,35 +179,32 @@
   if (cell == nil) {
     cell = (CoderCell*)[[UITableViewCell alloc] initWithNibName:[NSString stringWithFormat:@"CoderCell"] reuseIdentifier:[NSString stringWithFormat:@"Coder"]];
   }
-  
   CoreCoder *coder = [self.fetchedResultsController objectAtIndexPath:indexPath];
-  //Coder* coder = ((Coder *)[self.data objectAtIndex:indexPath.row]);
   cell.nameLabel.text = coder.fullName;
   NSLog(@"coder ranked at %@",coder.railsRank);
   cell.rankLabel.text = coder.railsRank;
-  //cell.cityLabel.text = coder.city;
+  cell.cityLabel.text = coder.city;
   cell.railsRankPointsLabel.text = coder.railsRankPoints; 
   [[cell.profileImage viewWithTag:57] removeFromSuperview];
   
-//  NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
-//  NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
-//  NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
-//  if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
+  NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
+  NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
+  NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
+  if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
     cell.profileImage.image = [UIImage imageNamed:@"profile_small.png"];
-//  }
-//  else{
-//    NSString *url = [[NSString alloc] initWithString:coder.imagePath];
-//    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,58,58) andUrl:url];
-//    webImage.tag = 57;
-//    [cell.profileImage addSubview:webImage];
-//  }
+  }
+  else{
+    NSString *url = [[NSString alloc] initWithString:coder.imagePath];
+    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,58,58) andUrl:url];
+    webImage.tag = 57;
+    [cell.profileImage addSubview:webImage];
+  }
+  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   return cell;
-  
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   NSLog(@"selected a fav coder");
-  //Coder* coder = [self.data objectAtIndex:indexPath.row];
   CoreCoder* coreCoder = (CoreCoder *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
   Coder* coder = [[Coder alloc] init];
   coder.fullName = coreCoder.fullName;
@@ -226,7 +222,6 @@
   coder.lastName = coreCoder.lastName;
   coder.website = coreCoder.webSite;
   
-  
   CoderDetailViewController *coderDetailViewController = [[CoderDetailViewController alloc] initWithNibName:@"CoderDetailViewController" bundle:nil];
   coderDetailViewController.coder = coder;
   [self.navigationController pushViewController:coderDetailViewController animated:YES];
@@ -240,6 +235,9 @@
   return YES;
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return UITableViewCellEditingStyleDelete;
+}
 
 
 // Override to support editing the table view.
@@ -249,14 +247,12 @@
     // Delete the managed object for the given index path
 		NSManagedObjectContext *context = [[self fetchedResultsController] managedObjectContext];
 		[context deleteObject:[[self fetchedResultsController] objectAtIndexPath:indexPath]];
-		
 		// Save the context.
 		NSError *error;
 		if (![context save:&error]) {
 			// Handle the error...
       NSLog(@"Failed to delete that guy, but why? %@",[error localizedDescription]);
 		}
-		
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
   }   
 }
