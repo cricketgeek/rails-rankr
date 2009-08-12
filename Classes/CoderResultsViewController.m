@@ -21,6 +21,7 @@
 {
 	networkQueue = [[ASINetworkQueue alloc] init];
   app = [UIApplication sharedApplication];
+  self.tabBarItem.title = @"ROLL TIDE";
 }
 
 -(IBAction)refreshData {
@@ -192,6 +193,7 @@
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTableView setRowHeight:64.0f];
   [self.searchDisplayController.searchResultsTableView setRowHeight:64.0f];
+  //[self.tabBarItem setTitle:@"Coders"];
 }
 
 /*

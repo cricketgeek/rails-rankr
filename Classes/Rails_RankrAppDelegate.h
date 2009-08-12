@@ -7,19 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoderDetailViewController.h"
+#import "CoderResultsViewController.h"
 #import "CoderFavoritesViewController.h"
 #import "Constants.h"
 
 @interface Rails_RankrAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
     UITabBarController *tabBarController;
-  
+    UITabBarItem* favoritesTabBarItem;
+    CoderResultsViewController* coderResultsViewController;
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    
     NSPersistentStoreCoordinator *persistentStoreCoordinator;  
 }
 
+@property (nonatomic, retain) IBOutlet CoderResultsViewController *coderResultsViewController;
+@property (nonatomic, retain) IBOutlet UITabBarItem *favoritesTabBarItem;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;

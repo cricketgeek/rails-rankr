@@ -24,6 +24,7 @@
 		F16D6B701032FF510042BFB4 /* CoderGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6B6F1032FF510042BFB4 /* CoderGroup.m */; };
 		F16D6B86103307DF0042BFB4 /* CoreCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6B85103307DF0042BFB4 /* CoreCoder.m */; };
 		F16D6BE1103309130042BFB4 /* CoderModelsConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6BE0103309130042BFB4 /* CoderModelsConverter.m */; };
+		F16D6DD810333DCC0042BFB4 /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6DD710333DCC0042BFB4 /* SyncManager.m */; };
 		F181B199102B42D700E06C6B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F181B198102B42D700E06C6B /* CoreData.framework */; };
 		F181B244102B5BB100E06C6B /* BaseResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F181B243102B5BB100E06C6B /* BaseResultsViewController.m */; };
 		F181B24A102B5EF200E06C6B /* background_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F181B249102B5EF200E06C6B /* background_profile.png */; };
@@ -111,6 +112,8 @@
 		F16D6B85103307DF0042BFB4 /* CoreCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreCoder.m; path = Classes/CoreCoder.m; sourceTree = "<group>"; };
 		F16D6BDF103309130042BFB4 /* CoderModelsConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderModelsConverter.h; sourceTree = "<group>"; };
 		F16D6BE0103309130042BFB4 /* CoderModelsConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderModelsConverter.m; sourceTree = "<group>"; };
+		F16D6DD610333DCC0042BFB4 /* SyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncManager.h; sourceTree = "<group>"; };
+		F16D6DD710333DCC0042BFB4 /* SyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncManager.m; sourceTree = "<group>"; };
 		F181B198102B42D700E06C6B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F181B242102B5BB100E06C6B /* BaseResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResultsViewController.h; sourceTree = "<group>"; };
 		F181B243102B5BB100E06C6B /* BaseResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResultsViewController.m; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 				F16140251030C3E4005DDC51 /* CoderFavoritesViewController.xib */,
 				F16D6B321032EE1B0042BFB4 /* Pluralizer.h */,
 				F16D6B331032EE1B0042BFB4 /* Pluralizer.m */,
+				F16D6DD610333DCC0042BFB4 /* SyncManager.h */,
+				F16D6DD710333DCC0042BFB4 /* SyncManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				F16D6B701032FF510042BFB4 /* CoderGroup.m in Sources */,
 				F16D6B86103307DF0042BFB4 /* CoreCoder.m in Sources */,
 				F16D6BE1103309130042BFB4 /* CoderModelsConverter.m in Sources */,
+				F16D6DD810333DCC0042BFB4 /* SyncManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
