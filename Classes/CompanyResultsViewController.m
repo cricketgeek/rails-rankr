@@ -108,8 +108,10 @@
   self.data = [[NSMutableArray alloc] initWithCapacity:10];
   [self grabCodersInTheBackground];
   
-  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
-                                                                   target:self action:@selector(refreshData)];
+//  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
+//                                                                   target:self action:@selector(refreshData)];
+  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+                                                                                 target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTable setRowHeight:62.0f];
@@ -178,8 +180,17 @@
   companyDetailViewController.company = company;
   [self.navigationController pushViewController:companyDetailViewController animated:YES];
   [companyDetailViewController release];
+  
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+  Company* company = [data objectAtIndex:indexPath.row];
+  CompanyDetailViewController *companyDetailViewController = [[CompanyDetailViewController alloc] initWithNibName:@"CompanyDetailViewController" bundle:nil];
+  companyDetailViewController.company = company;
+  [self.navigationController pushViewController:companyDetailViewController animated:YES];
+  [companyDetailViewController release];
+  
+}
 
 
 // Override to support conditional editing of the table view.

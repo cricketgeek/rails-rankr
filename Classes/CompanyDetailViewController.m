@@ -47,7 +47,11 @@
 
 - (void)requestDone:(ASIHTTPRequestJSON *)request
 {
-  [self.data addObjectsFromArray:[request getCoderCollection]];
+  //TODO: check to see if the items are actually released with the array
+  [self.data release];
+  NSMutableArray* coders = [request getCoderCollection];
+  self.data = [[NSMutableArray alloc] initWithCapacity:[coders count]];
+  [self.data addObjectsFromArray:coders];
   NSLog(@"now we have %d",[self.data count]);
   [self.resultsTable reloadData];
   gettingDataNow = NO;
@@ -80,8 +84,10 @@
   self.data = [[NSMutableArray alloc] initWithCapacity:10];
   [self grabCodersInTheBackground];
   
-  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
-                                                                   target:self action:@selector(refreshData)];
+//  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
+//                                                                   target:self action:@selector(refreshData)];
+  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+                                                                                 target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTable setRowHeight:62.0f];
