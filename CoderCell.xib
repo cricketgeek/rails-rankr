@@ -125,7 +125,7 @@
 							<object class="IBUIImageView" id="455899946">
 								<reference key="NSNextResponder" ref="626518750"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{56, 6}, {59, 52}}</string>
+								<string key="NSFrame">{{56, 6}, {59, 54}}</string>
 								<reference key="NSSuperview" ref="626518750"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIAutoresizesSubviews">NO</bool>

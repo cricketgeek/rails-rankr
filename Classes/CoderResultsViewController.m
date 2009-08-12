@@ -258,7 +258,7 @@
   }
   else{
     NSString *url = [[NSString alloc] initWithString:coder.imagePath];
-    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,58,58) andUrl:url];
+    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,60,56) andUrl:url];
     webImage.tag = 57;
     //CGSize image_size = {50.0f, 50.0f};
     [cell.profileImage addSubview:webImage];

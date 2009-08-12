@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="134"/>
+			<integer value="130"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -69,7 +69,7 @@
 						<object class="IBUIViewController" id="255477182">
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="695317428">
 								<reference key="IBUINavigationBar"/>
-								<string key="IBUITitle">Rails Rankr</string>
+								<string key="IBUITitle">Coders</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="630192085"/>
 							<string key="IBUINibName">CoderResultsViewController</string>
