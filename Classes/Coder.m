@@ -10,7 +10,7 @@
 
 @implementation Coder
 @synthesize coderId, fullName, wholeName, firstName, lastName, city, companyName, fullRank, 
-rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, githubUrl, updatedAt;
+formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, githubUrl, updatedAt;
 
 - (NSString *)fullName {
   if([self.wholeName isKindOfClass:[NSString class]]) {
@@ -33,7 +33,10 @@ rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, g
     self.railsrank = [(NSNumber*)[dict objectForKey:@"railsrank"] stringValue];
     self.rank = [(NSNumber*)[dict objectForKey:@"rank"] stringValue];
     self.imagePath = [dict objectForKey:@"image_path"];
-    self.fullRank = [(NSNumber*)[dict objectForKey:@"full_rank"] stringValue];
+    NSNumberFormatter* nf = [[NSNumberFormatter alloc] init];
+    [nf setNumberStyle:NSNumberFormatterBehavior10_4];
+    self.formattedFullRank = [nf stringFromNumber:(NSNumber*)[dict objectForKey:@"full_rank"]];
+    self.fullRank = (NSNumber*)[dict objectForKey:@"full_rank"];
     self.city = [dict objectForKey:@"city"];
     self.companyName = [dict objectForKey:@"company_name"];
     self.githubWatchers = [(NSNumber*)[dict objectForKey:@"github_watchers"] stringValue];

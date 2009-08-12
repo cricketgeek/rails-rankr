@@ -20,7 +20,10 @@
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		F1613F731030BE32005DDC51 /* CityResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1613F721030BE32005DDC51 /* CityResultsViewController.xib */; };
 		F16140261030C3E4005DDC51 /* CoderFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F16140251030C3E4005DDC51 /* CoderFavoritesViewController.xib */; };
-		F16148BA10321856005DDC51 /* CoreCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F16148B910321856005DDC51 /* CoreCoder.m */; };
+		F16D6B341032EE1B0042BFB4 /* Pluralizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6B331032EE1B0042BFB4 /* Pluralizer.m */; };
+		F16D6B701032FF510042BFB4 /* CoderGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6B6F1032FF510042BFB4 /* CoderGroup.m */; };
+		F16D6B86103307DF0042BFB4 /* CoreCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6B85103307DF0042BFB4 /* CoreCoder.m */; };
+		F16D6BE1103309130042BFB4 /* CoderModelsConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6BE0103309130042BFB4 /* CoderModelsConverter.m */; };
 		F181B199102B42D700E06C6B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F181B198102B42D700E06C6B /* CoreData.framework */; };
 		F181B244102B5BB100E06C6B /* BaseResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F181B243102B5BB100E06C6B /* BaseResultsViewController.m */; };
 		F181B24A102B5EF200E06C6B /* background_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F181B249102B5EF200E06C6B /* background_profile.png */; };
@@ -100,8 +103,14 @@
 		8D1107310486CEB800E47090 /* Rails_Rankr-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Rails_Rankr-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		F1613F721030BE32005DDC51 /* CityResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityResultsViewController.xib; sourceTree = "<group>"; };
 		F16140251030C3E4005DDC51 /* CoderFavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoderFavoritesViewController.xib; sourceTree = "<group>"; };
-		F16148B810321856005DDC51 /* CoreCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreCoder.h; path = Classes/CoreCoder.h; sourceTree = "<group>"; };
-		F16148B910321856005DDC51 /* CoreCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreCoder.m; path = Classes/CoreCoder.m; sourceTree = "<group>"; };
+		F16D6B321032EE1B0042BFB4 /* Pluralizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pluralizer.h; sourceTree = "<group>"; };
+		F16D6B331032EE1B0042BFB4 /* Pluralizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pluralizer.m; sourceTree = "<group>"; };
+		F16D6B6E1032FF510042BFB4 /* CoderGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderGroup.h; sourceTree = "<group>"; };
+		F16D6B6F1032FF510042BFB4 /* CoderGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderGroup.m; sourceTree = "<group>"; };
+		F16D6B84103307DF0042BFB4 /* CoreCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreCoder.h; path = Classes/CoreCoder.h; sourceTree = "<group>"; };
+		F16D6B85103307DF0042BFB4 /* CoreCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreCoder.m; path = Classes/CoreCoder.m; sourceTree = "<group>"; };
+		F16D6BDF103309130042BFB4 /* CoderModelsConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderModelsConverter.h; sourceTree = "<group>"; };
+		F16D6BE0103309130042BFB4 /* CoderModelsConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderModelsConverter.m; sourceTree = "<group>"; };
 		F181B198102B42D700E06C6B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F181B242102B5BB100E06C6B /* BaseResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResultsViewController.h; sourceTree = "<group>"; };
 		F181B243102B5BB100E06C6B /* BaseResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResultsViewController.m; sourceTree = "<group>"; };
@@ -254,6 +263,8 @@
 				F1A524B310308AB300F72FE1 /* CoderFavoritesViewController.m */,
 				F1613F721030BE32005DDC51 /* CityResultsViewController.xib */,
 				F16140251030C3E4005DDC51 /* CoderFavoritesViewController.xib */,
+				F16D6B321032EE1B0042BFB4 /* Pluralizer.h */,
+				F16D6B331032EE1B0042BFB4 /* Pluralizer.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -341,8 +352,8 @@
 		F16145821031B620005DDC51 /* CoreModels */ = {
 			isa = PBXGroup;
 			children = (
-				F16148B810321856005DDC51 /* CoreCoder.h */,
-				F16148B910321856005DDC51 /* CoreCoder.m */,
+				F16D6B84103307DF0042BFB4 /* CoreCoder.h */,
+				F16D6B85103307DF0042BFB4 /* CoreCoder.m */,
 			);
 			name = CoreModels;
 			sourceTree = "<group>";
@@ -367,6 +378,10 @@
 				F1DEE0B30F88626E00F567F2 /* Company.m */,
 				F1A5258C1030ABE800F72FE1 /* City.h */,
 				F1A5258D1030ABE800F72FE1 /* City.m */,
+				F16D6B6E1032FF510042BFB4 /* CoderGroup.h */,
+				F16D6B6F1032FF510042BFB4 /* CoderGroup.m */,
+				F16D6BDF103309130042BFB4 /* CoderModelsConverter.h */,
+				F16D6BE0103309130042BFB4 /* CoderModelsConverter.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -558,7 +573,10 @@
 				F1A524B510308AB300F72FE1 /* CoderFavoritesViewController.m in Sources */,
 				F1A524DE10308E5500F72FE1 /* CoderCoreModels.xcdatamodel in Sources */,
 				F1A5258E1030ABE800F72FE1 /* City.m in Sources */,
-				F16148BA10321856005DDC51 /* CoreCoder.m in Sources */,
+				F16D6B341032EE1B0042BFB4 /* Pluralizer.m in Sources */,
+				F16D6B701032FF510042BFB4 /* CoderGroup.m in Sources */,
+				F16D6B86103307DF0042BFB4 /* CoreCoder.m in Sources */,
+				F16D6BE1103309130042BFB4 /* CoderModelsConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

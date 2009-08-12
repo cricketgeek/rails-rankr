@@ -17,7 +17,7 @@
 #import "ASINetworkQueue.h"
 #import "UIWebImageView.h"
 #import "Constants.h"
-
+#import "Pluralizer.h"
 
 @implementation CompanyDetailViewController
 
@@ -73,9 +73,10 @@
   networkQueue = [[ASINetworkQueue alloc] init];
   app = [UIApplication sharedApplication];
   self.companyTitle.text = self.company.name;
-  self.totalPointsLabel.text = self.company.points;
+  self.totalPointsLabel.text = self.company.formattedPoints;
   self.rankLabel.text = self.company.rank;
-  self.numberOfCodersLabel.text = [NSString stringWithFormat:@"%@ coders",self.company.numberOfCoders];
+  NSString* coderSuffix = [Pluralizer coderSuffix:self.company.numberOfCoders];
+  self.numberOfCodersLabel.text = [NSString stringWithFormat:@"%@ %@",self.company.numberOfCoders,coderSuffix];
   
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
@@ -84,8 +85,6 @@
   self.data = [[NSMutableArray alloc] initWithCapacity:10];
   [self grabCodersInTheBackground];
   
-//  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
-//                                                                   target:self action:@selector(refreshData)];
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                                                  target:self action:@selector(refreshData)];
   

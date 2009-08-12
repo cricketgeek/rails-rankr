@@ -14,8 +14,8 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   
-    // Add the tab bar controller's current view as a subview of the window
-    [window addSubview:tabBarController.view];
+  // Add the tab bar controller's current view as a subview of the window
+  [window addSubview:tabBarController.view];
 }
 
 /**
@@ -34,16 +34,16 @@
 }
 
 /*
-// Optional UITabBarControllerDelegate method
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-}
-*/
+ // Optional UITabBarControllerDelegate method
+ - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+ }
+ */
 
 /*
-// Optional UITabBarControllerDelegate method
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
-}
-*/
+ // Optional UITabBarControllerDelegate method
+ - (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
+ }
+ */
 
 #pragma mark -
 #pragma mark Core Data stack
@@ -122,9 +122,9 @@
   [managedObjectContext release];
   [managedObjectModel release];
   [persistentStoreCoordinator release];  
-    [tabBarController release];
-    [window release];
-    [super dealloc];
+  [tabBarController release];
+  [window release];
+  [super dealloc];
 }
 
 @end

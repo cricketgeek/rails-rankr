@@ -13,7 +13,8 @@
   NSString  * wholeName;
 	NSString	* city;
 	NSString	* rank;
-	NSString	* fullRank;
+	NSNumber	* fullRank;
+  NSString  * formattedFullRank;
   NSString  * railsrank;
 	NSString	* companyName;
 	NSString	* firstName;
@@ -37,7 +38,8 @@
 @property (nonatomic , retain) NSString	* lastName;
 @property (nonatomic , retain) NSString	* city;
 @property (nonatomic , retain) NSString * companyName;
-@property (nonatomic , retain) NSString * fullRank;
+@property (nonatomic , retain) NSNumber * fullRank;
+@property (nonatomic, retain) NSString *formattedFullRank;
 @property (nonatomic , retain) NSString * rank;
 @property (nonatomic , retain) NSString * railsrank;
 @property (nonatomic , retain) NSString * githubWatchers;

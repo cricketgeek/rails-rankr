@@ -13,6 +13,7 @@
 #import "CoderCell.h"
 #import "Coder.h"
 #import "Rails_RankrAppDelegate.h"
+#import "CoderModelsConverter.h"
 #import "CoreCoder.h"
 
 @implementation CoderFavoritesViewController
@@ -144,17 +145,12 @@
 	[networkQueue setDelegate:self];
   self.data = [[NSMutableArray alloc] initWithCapacity:10];
   
-  
-//  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain
-//                                                                   target:self action:@selector(refreshData)];
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                                                  target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton;
-  //self.navigationItem.leftBarButtonItem = self.editButtonItem;
   [self.resultsTable setRowHeight:62.0f];
-  pageNumber = (int)1;
-  
+  pageNumber = (int)1;  
   Rails_RankrAppDelegate* delegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
   self.managedObjectContext = delegate.managedObjectContext;
 }
@@ -183,10 +179,9 @@
   }
   CoreCoder *coder = [self.fetchedResultsController objectAtIndexPath:indexPath];
   cell.nameLabel.text = coder.fullName;
-  NSLog(@"coder ranked at %@",coder.railsRank);
   cell.rankLabel.text = coder.railsRank;
   cell.cityLabel.text = coder.city;
-  cell.railsRankPointsLabel.text = coder.railsRankPoints; 
+  cell.railsRankPointsLabel.text = [coder formattedRankPoints]; 
   [[cell.profileImage viewWithTag:57] removeFromSuperview];
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
@@ -209,21 +204,7 @@
   NSLog(@"selected a fav coder");
   CoreCoder* coreCoder = (CoreCoder *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
   Coder* coder = [[Coder alloc] init];
-  coder.fullName = coreCoder.fullName;
-  coder.railsrank = coreCoder.railsRank;
-  coder.fullRank = coreCoder.railsRankPoints;
-  coder.rank = coreCoder.wwrRank;
-  coder.city = coreCoder.city;
-  coder.wwrProfileUrl = coreCoder.wwrProfileUrl;
-  coder.companyName = coreCoder.company;
-  coder.githubUrl = coreCoder.githubUrl;
-  coder.githubWatchers = coreCoder.githubWatchers;
-  coder.imagePath = coreCoder.imagePath;
-  coder.available = (BOOL)coreCoder.availability;
-  coder.firstName = coreCoder.firstName;
-  coder.lastName = coreCoder.lastName;
-  coder.website = coreCoder.webSite;
-  
+  [CoderModelsConverter coderFromCoreCoder:coder andCoreCoder:coreCoder];
   CoderDetailViewController *coderDetailViewController = [[CoderDetailViewController alloc] initWithNibName:@"CoderDetailViewController" bundle:nil];
   coderDetailViewController.coder = coder;
   [self.navigationController pushViewController:coderDetailViewController animated:YES];

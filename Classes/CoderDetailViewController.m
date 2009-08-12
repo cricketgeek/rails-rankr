@@ -11,6 +11,7 @@
 #import "UITableViewCell+CustomNib.h"
 #import "UIWebImageView.h"
 #import "Rails_RankrAppDelegate.h"
+#import "CoderModelsConverter.h"
 #import "CoreCoder.h"
 
 
@@ -39,21 +40,7 @@
 
 -(IBAction)saveAsFavorite {  
   CoreCoder* coreCoder = (CoreCoder *)[NSEntityDescription insertNewObjectForEntityForName:@"CoreCoder" inManagedObjectContext:[self managedObjectContext]];  
-  coreCoder.fullName = self.coder.fullName;
-  coreCoder.coder_id = self.coder.coderId;
-  coreCoder.githubUrl = self.coder.githubUrl;
-  coreCoder.githubWatchers = self.coder.githubWatchers;
-  coreCoder.railsRank = self.coder.railsrank;
-  coreCoder.railsRankPoints = self.coder.fullRank;
-  coreCoder.wwrRank = self.coder.rank;
-  coreCoder.firstName = self.coder.firstName;
-  coreCoder.lastName = self.coder.lastName;
-  coreCoder.webSite = self.coder.website;
-  coreCoder.company = self.coder.companyName;
-  coreCoder.imagePath = self.coder.imagePath;
-  coreCoder.updatedAt = [NSDate date];
-  coreCoder.wwrProfileUrl = self.coder.wwrProfileUrl;
-  
+  [CoderModelsConverter coreCoderFromCoder:coreCoder andCoder:self.coder];
   NSError *error;
   if (![[self managedObjectContext] save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);

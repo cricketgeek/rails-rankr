@@ -2,7 +2,7 @@
 //  CoreCoder.m
 //  Rails Rankr
 //
-//  Created by Mark Jones on 8/11/09.
+//  Created by Mark Jones on 8/12/09.
 //  Copyright 2009 Geordie Enterprises LLC. All rights reserved.
 //
 
@@ -31,5 +31,12 @@
 @dynamic wwrProfileUrl;
 @dynamic availability;
 @dynamic lastName;
+
+-(NSString*)formattedRankPoints {
+  NSNumberFormatter* nf = [[NSNumberFormatter alloc] init];
+  [nf setNumberStyle:NSNumberFormatterBehavior10_4];
+  return [nf stringFromNumber:self.railsRankPoints];
+  
+}
 
 @end

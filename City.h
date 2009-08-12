@@ -7,19 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CoderGroup.h"
 
+@interface City : CoderGroup {
 
-@interface City : NSObject {
-  NSString	* name;
-  NSString	* points;
-  NSString  * rank;
-  NSString  * numberOfCoders;
 }
-
-@property (nonatomic , retain) NSString	* name;
-@property (nonatomic , retain) NSString	* points;
-@property (nonatomic , retain) NSString	* rank;
-@property (nonatomic, retain) NSString *numberOfCoders;
 
 
 @end

@@ -34,7 +34,7 @@
 @property (nonatomic, retain) NSMutableArray *data;
 
 - (void)grabCodersInTheBackground;
--(IBAction)refreshData:(id)sender;
+-(IBAction)refreshData;
 
 
 @end

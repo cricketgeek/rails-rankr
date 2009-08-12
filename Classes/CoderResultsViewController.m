@@ -247,7 +247,7 @@
   NSLog(@"coder ranked at %@",coder.railsrank);
   cell.rankLabel.text = coder.railsrank;
   cell.cityLabel.text = coder.city;
-  cell.railsRankPointsLabel.text = coder.fullRank; 
+  cell.railsRankPointsLabel.text = coder.formattedFullRank; //coder.fullRank; 
   [[cell.profileImage viewWithTag:57] removeFromSuperview];
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
