@@ -12,11 +12,11 @@
 
 @synthesize window;
 @synthesize tabBarController;
-@synthesize coderResultsViewController;
+@synthesize coderFavoritesViewController;
 @synthesize favoritesTabBarItem;
 
+
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-  
   SyncManager* sync = [[SyncManager alloc] init];
   [sync syncFavorites:favoritesTabBarItem];
   // Add the tab bar controller's current view as a subview of the window
@@ -43,7 +43,9 @@
  // Optional UITabBarControllerDelegate method
  - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
    NSLog(@"in didSelectViewController");
-   
+   if([viewController isMemberOfClass:[CoderFavoritesViewController class]]) {
+     
+   }
  }
  
 

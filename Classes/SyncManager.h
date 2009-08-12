@@ -18,14 +18,18 @@
   NSMutableArray* data;
   ASINetworkQueue *networkQueue;
   UIApplication *app;
+  UITabBarItem* favoritesTabBarItem;
+  NSInteger favsChanged;
   BOOL gettingDataNow;  
 }
 
 @property (nonatomic, retain) NSMutableArray *data;
+@property (nonatomic, retain) UITabBarItem *favoritesTabBarItem;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSManagedObjectContext *addingManagedObjectContext;
 
 -(void)syncFavorites:(UITabBarItem*)tabBarItemToUpdate;
+- (void)grabCodersInTheBackground;
 
 @end

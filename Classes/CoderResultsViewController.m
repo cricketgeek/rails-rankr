@@ -21,7 +21,6 @@
 {
 	networkQueue = [[ASINetworkQueue alloc] init];
   app = [UIApplication sharedApplication];
-  self.tabBarItem.title = @"ROLL TIDE";
 }
 
 -(IBAction)refreshData {
@@ -140,7 +139,8 @@
   NSLog(@"hitting: %@coders.json",HOST_SERVER);
   
 	request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders.json",HOST_SERVER]]] autorelease];
-	[networkQueue addOperation:request];
+	[request setTimeOutSeconds:15];
+  [networkQueue addOperation:request];
   [networkQueue go];
 }
 
@@ -178,7 +178,7 @@
   gettingDataNow = NO;
   newSearchResults = NO;
   
-  [networkQueue cancelAllOperations];
+  //[networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
 	[networkQueue setDelegate:self];
@@ -193,7 +193,6 @@
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTableView setRowHeight:64.0f];
   [self.searchDisplayController.searchResultsTableView setRowHeight:64.0f];
-  //[self.tabBarItem setTitle:@"Coders"];
 }
 
 /*

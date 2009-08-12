@@ -16,11 +16,12 @@
 
 @implementation SyncManager
 
-@synthesize data, fetchedResultsController, managedObjectContext, addingManagedObjectContext;
+@synthesize data, favoritesTabBarItem, fetchedResultsController, managedObjectContext, addingManagedObjectContext;
 
 
 -(id)init {
   if(self = [super init]){
+    favsChanged = 0;
     networkQueue = [[ASINetworkQueue alloc] init];
     app = [UIApplication sharedApplication];    
     [networkQueue cancelAllOperations];
@@ -35,15 +36,22 @@
 }
 
 -(void)syncFavorites:(UITabBarItem*)tabBarItemToUpdate {
+  self.favoritesTabBarItem = tabBarItemToUpdate;
+  NSError* error;
+  if([[self fetchedResultsController] performFetch:&error]) {
+    NSLog(@"got results from core data");
+    [self grabCodersInTheBackground];
+  }
+  else {
+    NSLog(@"somefink went wrong Horace!");
+  }
   
-  tabBarItemToUpdate.badgeValue = [NSString stringWithFormat:@"15"];
 }
 
 #pragma mark -
 #pragma mark ASIHTTPRequestJSON methods
 
-- (void)grabCodersInTheBackground
-{
+- (void)grabCodersInTheBackground {
 	ASIHTTPRequestJSON *request;
   NSLog(@"SYNC MANAGER: hitting: %@coders.json",HOST_SERVER);
   NSArray* existingFavorites = [[self fetchedResultsController] fetchedObjects];
@@ -79,6 +87,7 @@
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];//%a, %d %b %Y %H:%M:%S %Z"];
         NSDate* serverDate = [dateFormatter dateFromString:coder.updatedAt];
         if([coreCoder.updatedAt compare:serverDate] == NSOrderedAscending) {
+          favsChanged += 1;
           coreCoder.updatedAt = serverDate;
           coreCoder.railsRankPoints = coder.fullRank;
           coreCoder.railsRank = coder.railsrank;
@@ -106,7 +115,9 @@
   }
 
   //TODO update badge on TabBarFavorites
-
+  if(favsChanged > 0) {
+    self.favoritesTabBarItem.badgeValue = [NSString stringWithFormat:@"%d",favsChanged];    
+  }
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
 }
