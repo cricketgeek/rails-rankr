@@ -122,7 +122,7 @@
   City* city = ((City *)[self.data objectAtIndex:indexPath.row]);
   cell.nameLabel.text = city.name;
   cell.railsRankPointsLabel.text = city.formattedPoints; 
-  cell.coderNumberLabel.text = [NSString stringWithFormat:@"%@ coders", city.numberOfCoders];
+  cell.coderNumberLabel.text = city.numberOfCoders;
   cell.rankLabel.text = city.rank;
   cell.accessoryType = UITableViewCellAccessoryNone;
   

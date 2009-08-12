@@ -72,7 +72,7 @@
   self.city.text = self.coder.city;
   self.railsRank.text = self.coder.railsrank;
   self.wwrRank.text = self.coder.rank;
-  self.railsRankingsPoints.text = self.coder.fullRank;
+  self.railsRankingsPoints.text = self.coder.formattedFullRank;
   self.githubWatchers.text = self.coder.githubWatchers;
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];

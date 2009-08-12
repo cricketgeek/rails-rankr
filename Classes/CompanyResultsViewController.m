@@ -12,7 +12,6 @@
 #import "Company.h"
 #import "CompanyCell.h"
 #import "Constants.h"
-#import "Pluralizer.h"
 
 @implementation CompanyResultsViewController
 
@@ -167,8 +166,7 @@
   cell.nameLabel.text = company.name;
   cell.rankLabel.text = company.rank;
   cell.railsRankPointsLabel.text = company.formattedPoints;
-  NSString* coderSuffix = [Pluralizer coderSuffix:company.numberOfCoders];
-  cell.coderNumberLabel.text = [NSString stringWithFormat:@"%@ %@", company.numberOfCoders, coderSuffix];
+  cell.coderNumberLabel.text = company.numberOfCoders;
 
   //CGSize image_size = {50.0f, 50.0f};
   //UIImage* profile_image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [NSString stringWithFormat:@"%@",coder.imagePath]]]];

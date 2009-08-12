@@ -7,7 +7,7 @@
 //
 
 #import "CoderGroup.h"
-
+#import "Pluralizer.h"
 
 @implementation CoderGroup
 
@@ -20,9 +20,11 @@
     self.points = [nfplain numberFromString:[dict objectForKey:@"total"]];
     NSNumberFormatter* nf = [[NSNumberFormatter alloc] init];
     [nf setNumberStyle:NSNumberFormatterBehavior10_4];
-    self.formattedPoints = [nf stringFromNumber:(NSNumber*)[dict objectForKey:@"total"]];    
-    self.name = [dict objectForKey:@"company_name"];
-    self.numberOfCoders = [dict objectForKey:@"count"];
+    self.formattedPoints = [nf stringFromNumber:self.points];    
+    self.name = [dict objectForKey:@"name"];
+    NSString* origingalCoderNumbers = [dict objectForKey:@"count"];
+    NSString* coderSuffix = [Pluralizer coderSuffix:origingalCoderNumbers];
+    self.numberOfCoders = [NSString stringWithFormat:@"%@ %@", origingalCoderNumbers, coderSuffix];
   }
   return self;
 }

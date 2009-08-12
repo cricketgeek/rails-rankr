@@ -53,7 +53,7 @@
 					<object class="IBUILabel" id="30654290">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 6}, {280, 36}}</string>
+						<string key="NSFrame">{{25, 6}, {241, 36}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -75,7 +75,7 @@
 					<object class="IBUILabel" id="134916075">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{230, 59}, {70, 21}}</string>
+						<string key="NSFrame">{{71, 59}, {78, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -97,7 +97,7 @@
 					<object class="IBUILabel" id="31927876">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{231, 45}, {86, 21}}</string>
+						<string key="NSFrame">{{180, 59}, {86, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -150,7 +150,7 @@
 					<object class="IBUILabel" id="7451268">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{70, 45}, {45, 21}}</string>
+						<string key="NSFrame">{{70, 43}, {45, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -172,7 +172,7 @@
 					<object class="IBUIImageView" id="229050813">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{201, 45}, {22, 21}}</string>
+						<string key="NSFrame">{{152, 59}, {22, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -286,12 +286,12 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="1043285060"/>
 							<reference ref="998891027"/>
-							<reference ref="411303742"/>
 							<reference ref="30654290"/>
 							<reference ref="7451268"/>
 							<reference ref="31927876"/>
 							<reference ref="229050813"/>
 							<reference ref="134916075"/>
+							<reference ref="411303742"/>
 						</object>
 						<reference key="parent" ref="317526666"/>
 					</object>
@@ -418,7 +418,7 @@
 					<string key="className">CompanyDetailViewController</string>
 					<string key="superclassName">BaseResultsViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">refreshData:</string>
+						<string key="NS.key.0">refreshData</string>
 						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">

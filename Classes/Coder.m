@@ -35,8 +35,8 @@ formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, availabl
     self.imagePath = [dict objectForKey:@"image_path"];
     NSNumberFormatter* nf = [[NSNumberFormatter alloc] init];
     [nf setNumberStyle:NSNumberFormatterBehavior10_4];
-    self.formattedFullRank = [nf stringFromNumber:(NSNumber*)[dict objectForKey:@"full_rank"]];
     self.fullRank = (NSNumber*)[dict objectForKey:@"full_rank"];
+    self.formattedFullRank = [nf stringFromNumber:self.fullRank];
     self.city = [dict objectForKey:@"city"];
     self.companyName = [dict objectForKey:@"company_name"];
     self.githubWatchers = [(NSNumber*)[dict objectForKey:@"github_watchers"] stringValue];

@@ -75,8 +75,7 @@
   self.companyTitle.text = self.company.name;
   self.totalPointsLabel.text = self.company.formattedPoints;
   self.rankLabel.text = self.company.rank;
-  NSString* coderSuffix = [Pluralizer coderSuffix:self.company.numberOfCoders];
-  self.numberOfCodersLabel.text = [NSString stringWithFormat:@"%@ %@",self.company.numberOfCoders,coderSuffix];
+  self.numberOfCodersLabel.text = self.company.numberOfCoders;
   
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
@@ -131,7 +130,7 @@
   NSLog(@"coder ranked at %@",coder.railsrank);
   cell.rankLabel.text = coder.railsrank;
   cell.cityLabel.text = coder.city;
-  cell.railsRankPointsLabel.text = coder.fullRank; 
+  cell.railsRankPointsLabel.text = coder.formattedFullRank; 
   [[cell.profileImage viewWithTag:57] removeFromSuperview];
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
