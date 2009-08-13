@@ -60,7 +60,7 @@
   Rails_RankrAppDelegate* delegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
   self.managedObjectContext = delegate.managedObjectContext;
   
-  UIBarButtonItem *addFavButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"heart.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(saveAsFavorite)]; 
+  UIBarButtonItem *addFavButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favs-white.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(saveAsFavorite)]; 
   self.navigationItem.rightBarButtonItem = addFavButton; 
 }
 
