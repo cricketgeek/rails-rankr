@@ -42,7 +42,8 @@
 
  // Optional UITabBarControllerDelegate method
  - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-   NSLog(@"in didSelectViewController");
+   NSLog(@"in didSelectViewController %@", [viewController class]);
+   //UIViewController* view = [(UINavigationController*)viewController v
    if([viewController isMemberOfClass:[CoderFavoritesViewController class]]) {
      
    }

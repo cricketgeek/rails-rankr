@@ -139,7 +139,7 @@
   NSLog(@"hitting: %@coders.json",HOST_SERVER);
   
 	request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders.json",HOST_SERVER]]] autorelease];
-	[request setTimeOutSeconds:15];
+	[request setTimeOutSeconds:20];
   [networkQueue addOperation:request];
   [networkQueue go];
 }

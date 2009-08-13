@@ -114,7 +114,6 @@
     }
   }
 
-  //TODO update badge on TabBarFavorites
   if(favsChanged > 0) {
     self.favoritesTabBarItem.badgeValue = [NSString stringWithFormat:@"%d",favsChanged];    
   }
