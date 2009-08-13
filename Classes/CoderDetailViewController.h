@@ -18,6 +18,7 @@
   UILabel* railsRankingsPoints;
   UILabel* railsRank;
   UILabel* city;
+  UILabel* lastUpdated;
   UITableView* detailTableView;
   UIButton* wwrProfileUrlButton;
   UIButton* githubProfileUrlButton;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) NSManagedObjectContext *addingManagedObjectContext;
 
 @property (nonatomic, retain) Coder *coder;
+@property (nonatomic, retain) IBOutlet UILabel *lastUpdated;
 @property (nonatomic, retain) IBOutlet UILabel *coderName;
 @property (nonatomic, retain) IBOutlet UILabel *wwrRank;
 @property (nonatomic, retain) IBOutlet UILabel *githubWatchers;

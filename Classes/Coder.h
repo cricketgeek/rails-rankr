@@ -5,7 +5,7 @@
 //  Created by Mark Jones on 2/6/09.
 //  Copyright 2009 Geordie Enterprises LLC. All rights reserved.
 //
-
+#import "Constants.h"
 
 @interface Coder : NSObject {
 	NSString	* coderId;

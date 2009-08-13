@@ -33,9 +33,9 @@
 
 - (void)grabCodersInTheBackground
 {
-  NSLog(@"Making a request to %@",[NSString stringWithFormat:@"%@coders.json?search=%@",HOST_SERVER,self.company.name]);
+  NSLog(@"Making a request to %@",[NSString stringWithFormat:@"%@coders/get_coders_by_company.json?company=%@",HOST_SERVER,self.company.name]);
 	
-  NSString *coderPath = [[NSString stringWithFormat:@"%@coders.json?search=%@",
+  NSString *coderPath = [[NSString stringWithFormat:@"%@coders/get_coders_by_company.json?company=%@",
                          HOST_SERVER,
                          self.company.name] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];  
   ASIHTTPRequestJSON *request;
@@ -76,7 +76,7 @@
   self.totalPointsLabel.text = self.company.formattedPoints;
   self.rankLabel.text = self.company.rank;
   self.numberOfCodersLabel.text = self.company.numberOfCoders;
-  
+  self.title = self.company.name;
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
