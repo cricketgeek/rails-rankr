@@ -33,6 +33,13 @@
   return self.coderSearchResults;      
 }
 
+-(void)clearSearchResults {
+  
+  [self.coderSearchResults release];
+  self.coderSearchResults = [[NSMutableArray alloc] initWithCapacity:10];
+  
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
   NSLog(@"I scrolled bitch! offset now %f height now %f", scrollView.contentOffset.y,scrollView.contentSize.height);
   if( (scrollView.contentOffset.y > (scrollView.contentSize.height - 320.0f)) && ([[self resultsForTableView:(UITableView*)scrollView] count] < 200)){
@@ -293,6 +300,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
   searchPageNumber = 1;
+  [self clearSearchResults];
   NSString *coderPath = [NSString stringWithFormat:@"%@coders.json?search=%@",
                          HOST_SERVER,
                          [self.lastSearchString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];  
@@ -325,6 +333,7 @@
 
 - (void)dealloc {
   [coders release];
+  [coderSearchResults release];
   [networkQueue release];
   [searchPredicate release];
   [super dealloc];
