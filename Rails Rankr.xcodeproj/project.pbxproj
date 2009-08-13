@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		064628371034817500EFDAFA /* SuccessFormula.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064628361034817500EFDAFA /* SuccessFormula.xib */; };
+		0646283A1034822900EFDAFA /* formula.png in Resources */ = {isa = PBXBuildFile; fileRef = 064628391034822900EFDAFA /* formula.png */; };
 		0663299F1030782900D3D668 /* rr_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0663299E1030782900D3D668 /* rr_icon.png */; };
 		06B103AC1030FDD400921A10 /* wwr_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B103A91030FDD400921A10 /* wwr_icon.png */; };
 		06B103AD1030FDD400921A10 /* profile_photobg.png in Resources */ = {isa = PBXBuildFile; fileRef = 06B103AA1030FDD400921A10 /* profile_photobg.png */; };
@@ -97,6 +99,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		064628361034817500EFDAFA /* SuccessFormula.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessFormula.xib; sourceTree = "<group>"; };
+		064628391034822900EFDAFA /* formula.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = formula.png; sourceTree = "<group>"; };
 		0663299E1030782900D3D668 /* rr_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rr_icon.png; sourceTree = "<group>"; };
 		06B103A91030FDD400921A10 /* wwr_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wwr_icon.png; sourceTree = "<group>"; };
 		06B103AA1030FDD400921A10 /* profile_photobg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_photobg.png; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				064628391034822900EFDAFA /* formula.png */,
 				F16D6FCB10341BB10042BFB4 /* cities-off.png */,
 				F16D6FCC10341BB10042BFB4 /* cities-on.png */,
 				F16D6FCD10341BB10042BFB4 /* company-off.png */,
@@ -369,6 +374,7 @@
 				F1A523B4102FB69500F72FE1 /* TwoLabelTableCell.xib */,
 				F1A523B6102FB6B800F72FE1 /* LabelAndLinkTableCell.xib */,
 				F1A524DD10308E5500F72FE1 /* CoderCoreModels.xcdatamodel */,
+				064628361034817500EFDAFA /* SuccessFormula.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -571,6 +577,8 @@
 				F16D6FDC10341BB10042BFB4 /* favs-off.png in Resources */,
 				F16D6FDD10341BB10042BFB4 /* favs-on.png in Resources */,
 				F16D6FDE10341BB10042BFB4 /* favs-white.png in Resources */,
+				064628371034817500EFDAFA /* SuccessFormula.xib in Resources */,
+				0646283A1034822900EFDAFA /* formula.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
