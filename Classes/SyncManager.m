@@ -12,7 +12,7 @@
 #import "Coder.h"
 #import "Rails_RankrAppDelegate.h"
 #import "CoderModelsConverter.h"
-#import "CoreCoder.h"
+
 
 @implementation SyncManager
 
@@ -48,6 +48,28 @@
   
 }
 
+-(BOOL)isFavorite:(NSString*)coderId {
+  BOOL found = NO;
+  for (CoreCoder* coder in [[self fetchedResultsController] fetchedObjects]) {
+    if([[coder coder_id] isEqualToString:coderId]){
+      found = YES;
+      break;
+    }
+  }
+  return found;
+}
+
+-(CoreCoder*)getFavorite:(NSString*)coderId {
+  CoreCoder* found;
+  for (CoreCoder* coder in [[self fetchedResultsController] fetchedObjects]) {
+    if([[coder coder_id] isEqualToString:coderId]){
+      found = coder;
+      break;
+    }
+  }
+  return found; 
+}
+
 #pragma mark -
 #pragma mark ASIHTTPRequestJSON methods
 
@@ -73,6 +95,8 @@
     
   }
 }
+
+
 
 - (void)requestDone:(ASIHTTPRequestJSON *)request
 {
@@ -127,6 +151,10 @@
   NSLog(@"error occurred %@",[error localizedDescription]);
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
+}
+
+-(void)resetBadges {
+  self.favoritesTabBarItem.badgeValue = nil;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {

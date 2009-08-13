@@ -10,7 +10,6 @@
 #import "TwoLabelTableCell.h"
 #import "UITableViewCell+CustomNib.h"
 #import "UIWebImageView.h"
-#import "Rails_RankrAppDelegate.h"
 #import "CoderModelsConverter.h"
 #import "CoreCoder.h"
 
@@ -48,16 +47,26 @@
   }
   else {
     //turn fav button into unfavorite
-    NSLog(@"saved favorite");
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    NSLog(@"saved favorite coder_id: %@",coreCoder.coder_id);
   }
   
+}
+
+-(void)setFavButtonState {
+  if([delegate.syncManager isFavorite:self.coder.coderId]) {
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
+  }
+  else {
+    [self.navigationItem.rightBarButtonItem setEnabled:YES];    
+  }
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self.detailTableView setBackgroundColor:[UIColor clearColor]];
-  Rails_RankrAppDelegate* delegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
+  delegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
   self.managedObjectContext = delegate.managedObjectContext;
   
   UIBarButtonItem *addFavButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favs-white.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(saveAsFavorite)]; 
@@ -74,6 +83,8 @@
   self.wwrRank.text = self.coder.rank;
   self.railsRankingsPoints.text = self.coder.formattedFullRank;
   self.githubWatchers.text = self.coder.githubWatchers;
+  
+  [self setFavButtonState];
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
   NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];

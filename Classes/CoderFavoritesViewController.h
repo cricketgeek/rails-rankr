@@ -12,6 +12,7 @@
 #import "ASIHTTPRequest+JSON.h"
 #import "ASINetworkQueue.h"
 #import "BaseResultsViewController.h"
+//#import "Rails_RankrAppDelegate.h"
 
 @interface CoderFavoritesViewController : BaseResultsViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
 	NSFetchedResultsController *fetchedResultsController;
@@ -22,7 +23,8 @@
   NSInteger pageNumber;
   ASINetworkQueue *networkQueue;
   UIProgressView *progressView;
-  UIApplication *app;    
+  UIApplication *app;
+//  Rails_RankrAppDelegate* delegate;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;

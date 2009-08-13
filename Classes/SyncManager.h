@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ASIHTTPRequest+JSON.h"
 #import "ASINetworkQueue.h"
-
+#import "CoreCoder.h"
 
 @interface SyncManager : NSObject <NSFetchedResultsControllerDelegate> {
 	NSFetchedResultsController *fetchedResultsController;
@@ -31,5 +31,8 @@
 
 -(void)syncFavorites:(UITabBarItem*)tabBarItemToUpdate;
 - (void)grabCodersInTheBackground;
+-(BOOL)isFavorite:(NSString*)coderId;
+-(CoreCoder*)getFavorite:(NSString*)coderId;
+-(void)resetBadges;
 
 @end

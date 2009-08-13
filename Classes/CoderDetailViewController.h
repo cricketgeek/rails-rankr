@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Coder.h"
+#import "Rails_RankrAppDelegate.h"
 
 @interface CoderDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
   Coder* coder;
@@ -21,7 +22,7 @@
   UIButton* wwrProfileUrlButton;
   UIButton* githubProfileUrlButton;
   UIButton* recommendWWRButton;
-  
+  Rails_RankrAppDelegate* delegate;
 	NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
   NSManagedObjectContext *addingManagedObjectContext;    

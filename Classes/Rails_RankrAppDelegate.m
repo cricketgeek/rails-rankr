@@ -6,7 +6,6 @@
 //
 
 #import "Rails_RankrAppDelegate.h"
-#import "SyncManager.h"
 
 @implementation Rails_RankrAppDelegate
 
@@ -14,11 +13,11 @@
 @synthesize tabBarController;
 @synthesize coderFavoritesViewController;
 @synthesize favoritesTabBarItem;
-
+@synthesize syncManager;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-  SyncManager* sync = [[SyncManager alloc] init];
-  [sync syncFavorites:favoritesTabBarItem];
+  self.syncManager = [[SyncManager alloc] init];
+  [self.syncManager syncFavorites:favoritesTabBarItem];
   // Add the tab bar controller's current view as a subview of the window
   [window addSubview:tabBarController.view];
   
@@ -38,6 +37,8 @@
     } 
   }
 }
+
+
 
 
  // Optional UITabBarControllerDelegate method

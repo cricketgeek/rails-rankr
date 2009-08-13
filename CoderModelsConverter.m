@@ -34,6 +34,7 @@
   coreCoder.githubUrl = coder.githubUrl;
   coreCoder.githubWatchers = coder.githubWatchers;
   coreCoder.railsRank = coder.railsrank;
+  coreCoder.city = coder.city;
   coreCoder.railsRankPoints = coder.fullRank;
   coreCoder.wwrRank = coder.rank;
   coreCoder.firstName = coder.firstName;

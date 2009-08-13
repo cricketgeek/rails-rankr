@@ -12,9 +12,9 @@
 #import "Constants.h"
 #import "CoderCell.h"
 #import "Coder.h"
-#import "Rails_RankrAppDelegate.h"
 #import "CoderModelsConverter.h"
 #import "CoreCoder.h"
+#import "Rails_RankrAppDelegate.h"
 
 @implementation CoderFavoritesViewController
 
@@ -124,11 +124,16 @@
  */
 
 -(void)viewWillAppear:(BOOL)animated {
-  
+  [[(Rails_RankrAppDelegate*)[app delegate] syncManager] resetBadges];
   NSError* error;
   if([[self fetchedResultsController] performFetch:&error]) {
-    NSLog(@"got results from core data");
-    [self grabCodersInTheBackground];
+    if([[self.fetchedResultsController sections] count] > 0){
+      NSLog(@"got results from core data");
+      [self grabCodersInTheBackground];      
+    } 
+    else {
+      NSLog(@"no favs to sync up");
+    }
   }
   else {
     NSLog(@"somefink went wrong Horace!");
@@ -151,7 +156,7 @@
   self.navigationItem.rightBarButtonItem = refreshButton;
   [self.resultsTable setRowHeight:62.0f];
   pageNumber = (int)1;  
-  Rails_RankrAppDelegate* delegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
+  Rails_RankrAppDelegate* delegate = (Rails_RankrAppDelegate*)[app delegate];
   self.managedObjectContext = delegate.managedObjectContext;
 }
 
@@ -165,6 +170,10 @@
 
 - (NSInteger)tableView:(UITableView *)atableView
  numberOfRowsInSection:(NSInteger)section {
+  if([[self.fetchedResultsController sections] count] == 0) {
+    return 0;
+  }
+  
 	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
   return [sectionInfo numberOfObjects];
 }
