@@ -15,6 +15,7 @@
   coder.fullName = coreCoder.fullName;
   coder.railsrank = coreCoder.railsRank;
   coder.fullRank = coreCoder.railsRankPoints;
+  coder.formattedFullRank = [coreCoder formattedRankPoints];
   coder.rank = coreCoder.wwrRank;
   coder.city = coreCoder.city;
   coder.wwrProfileUrl = coreCoder.wwrProfileUrl;
