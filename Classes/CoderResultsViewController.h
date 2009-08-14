@@ -34,6 +34,7 @@
   UIActionSheet *actionSheet;
   UIApplication *app;
   BOOL searching;
+  UIView* infoView;
 }
 
 @property (nonatomic, retain) NSMutableArray *coders;
@@ -43,6 +44,7 @@
 @property (nonatomic, readonly) NSArray *searchResults;
 @property (nonatomic, retain) NSString *lastSearchString;
 @property (retain) UIActionSheet *actionSheet;
+@property (nonatomic, retain) IBOutlet UIView *infoView;
 
 -(NSArray*)resultsForTableView:(UITableView*)table;
 -(void)getNextPageOfCoderData:(UITableView*)aTableView;
@@ -51,5 +53,7 @@
 -(void)incrementCurrentPageNumber:(UITableView*)aTableView;
 -(void)showProgressIndicator:(BOOL)fast andLength:(NSInteger)lengthOfTime;
 -(IBAction)refreshData;
+//-(IBAction)showInfoView;
+//-(IBAction)closeInfoView;
 
 @end

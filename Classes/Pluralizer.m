@@ -12,7 +12,7 @@
 @implementation Pluralizer
 
 +(NSString*)coderSuffix:(NSString*)stringCount {
-  NSNumberFormatter* nf = [[NSNumberFormatter alloc] init];
+  NSNumberFormatter* nf = [[[NSNumberFormatter alloc] init] autorelease];
   NSNumber* coderNumber = [nf numberFromString:stringCount];
   NSString* coderSuffix = [coderNumber intValue] > 1 ? @"coders" : @"coder";
   return coderSuffix;

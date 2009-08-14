@@ -7,6 +7,7 @@
 //
 
 #import "CityResultsViewController.h"
+#import "CityDetailViewController.h"
 #import "Constants.h"
 #import "City.h"
 #import "CompanyCell.h"
@@ -124,7 +125,7 @@
   cell.railsRankPointsLabel.text = city.formattedPoints; 
   cell.coderNumberLabel.text = city.numberOfCoders;
   cell.rankLabel.text = city.rank;
-  cell.accessoryType = UITableViewCellAccessoryNone;
+  cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
   
   //CGSize image_size = {50.0f, 50.0f};
   //UIImage* profile_image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [NSString stringWithFormat:@"%@",coder.imagePath]]]];
@@ -133,9 +134,22 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSLog(@"selected a city");
+  City* city = [data objectAtIndex:indexPath.row];
+  CityDetailViewController *cityDetailViewController = [[CityDetailViewController alloc] initWithNibName:@"CityDetailViewController" bundle:nil];
+  cityDetailViewController.city = city;
+  [self.navigationController pushViewController:cityDetailViewController animated:YES];
+  [cityDetailViewController release];
+  
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+  City* city = [data objectAtIndex:indexPath.row];
+  CityDetailViewController *cityDetailViewController = [[CityDetailViewController alloc] initWithNibName:@"CityDetailViewController" bundle:nil];
+  cityDetailViewController.city = city;
+  [self.navigationController pushViewController:cityDetailViewController animated:YES];
+  [cityDetailViewController release];
+  
+}
 
 
 

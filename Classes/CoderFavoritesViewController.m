@@ -69,7 +69,7 @@
     for (CoreCoder* coreCoder in [[self fetchedResultsController] fetchedObjects]) {
       if([coreCoder.coder_id isEqualToString:coder.coderId]) {
         NSLog(@"updated date: %@",coder.updatedAt);
-        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];//%a, %d %b %Y %H:%M:%S %Z"];
         NSDate* serverDate = [dateFormatter dateFromString:coder.updatedAt];
         if([coreCoder.updatedAt compare:serverDate] == NSOrderedAscending) {
@@ -202,7 +202,7 @@
   }
   else{
     NSString *url = [[NSString alloc] initWithString:coder.imagePath];
-    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,58,58) andUrl:url];
+    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,60,56) andUrl:url];
     webImage.tag = 57;
     [cell.profileImage addSubview:webImage];
   }

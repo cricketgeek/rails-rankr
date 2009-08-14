@@ -15,7 +15,7 @@
 
 @implementation CoderResultsViewController
 
-@synthesize resultsTableView, searchPredicate, coders, coderSearchResults, lastSearchString, actionSheet;
+@synthesize resultsTableView, infoView, searchPredicate, coders, coderSearchResults, lastSearchString, actionSheet;
 
 - (void)awakeFromNib
 {
@@ -29,6 +29,33 @@
   [self.resultsTableView reloadData];
 }
 
+//-(IBAction)showInfoView {
+//  NSLog(@"showing info view");
+//  
+//  [UIView beginAnimations:nil	context:NULL];
+//	[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:[self view] cache:YES];
+//	[UIView setAnimationDuration:1.0];
+//  
+//  UIView* baseImageView = [self.view viewWithTag:23];
+//  
+//  [[self view] bringSubviewToFront:infoView];
+//  [[self view] sendSubviewToBack:baseImageView];
+//  
+//  //[[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
+//	[UIView commitAnimations];
+//}
+//
+//-(IBAction)closeInfoView {
+//  NSLog(@"closing info view");
+//  
+//  [UIView beginAnimations:nil	context:NULL];
+//	[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:[self view] cache:YES];
+//	[UIView setAnimationDuration:1.0];
+//  [[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
+//	[UIView commitAnimations];
+//  
+//}
+
 -(NSArray*)searchResults {
   return self.coderSearchResults;      
 }
@@ -41,7 +68,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  NSLog(@"I scrolled bitch! offset now %f height now %f", scrollView.contentOffset.y,scrollView.contentSize.height);
+  //NSLog(@"I scrolled! offset now %f height now %f", scrollView.contentOffset.y,scrollView.contentSize.height);
   if( (scrollView.contentOffset.y > (scrollView.contentSize.height - 320.0f)) && ([[self resultsForTableView:(UITableView*)scrollView] count] < 200)){
     if(!gettingDataNow) {
       [self incrementCurrentPageNumber:(UITableView*)scrollView];
@@ -112,12 +139,9 @@
 
 -(void)getNextPageOfCoderData:(UITableView*)aTableView {
   gettingDataNow = YES;
-  
   app.networkActivityIndicatorVisible = YES;
-  
-  NSLog(@"getting more data");
   NSInteger pageNumberToUse = [self currentPageNumber:aTableView];
-  NSString* queryString = lastSearchString ? [NSString stringWithFormat:@"page=%d&search=%@",pageNumberToUse,lastSearchString] : [NSString stringWithFormat:@"page=%d",pageNumberToUse];  
+  NSString* queryString = searching ? [NSString stringWithFormat:@"page=%d&search=%@",pageNumberToUse,lastSearchString] : [NSString stringWithFormat:@"page=%d",pageNumberToUse];  
   NSString *coderPath = [NSString stringWithFormat:@"%@coders.json?%@",
                          HOST_SERVER,
                          queryString];
@@ -126,16 +150,6 @@
 	[networkQueue addOperation:request];
   [networkQueue go];
 }
-
-/*dd
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
- - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
- if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
- // Custom initialization
- }
- return self;
- }
- */
 
 #pragma mark -
 #pragma mark ASIHTTPRequestJSON methods
@@ -161,11 +175,10 @@
   }
   else {
     [self.coders addObjectsFromArray:[request getCoderCollection]];
+      [self.resultsTableView reloadData];
     NSLog(@"now we have %d coders",[self.coders count]);
   }
-  
-  
-  [self.resultsTableView reloadData];
+
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
 }
@@ -197,6 +210,10 @@
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                 target:self action:@selector(refreshData)];
   
+//  UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize 
+//                                                target:self action:@selector(showInfoView)];
+//  
+//  self.navigationItem.leftBarButtonItem = infoButton;
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTableView setRowHeight:64.0f];
   [self.searchDisplayController.searchResultsTableView setRowHeight:64.0f];

@@ -85,7 +85,7 @@ lastUpdated;
   self.wwrRank.text = self.coder.rank;
   self.railsRankingsPoints.text = self.coder.formattedFullRank;
   self.githubWatchers.text = self.coder.githubWatchers;
-  NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+  NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
   [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];//%a, %d %b %Y %H:%M:%S %Z"];
   NSDate* updatedDate = [dateFormatter dateFromString:coder.updatedAt];
   if(updatedDate == nil){

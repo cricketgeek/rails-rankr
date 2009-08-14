@@ -33,7 +33,7 @@
 @dynamic lastName;
 
 -(NSString*)formattedRankPoints {
-  NSNumberFormatter* nf = [[NSNumberFormatter alloc] init];
+  NSNumberFormatter* nf = [[[NSNumberFormatter alloc] init] autorelease];
   [nf setNumberStyle:NSNumberFormatterBehavior10_4];
   return [nf stringFromNumber:self.railsRankPoints];
   

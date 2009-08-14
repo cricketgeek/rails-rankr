@@ -34,7 +34,7 @@ formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, availabl
     self.railsrank = [railsrankNumber integerValue] < MAX_RANK ? [railsrankNumber stringValue] : @"Nil";
     self.rank = [(NSNumber*)[dict objectForKey:@"rank"] stringValue];
     self.imagePath = [dict objectForKey:@"image_path"];
-    NSNumberFormatter* nf = [[NSNumberFormatter alloc] init];
+    NSNumberFormatter* nf = [[[NSNumberFormatter alloc] init] autorelease];
     [nf setNumberStyle:NSNumberFormatterBehavior10_4];
     self.fullRank = (NSNumber*)[dict objectForKey:@"full_rank"];
     self.formattedFullRank = [nf stringFromNumber:self.fullRank];

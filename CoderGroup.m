@@ -16,9 +16,9 @@
 - (id)initWithDictionary:(NSDictionary*)dict {
   if((self = [super init])) {
     self.rank = [(NSNumber*)[dict objectForKey:@"railsrank"] stringValue];
-    NSNumberFormatter* nfplain = [[NSNumberFormatter alloc] init];
+    NSNumberFormatter* nfplain = [[[NSNumberFormatter alloc] init] autorelease];
     self.points = [nfplain numberFromString:[dict objectForKey:@"total"]];
-    NSNumberFormatter* nf = [[NSNumberFormatter alloc] init];
+    NSNumberFormatter* nf = [[[NSNumberFormatter alloc] init] autorelease];
     [nf setNumberStyle:NSNumberFormatterBehavior10_4];
     self.formattedPoints = [nf stringFromNumber:self.points];    
     self.name = [dict objectForKey:@"name"];

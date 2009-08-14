@@ -1,12 +1,12 @@
 //
-//  CompanyDetailViewController.m
+//  CityDetailViewController.m
 //  Rails Rankr
 //
-//  Created by Mark Jones on 8/5/09.
+//  Created by Mark Jones on 8/14/09.
 //  Copyright 2009 Geordie Enterprises LLC. All rights reserved.
 //
 
-#import "CompanyDetailViewController.h"
+#import "CityDetailViewController.h"
 #import "CoderDetailViewController.h"
 #import "Coder.h"
 #import "Company.h"
@@ -19,9 +19,9 @@
 #import "Constants.h"
 #import "Pluralizer.h"
 
-@implementation CompanyDetailViewController
+@implementation CityDetailViewController
 
-@synthesize company,companyTitle,numberOfCodersLabel,rankLabel,totalPointsLabel,resultsTable, data;
+@synthesize city,cityTitle,numberOfCodersLabel,rankLabel,totalPointsLabel,resultsTable, data;
 
 -(IBAction)refreshData {
   [self grabCodersInTheBackground];
@@ -33,11 +33,11 @@
 
 - (void)grabCodersInTheBackground
 {
-  NSLog(@"Making a request to %@",[NSString stringWithFormat:@"%@coders/get_coders_by_company.json?company=%@",HOST_SERVER,self.company.name]);
+  NSLog(@"Making a request to %@",[NSString stringWithFormat:@"%@coders/get_coders_by_city.json?city=%@",HOST_SERVER,self.city.name]);
 	
-  NSString *coderPath = [[NSString stringWithFormat:@"%@coders/get_coders_by_company.json?company=%@",
-                         HOST_SERVER,
-                         self.company.name] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];  
+  NSString *coderPath = [[NSString stringWithFormat:@"%@coders/get_coders_by_city.json?city=%@",
+                          HOST_SERVER,
+                          self.city.name] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];  
   ASIHTTPRequestJSON *request;
   request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:coderPath]] autorelease]; 
   
@@ -52,7 +52,6 @@
   NSMutableArray* coders = [request getCoderCollection];
   self.data = [[NSMutableArray alloc] initWithCapacity:[coders count]];
   [self.data addObjectsFromArray:coders];
-  NSLog(@"now we have %d",[self.data count]);
   [self.resultsTable reloadData];
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
@@ -72,11 +71,11 @@
   [super viewDidLoad];
   networkQueue = [[ASINetworkQueue alloc] init];
   app = [UIApplication sharedApplication];
-  self.companyTitle.text = self.company.name;
-  self.totalPointsLabel.text = self.company.formattedPoints;
-  self.rankLabel.text = self.company.rank;
-  self.numberOfCodersLabel.text = self.company.numberOfCoders;
-  self.title = self.company.name;
+  //self.cityTitle.text = self.city.name;
+  self.totalPointsLabel.text = self.city.formattedPoints;
+  self.rankLabel.text = self.city.rank;
+  self.numberOfCodersLabel.text = self.city.numberOfCoders;
+  self.title = self.city.name;
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
@@ -89,7 +88,7 @@
   
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTable setRowHeight:62.0f];
-
+  
   
 }
 
@@ -145,8 +144,8 @@
     webImage.tag = 57;
     [cell.profileImage addSubview:webImage];
   }
+  
   cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-
   return cell;
 }
 
@@ -154,8 +153,6 @@
   Coder* coder = [self.data objectAtIndex:indexPath.row];
   CoderDetailViewController *coderDetailViewController = [[CoderDetailViewController alloc] initWithNibName:@"CoderDetailViewController" bundle:nil];
   coderDetailViewController.coder = coder;
-  
-  //[self.parentViewController presentModalViewController:coderDetailViewController animated:YES];
   [self.navigationController pushViewController:coderDetailViewController animated:YES];
   [coderDetailViewController release];
 }
@@ -175,10 +172,11 @@
 
 
 - (void)dealloc {
-  [company release];
-  [data release];
+  [self.city release];
+  [self.data release];
   [super dealloc];
 }
+
 
 
 @end

@@ -15,6 +15,7 @@
   coder.fullName = coreCoder.fullName;
   coder.railsrank = coreCoder.railsRank;
   coder.fullRank = coreCoder.railsRankPoints;
+  coder.coderId = coreCoder.coder_id;
   coder.formattedFullRank = [coreCoder formattedRankPoints];
   coder.rank = coreCoder.wwrRank;
   coder.city = coreCoder.city;
@@ -29,7 +30,7 @@
   coder.firstName = coreCoder.firstName;
   coder.lastName = coreCoder.lastName;
   coder.website = coreCoder.webSite;
-  NSDateFormatter* df = [[NSDateFormatter alloc] init];
+  NSDateFormatter* df = [[[NSDateFormatter alloc] init] autorelease];
   [df setDateFormat:@"“yyyy-MM-dd HH:MM:SS z"];
   coder.updatedAt = [df stringFromDate:coreCoder.updatedAt];
 }
@@ -45,7 +46,9 @@
   coreCoder.wwrRank = coder.rank;
   coreCoder.firstName = coder.firstName;
   coreCoder.lastName = coder.lastName;
-  coreCoder.webSite = coder.website;
+  if([coder hasWebSite]) {
+    coreCoder.webSite = coder.website;    
+  }
   coreCoder.company = coder.companyName;
   coreCoder.imagePath = coder.imagePath;
   coreCoder.updatedAt = [NSDate date];

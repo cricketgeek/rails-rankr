@@ -27,6 +27,5 @@
 
 -(IBAction)refreshData;
 - (void)grabCodersInTheBackground;
--(NSInteger)currentPageNumber:(UITableView*)aTableView;
 
 @end
