@@ -23,10 +23,15 @@
   coder.githubUrl = coreCoder.githubUrl;
   coder.githubWatchers = coreCoder.githubWatchers;
   coder.imagePath = coreCoder.imagePath;
-  coder.available = (BOOL)coreCoder.availability;
+  if(coreCoder.availability) {
+    coder.available = [coreCoder.availability boolValue];    
+  }
   coder.firstName = coreCoder.firstName;
   coder.lastName = coreCoder.lastName;
   coder.website = coreCoder.webSite;
+  NSDateFormatter* df = [[NSDateFormatter alloc] init];
+  [df setDateFormat:@"“yyyy-MM-dd HH:MM:SS z"];
+  coder.updatedAt = [df stringFromDate:coreCoder.updatedAt];
 }
 
 +(void)coreCoderFromCoder:(CoreCoder*)coreCoder andCoder:(Coder*)coder{
@@ -44,6 +49,9 @@
   coreCoder.company = coder.companyName;
   coreCoder.imagePath = coder.imagePath;
   coreCoder.updatedAt = [NSDate date];
+  if(coder.available){
+    coreCoder.availability = [NSNumber numberWithBool:coder.available];    
+  }
   coreCoder.wwrProfileUrl = coder.wwrProfileUrl;
 }
 

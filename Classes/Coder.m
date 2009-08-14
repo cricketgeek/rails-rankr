@@ -43,9 +43,9 @@ formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, availabl
     self.githubWatchers = [(NSNumber*)[dict objectForKey:@"github_watchers"] stringValue];
     self.website = [dict objectForKey:@"website"];
     NSLog(@"is available? %@",[dict objectForKey:@"is_available_for_hire"]);
-    
-    
-    self.available = [(NSNumber*)[dict valueForKey:@"is_available_for_hire"] boolValue];
+    if([[dict valueForKey:@"is_available_for_hire"] isMemberOfClass:[NSNumber class]] ) {
+      self.available = [(NSNumber*)[dict valueForKey:@"is_available_for_hire"] boolValue];      
+    }
   }
   return self;
   

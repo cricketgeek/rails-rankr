@@ -88,6 +88,10 @@ lastUpdated;
   NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];//%a, %d %b %Y %H:%M:%S %Z"];
   NSDate* updatedDate = [dateFormatter dateFromString:coder.updatedAt];
+  if(updatedDate == nil){
+      [dateFormatter setDateFormat:@"“yyyy-MM-dd HH:MM:SS z"];
+      updatedDate = [dateFormatter dateFromString:coder.updatedAt];
+  }
   [dateFormatter setDateStyle:kCFDateFormatterShortStyle];
   self.lastUpdated.text = [NSString stringWithFormat:@"updated: %@", [dateFormatter stringFromDate:updatedDate]];
   [self setFavButtonState];
