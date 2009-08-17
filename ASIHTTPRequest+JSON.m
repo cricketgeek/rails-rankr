@@ -26,16 +26,20 @@
 	responseCollection	= [[NSMutableArray alloc] init];
   NSError* errorForJSON;
   NSMutableDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:[self responseData] error:&errorForJSON];
-  NSLog(@"dict is : %@", [dict class]);
-  NSLog(@"dict is : %@",dict);
-  NSLog(@"allkeys count: %d", [[dict allKeys] count]);
-  for (NSDictionary* object in [dict objectForKey:[[dict allKeys] objectAtIndex:0]]) {
-    NSDictionary* coderDict = (NSDictionary*)[object objectForKey:@"coder"];
-    Coder* new_coder = [[Coder alloc] initWithDictionary:coderDict];
-    NSLog(@"coder is %@",new_coder.fullName);
-    [responseCollection addObject:new_coder];
-    [new_coder release];
+  //NSLog(@"allkeys count: %d", [[dict allKeys] count]);
+  @try {
+    for (NSDictionary* object in [dict objectForKey:[[dict allKeys] objectAtIndex:0]]) {
+      NSDictionary* coderDict = (NSDictionary*)[object objectForKey:@"coder"];
+      Coder* new_coder = [[Coder alloc] initWithDictionary:coderDict];
+      //NSLog(@"coder is %@",new_coder.fullName);
+      [responseCollection addObject:new_coder];
+      [new_coder release];
+    }    
   }
+  @catch (NSException * e) {
+    NSLog(@"no dict retrieved in that call");
+  }
+
 	return responseCollection;
 }
 
@@ -44,13 +48,11 @@
 	responseCollection	= [[NSMutableArray alloc] init];
   NSError* errorForJSON;
   NSMutableDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:[self responseData] error:&errorForJSON];
-  NSLog(@"dict is : %@", [dict class]);
-  NSLog(@"dict is : %@",dict);
-  NSLog(@"allkeys count: %d", [[dict allKeys] count]);
+  //NSLog(@"allkeys count: %d", [[dict allKeys] count]);
   for (NSDictionary* object in [dict objectForKey:[[dict allKeys] objectAtIndex:0]]) {
     NSDictionary* coderDict = (NSDictionary*)[object objectForKey:@"coder"];
     Company* new_coder = [[Company alloc] initWithDictionary:coderDict];
-    NSLog(@"company is %@",new_coder.name);
+    //NSLog(@"company is %@",new_coder.name);
     [responseCollection addObject:new_coder];
     [new_coder release];
   }
@@ -61,13 +63,11 @@
 	responseCollection	= [[NSMutableArray alloc] init];
   NSError* errorForJSON;
   NSMutableDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:[self responseData] error:&errorForJSON];
-  NSLog(@"dict is : %@", [dict class]);
-  NSLog(@"dict is : %@",dict);
-  NSLog(@"allkeys count: %d", [[dict allKeys] count]);
+  //NSLog(@"allkeys count: %d", [[dict allKeys] count]);
   for (NSDictionary* object in [dict objectForKey:[[dict allKeys] objectAtIndex:0]]) {
     NSDictionary* coderDict = (NSDictionary*)[object objectForKey:@"coder"];
     City* new_city = [[City alloc] initWithDictionary:coderDict];
-    NSLog(@"city is %@",new_city.name);
+    //NSLog(@"city is %@",new_city.name);
     [responseCollection addObject:new_city];
     [new_city release];
   }

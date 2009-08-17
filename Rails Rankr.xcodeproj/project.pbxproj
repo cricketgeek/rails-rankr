@@ -20,6 +20,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		F12E90AD1035F5A200CE7987 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = F12E90AC1035F5A200CE7987 /* Entitlements.plist */; };
 		F12F441A10359F37006CD41A /* CityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F12F441810359F37006CD41A /* CityDetailViewController.m */; };
 		F12F441B10359F37006CD41A /* CityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F12F441910359F37006CD41A /* CityDetailViewController.xib */; };
 		F12F44251035A571006CD41A /* orangeback.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F44241035A571006CD41A /* orangeback.png */; };
@@ -29,7 +30,6 @@
 		F16140261030C3E4005DDC51 /* CoderFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F16140251030C3E4005DDC51 /* CoderFavoritesViewController.xib */; };
 		F16D6B341032EE1B0042BFB4 /* Pluralizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6B331032EE1B0042BFB4 /* Pluralizer.m */; };
 		F16D6B701032FF510042BFB4 /* CoderGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6B6F1032FF510042BFB4 /* CoderGroup.m */; };
-		F16D6B86103307DF0042BFB4 /* CoreCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6B85103307DF0042BFB4 /* CoreCoder.m */; };
 		F16D6BE1103309130042BFB4 /* CoderModelsConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6BE0103309130042BFB4 /* CoderModelsConverter.m */; };
 		F16D6DD810333DCC0042BFB4 /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F16D6DD710333DCC0042BFB4 /* SyncManager.m */; };
 		F16D6FD510341BB10042BFB4 /* cities-off.png in Resources */ = {isa = PBXBuildFile; fileRef = F16D6FCB10341BB10042BFB4 /* cities-off.png */; };
@@ -86,6 +86,7 @@
 		F1DEDFFA0F88562E00F567F2 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEDFF90F88562E00F567F2 /* FavoritesViewController.m */; };
 		F1DEE00B0F8856D300F567F2 /* Coder.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE00A0F8856D300F567F2 /* Coder.m */; };
 		F1DEE0B40F88626E00F567F2 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEE0B30F88626E00F567F2 /* Company.m */; };
+		F1E6219D1037008D00490571 /* CoreCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E6219C1037008D00490571 /* CoreCoder.m */; };
 		F1EDF4491029C3A100A6C475 /* CoderResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */; };
 		F1EDF44A1029C3A100A6C475 /* CoderResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EDF4481029C3A100A6C475 /* CoderResultsViewController.xib */; };
 		F1EDF44E1029C3AE00A6C475 /* CoderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EDF44C1029C3AE00A6C475 /* CoderDetailViewController.m */; };
@@ -121,6 +122,7 @@
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Rails_Rankr-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Rails_Rankr-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		F12E90AC1035F5A200CE7987 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		F12F441710359F37006CD41A /* CityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailViewController.h; sourceTree = "<group>"; };
 		F12F441810359F37006CD41A /* CityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailViewController.m; sourceTree = "<group>"; };
 		F12F441910359F37006CD41A /* CityDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityDetailViewController.xib; sourceTree = "<group>"; };
@@ -134,8 +136,6 @@
 		F16D6B331032EE1B0042BFB4 /* Pluralizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pluralizer.m; sourceTree = "<group>"; };
 		F16D6B6E1032FF510042BFB4 /* CoderGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderGroup.h; sourceTree = "<group>"; };
 		F16D6B6F1032FF510042BFB4 /* CoderGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderGroup.m; sourceTree = "<group>"; };
-		F16D6B84103307DF0042BFB4 /* CoreCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreCoder.h; path = Classes/CoreCoder.h; sourceTree = "<group>"; };
-		F16D6B85103307DF0042BFB4 /* CoreCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreCoder.m; path = Classes/CoreCoder.m; sourceTree = "<group>"; };
 		F16D6BDF103309130042BFB4 /* CoderModelsConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderModelsConverter.h; sourceTree = "<group>"; };
 		F16D6BE0103309130042BFB4 /* CoderModelsConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderModelsConverter.m; sourceTree = "<group>"; };
 		F16D6DD610333DCC0042BFB4 /* SyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncManager.h; sourceTree = "<group>"; };
@@ -222,6 +222,8 @@
 		F1DEE00A0F8856D300F567F2 /* Coder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coder.m; path = Classes/Coder.m; sourceTree = "<group>"; };
 		F1DEE0B20F88626E00F567F2 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Company.h; path = Classes/Company.h; sourceTree = "<group>"; };
 		F1DEE0B30F88626E00F567F2 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Company.m; path = Classes/Company.m; sourceTree = "<group>"; };
+		F1E6219B1037008D00490571 /* CoreCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreCoder.h; path = Classes/CoreCoder.h; sourceTree = "<group>"; };
+		F1E6219C1037008D00490571 /* CoreCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreCoder.m; path = Classes/CoreCoder.m; sourceTree = "<group>"; };
 		F1EDF4461029C3A100A6C475 /* CoderResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderResultsViewController.h; sourceTree = "<group>"; };
 		F1EDF4471029C3A100A6C475 /* CoderResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderResultsViewController.m; sourceTree = "<group>"; };
 		F1EDF4481029C3A100A6C475 /* CoderResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoderResultsViewController.xib; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				F181B4B4102B8A5900E06C6B /* Test-Info.plist */,
 				F181BC69102CCBC900E06C6B /* CFNetwork.framework */,
 				F181BC6B102CCBD000E06C6B /* libz.1.2.3.dylib */,
+				F12E90AC1035F5A200CE7987 /* Entitlements.plist */,
 			);
 			name = "Rails Rankr";
 			sourceTree = "<group>";
@@ -412,8 +415,8 @@
 		F16145821031B620005DDC51 /* CoreModels */ = {
 			isa = PBXGroup;
 			children = (
-				F16D6B84103307DF0042BFB4 /* CoreCoder.h */,
-				F16D6B85103307DF0042BFB4 /* CoreCoder.m */,
+				F1E6219B1037008D00490571 /* CoreCoder.h */,
+				F1E6219C1037008D00490571 /* CoreCoder.m */,
 			);
 			name = CoreModels;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				F12F441B10359F37006CD41A /* CityDetailViewController.xib in Resources */,
 				F12F44251035A571006CD41A /* orangeback.png in Resources */,
 				F12F45171035C46C006CD41A /* bluebackline.png in Resources */,
+				F12E90AD1035F5A200CE7987 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,11 +654,11 @@
 				F1A5258E1030ABE800F72FE1 /* City.m in Sources */,
 				F16D6B341032EE1B0042BFB4 /* Pluralizer.m in Sources */,
 				F16D6B701032FF510042BFB4 /* CoderGroup.m in Sources */,
-				F16D6B86103307DF0042BFB4 /* CoreCoder.m in Sources */,
 				F16D6BE1103309130042BFB4 /* CoderModelsConverter.m in Sources */,
 				F16D6DD810333DCC0042BFB4 /* SyncManager.m in Sources */,
 				F12F441A10359F37006CD41A /* CityDetailViewController.m in Sources */,
 				F12F44CF1035B887006CD41A /* InfoView.m in Sources */,
+				F1E6219D1037008D00490571 /* CoreCoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +669,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Christian Jones (8NKE9JCJS2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -673,7 +677,7 @@
 				GCC_PREFIX_HEADER = Rails_Rankr_Prefix.pch;
 				INFOPLIST_FILE = "Rails_Rankr-Info.plist";
 				PRODUCT_NAME = "Rails Rankr";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BEC1ACD0-570F-4B2E-8CFD-A3C9AE7AB1EA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
 			name = Debug;
 		};
@@ -681,11 +685,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Christian Jones (8NKE9JCJS2)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Rails_Rankr_Prefix.pch;
 				INFOPLIST_FILE = "Rails_Rankr-Info.plist";
 				PRODUCT_NAME = "Rails Rankr";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BEC1ACD0-570F-4B2E-8CFD-A3C9AE7AB1EA";
 			};
 			name = Release;
 		};
@@ -707,14 +713,44 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Christian Jones (8NKE9JCJS2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BEC1ACD0-570F-4B2E-8CFD-A3C9AE7AB1EA";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
+		};
+		F12E90871035F37B00CE7987 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Christian Jones (8NKE9JCJS2)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BEC1ACD0-570F-4B2E-8CFD-A3C9AE7AB1EA";
+				SDKROOT = iphoneos3.0;
+			};
+			name = Distribution;
+		};
+		F12E90881035F37B00CE7987 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Geordie Enterprises LLC";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Rails_Rankr_Prefix.pch;
+				INFOPLIST_FILE = "Rails_Rankr-Info.plist";
+				PRODUCT_NAME = "Rails Rankr";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "96909CB3-6919-403A-9FF2-C63E46C1D29D";
+			};
+			name = Distribution;
 		};
 /* End XCBuildConfiguration section */
 
@@ -724,6 +760,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				F12E90881035F37B00CE7987 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -733,6 +770,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				F12E90871035F37B00CE7987 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

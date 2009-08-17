@@ -8,7 +8,6 @@
 
 #import "CoderModelsConverter.h"
 
-
 @implementation CoderModelsConverter
 
 +(void)coderFromCoreCoder:(Coder*)coder andCoreCoder:(CoreCoder*)coreCoder{
@@ -38,7 +37,9 @@
 +(void)coreCoderFromCoder:(CoreCoder*)coreCoder andCoder:(Coder*)coder{
   coreCoder.fullName = coder.fullName;
   coreCoder.coder_id = coder.coderId;
-  coreCoder.githubUrl = coder.githubUrl;
+  if([coder.githubUrl isMemberOfClass:[NSString class]]){
+    coreCoder.githubUrl = coder.githubUrl;    
+  }
   coreCoder.githubWatchers = coder.githubWatchers;
   coreCoder.railsRank = coder.railsrank;
   coreCoder.city = coder.city;
@@ -49,7 +50,10 @@
   if([coder hasWebSite]) {
     coreCoder.webSite = coder.website;    
   }
-  coreCoder.company = coder.companyName;
+  if([coder.companyName isMemberOfClass:[NSString class]]) {
+    coreCoder.company = coder.companyName;    
+  }
+
   coreCoder.imagePath = coder.imagePath;
   coreCoder.updatedAt = [NSDate date];
   if(coder.available){

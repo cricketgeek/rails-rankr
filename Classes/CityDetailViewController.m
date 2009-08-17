@@ -24,8 +24,8 @@
 @synthesize city,cityTitle,numberOfCodersLabel,rankLabel,totalPointsLabel,resultsTable, data;
 
 -(IBAction)refreshData {
+  [self.data removeAllObjects];
   [self grabCodersInTheBackground];
-  [self.resultsTable reloadData];
 }
 
 #pragma mark -
@@ -47,11 +47,7 @@
 
 - (void)requestDone:(ASIHTTPRequestJSON *)request
 {
-  //TODO: check to see if the items are actually released with the array
-  [self.data release];
-  NSMutableArray* coders = [request getCoderCollection];
-  self.data = [[NSMutableArray alloc] initWithCapacity:[coders count]];
-  [self.data addObjectsFromArray:coders];
+  [self.data addObjectsFromArray:[request getCoderCollection]];
   [self.resultsTable reloadData];
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
@@ -87,7 +83,7 @@
                                                                                  target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton; 
-  [self.resultsTable setRowHeight:62.0f];
+  [self.resultsTable setRowHeight:64.0f];
   
   
 }
@@ -126,7 +122,7 @@
   
   Coder* coder = ((Coder *)[self.data objectAtIndex:indexPath.row]);
   cell.nameLabel.text = coder.fullName;
-  NSLog(@"coder ranked at %@",coder.railsrank);
+  //NSLog(@"coder ranked at %@",coder.railsrank);
   cell.rankLabel.text = coder.railsrank;
   cell.cityLabel.text = coder.city;
   cell.railsRankPointsLabel.text = coder.formattedFullRank; 
@@ -134,7 +130,7 @@
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
   NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
-  NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
+  //NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
   if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
     cell.profileImage.image = [UIImage imageNamed:@"profile_small.png"];
   }

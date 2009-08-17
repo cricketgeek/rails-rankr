@@ -91,7 +91,7 @@
 	
 	self.image			 = self.loadedImage;
 	[self.loader stopAnimating];
-	NSLog(@"image : %@",self.loadedImage);
+	//NSLog(@"image : %@",self.loadedImage);
 }
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
 //	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[error localizedDescription]

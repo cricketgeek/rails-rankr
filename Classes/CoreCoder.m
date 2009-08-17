@@ -2,7 +2,7 @@
 //  CoreCoder.m
 //  Rails Rankr
 //
-//  Created by Mark Jones on 8/12/09.
+//  Created by Mark Jones on 8/15/09.
 //  Copyright 2009 Geordie Enterprises LLC. All rights reserved.
 //
 
@@ -12,6 +12,7 @@
 @implementation CoreCoder 
 
 @dynamic lat;
+@dynamic hasUpdates;
 @dynamic firstName;
 @dynamic fullName;
 @dynamic githubUrl;

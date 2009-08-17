@@ -25,8 +25,8 @@
 
 -(IBAction)refreshData {
   pageNumber = (int)1;
+  [self.data removeAllObjects];
   [self grabCodersInTheBackground];
-  [self.resultsTable reloadData];
 }
 
 #pragma mark -
@@ -105,14 +105,14 @@
 	[networkQueue setDownloadProgressDelegate:progressView];
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
 	[networkQueue setDelegate:self];
-  self.data = [[NSMutableArray alloc] initWithCapacity:10];
+  self.data = [[NSMutableArray alloc] initWithCapacity:100];
   [self grabCodersInTheBackground];
   
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                                                  target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton; 
-  [self.resultsTable setRowHeight:62.0f];
+  [self.resultsTable setRowHeight:64.0f];
   pageNumber = (int)1;
   
 }

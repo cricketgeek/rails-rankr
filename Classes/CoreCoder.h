@@ -2,7 +2,7 @@
 //  CoreCoder.h
 //  Rails Rankr
 //
-//  Created by Mark Jones on 8/12/09.
+//  Created by Mark Jones on 8/15/09.
 //  Copyright 2009 Geordie Enterprises LLC. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 }
 
 @property (nonatomic, retain) NSNumber * lat;
+@property (nonatomic, retain) NSNumber * hasUpdates;
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSString * fullName;
 @property (nonatomic, retain) NSString * githubUrl;

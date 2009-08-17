@@ -25,8 +25,8 @@
 
 -(IBAction)refreshData {
   pageNumber = (int)1;
+  [self.coders removeAllObjects];
   [self grabCodersInTheBackground];
-  [self.resultsTableView reloadData];
 }
 
 //-(IBAction)showInfoView {
@@ -157,7 +157,7 @@
 - (void)grabCodersInTheBackground
 {
 	ASIHTTPRequestJSON *request;
-  NSLog(@"hitting: %@coders.json",HOST_SERVER);
+  //NSLog(@"hitting: %@coders.json",HOST_SERVER);
   
 	request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders.json",HOST_SERVER]]] autorelease];
 	[request setTimeOutSeconds:20];
@@ -169,16 +169,16 @@
 {
   if(searching) {
     [self.coderSearchResults addObjectsFromArray:[request getCoderCollection]];
-    NSLog(@"now we have %d coders from search",[self.coderSearchResults count]);
+    //NSLog(@"now we have %d coders from search",[self.coderSearchResults count]);
     newSearchResults = YES;
     [self.searchDisplayController.searchResultsTableView reloadData];
   }
   else {
     [self.coders addObjectsFromArray:[request getCoderCollection]];
-      [self.resultsTableView reloadData];
-    NSLog(@"now we have %d coders",[self.coders count]);
+    [self.resultsTableView reloadData];
+    //NSLog(@"now we have %d coders",[self.coders count]);
   }
-
+  
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
 }
@@ -206,14 +206,14 @@
   self.coderSearchResults = [[NSMutableArray alloc] initWithCapacity:10];
   pageNumber = (int)1;  
   [self grabCodersInTheBackground];
-    
-  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
-                                                target:self action:@selector(refreshData)];
   
-//  UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize 
-//                                                target:self action:@selector(showInfoView)];
-//  
-//  self.navigationItem.leftBarButtonItem = infoButton;
+  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+                                                                                 target:self action:@selector(refreshData)];
+  
+  //  UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize 
+  //                                                target:self action:@selector(showInfoView)];
+  //  
+  //  self.navigationItem.leftBarButtonItem = infoButton;
   self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTableView setRowHeight:64.0f];
   [self.searchDisplayController.searchResultsTableView setRowHeight:64.0f];
@@ -229,7 +229,9 @@
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
-  [super didReceiveMemoryWarning];	
+  [super didReceiveMemoryWarning];
+  [self.coders release];
+  [self.coderSearchResults release];
 	// Release any cached data, images, etc that aren't in use.
 }
 
@@ -262,15 +264,20 @@
   
   Coder* coder = ((Coder *)[[self resultsForTableView:atableView] objectAtIndex:indexPath.row]);
   cell.nameLabel.text = coder.fullName;
-  NSLog(@"coder ranked at %@",coder.railsrank);
+  //NSLog(@"coder ranked at %@",coder.railsrank);
   cell.rankLabel.text = coder.railsrank;
-  cell.cityLabel.text = coder.city;
+  if([coder.city isMemberOfClass:[NSString class]]) {
+    cell.cityLabel.text = coder.city;    
+  }
+  else {
+    cell.cityLabel.text = [NSString string];
+  }
   cell.railsRankPointsLabel.text = coder.formattedFullRank; //coder.fullRank; 
   [[cell.profileImage viewWithTag:57] removeFromSuperview];
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
   NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
-  NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
+  //NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
   if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
     cell.profileImage.image = [UIImage imageNamed:@"profile_small.png"];
   }
@@ -350,6 +357,7 @@
 
 - (void)dealloc {
   [coders release];
+  [lastSearchString release];
   [coderSearchResults release];
   [networkQueue release];
   [searchPredicate release];

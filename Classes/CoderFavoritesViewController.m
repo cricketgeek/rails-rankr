@@ -10,10 +10,8 @@
 #import "CoderDetailViewController.h"
 #import "UIWebImageView.h"
 #import "Constants.h"
-#import "CoderCell.h"
 #import "Coder.h"
 #import "CoderModelsConverter.h"
-#import "CoreCoder.h"
 #import "Rails_RankrAppDelegate.h"
 
 @implementation CoderFavoritesViewController
@@ -33,6 +31,18 @@
   [self.resultsTable reloadData];
 }
 
+- (void)configureCellColors:(CoreCoder*)coder andCell:(CoderCell*)cell {
+  
+  if([coder.hasUpdates boolValue]) {
+     cell.hasUpdatesLabel.text = @"has updates";
+  }
+  else {
+    
+    
+  }
+  
+}
+
 #pragma mark -
 #pragma mark ASIHTTPRequestJSON methods
 
@@ -48,9 +58,9 @@
     }
     
     NSString* coder_params = [localCoders componentsJoinedByString:@","];
-    NSLog(@"passing params as %@",[NSString stringWithFormat:@"%@coders/get_coders_by_ids.json?coders=%@",
-                                   HOST_SERVER,
-                                   coder_params]);
+//    NSLog(@"passing params as %@",[NSString stringWithFormat:@"%@coders/get_coders_by_ids.json?coders=%@",
+//                                   HOST_SERVER,
+//                                   coder_params]);
     request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders/get_coders_by_ids.json?coders=%@",
                                                                              HOST_SERVER,
                                                                              coder_params]]] autorelease];
@@ -68,7 +78,7 @@
   for (Coder* coder in self.data) {
     for (CoreCoder* coreCoder in [[self fetchedResultsController] fetchedObjects]) {
       if([coreCoder.coder_id isEqualToString:coder.coderId]) {
-        NSLog(@"updated date: %@",coder.updatedAt);
+        //NSLog(@"updated date: %@",coder.updatedAt);
         NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];//%a, %d %b %Y %H:%M:%S %Z"];
         NSDate* serverDate = [dateFormatter dateFromString:coder.updatedAt];
@@ -128,7 +138,7 @@
   NSError* error;
   if([[self fetchedResultsController] performFetch:&error]) {
     if([[self.fetchedResultsController sections] count] > 0){
-      NSLog(@"got results from core data");
+      //NSLog(@"got results from core data");
       [self grabCodersInTheBackground];      
     } 
     else {
@@ -154,7 +164,7 @@
                                                                                  target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton;
-  [self.resultsTable setRowHeight:62.0f];
+  [self.resultsTable setRowHeight:64.0f];
   pageNumber = (int)1;  
   Rails_RankrAppDelegate* delegate = (Rails_RankrAppDelegate*)[app delegate];
   self.managedObjectContext = delegate.managedObjectContext;
@@ -196,7 +206,7 @@
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
   NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
-  NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
+  //NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
   if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
     cell.profileImage.image = [UIImage imageNamed:@"profile_small.png"];
   }
@@ -206,12 +216,13 @@
     webImage.tag = 57;
     [cell.profileImage addSubview:webImage];
   }
+  [self configureCellColors:coder andCell:cell];
   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSLog(@"selected a fav coder");
+  //NSLog(@"selected a fav coder");
   CoreCoder* coreCoder = (CoreCoder *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
   Coder* coder = [[Coder alloc] init];
   [CoderModelsConverter coderFromCoreCoder:coder andCoreCoder:coreCoder];

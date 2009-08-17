@@ -12,11 +12,13 @@
 @interface CoderCell : UITableViewCell {
   UILabel* nameLabel;
   UILabel* rankLabel;
+  UILabel* hasUpdatesLabel;
   UILabel* railsRankPointsLabel;
   UILabel* cityLabel;
   UIImageView* profileImage;
 }
 
+@property (nonatomic, retain) IBOutlet UILabel* hasUpdatesLabel;
 @property(nonatomic, retain) IBOutlet  UILabel* nameLabel;
 @property(nonatomic, retain) IBOutlet UILabel* rankLabel;
 @property(nonatomic, retain) IBOutlet UILabel* cityLabel;

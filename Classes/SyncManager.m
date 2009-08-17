@@ -122,6 +122,7 @@
           coreCoder.availability = [[NSNumber alloc] initWithBool:coder.available];
           coreCoder.githubUrl = coder.githubUrl;
           coreCoder.githubWatchers = coder.githubWatchers;
+          coreCoder.hasUpdates = [[NSNumber alloc] initWithBool:YES];
           
           //we have a newer version on the server
           NSError *error;

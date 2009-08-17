@@ -13,6 +13,8 @@
 #import "ASINetworkQueue.h"
 #import "BaseResultsViewController.h"
 //#import "Rails_RankrAppDelegate.h"
+#import "CoreCoder.h"
+#import "CoderCell.h"
 
 @interface CoderFavoritesViewController : BaseResultsViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
 	NSFetchedResultsController *fetchedResultsController;
@@ -35,6 +37,6 @@
 
 - (void)grabCodersInTheBackground;
 -(IBAction)refreshData;
-
+- (void)configureCellColors:(CoreCoder*)coder andCell:(CoderCell*)cell;
 
 @end

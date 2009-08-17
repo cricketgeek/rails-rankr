@@ -23,8 +23,8 @@
 }
 
 -(IBAction)refreshData {
+  [self.data removeAllObjects];
   [self grabCodersInTheBackground];
-  [self.resultsTable reloadData];
 }
 
 #pragma mark -
@@ -41,7 +41,7 @@
 - (void)requestDone:(ASIHTTPRequestJSON *)request
 {
   [self.data addObjectsFromArray:[request getCityCollection]];
-  NSLog(@"now we have %d",[self.data count]);
+  //NSLog(@"now we have %d",[self.data count]);
   [self.resultsTable reloadData];
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
@@ -60,7 +60,7 @@
   
   app.networkActivityIndicatorVisible = YES;
   
-  NSLog(@"getting more data");
+  //NSLog(@"getting more data");
   NSString* queryString = [NSString stringWithFormat:@"page=%d",pageNumber];  
   NSString *coderPath = [NSString stringWithFormat:@"%@coders/all_cities.json?%@",
                          HOST_SERVER,
@@ -97,7 +97,7 @@
                                                                                  target:self action:@selector(refreshData)];
   
   self.navigationItem.rightBarButtonItem = refreshButton; 
-  [self.resultsTable setRowHeight:62.0f];
+  [self.resultsTable setRowHeight:64.0f];
   pageNumber = (int)1;  
 }
 

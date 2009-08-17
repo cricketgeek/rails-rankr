@@ -23,29 +23,36 @@ formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, availabl
 
 - (id)initWithDictionary:(NSDictionary*)dict {
   if((self = [super init])) {
-    self.coderId = [(NSNumber*)[dict objectForKey:@"id"] stringValue];
-    self.updatedAt = [dict objectForKey:@"updated_at"];
-    self.wwrProfileUrl = [dict objectForKey:@"profile_url"];
-    self.githubUrl = [dict objectForKey:@"github_url"];
-    self.firstName = [dict objectForKey:@"first_name"];
-    self.wholeName = [dict objectForKey:@"whole_name"];
-    self.lastName = [dict objectForKey:@"last_name"];
-    NSNumber* railsrankNumber = [dict objectForKey:@"railsrank"];
-    self.railsrank = [railsrankNumber integerValue] < MAX_RANK ? [railsrankNumber stringValue] : @"Nil";
-    self.rank = [(NSNumber*)[dict objectForKey:@"rank"] stringValue];
-    self.imagePath = [dict objectForKey:@"image_path"];
-    NSNumberFormatter* nf = [[[NSNumberFormatter alloc] init] autorelease];
-    [nf setNumberStyle:NSNumberFormatterBehavior10_4];
-    self.fullRank = (NSNumber*)[dict objectForKey:@"full_rank"];
-    self.formattedFullRank = [nf stringFromNumber:self.fullRank];
-    self.city = [dict objectForKey:@"city"];
-    self.companyName = [dict objectForKey:@"company_name"];
-    self.githubWatchers = [(NSNumber*)[dict objectForKey:@"github_watchers"] stringValue];
-    self.website = [dict objectForKey:@"website"];
-    NSLog(@"is available? %@",[dict objectForKey:@"is_available_for_hire"]);
-    if([[dict valueForKey:@"is_available_for_hire"] isMemberOfClass:[NSNumber class]] ) {
-      self.available = [(NSNumber*)[dict valueForKey:@"is_available_for_hire"] boolValue];      
+    @try {
+      self.coderId = [(NSNumber*)[dict objectForKey:@"id"] stringValue];
+      self.updatedAt = [dict objectForKey:@"updated_at"];
+      self.wwrProfileUrl = [dict objectForKey:@"profile_url"];
+      self.githubUrl = [dict objectForKey:@"github_url"];
+      self.firstName = [dict objectForKey:@"first_name"];
+      self.wholeName = [dict objectForKey:@"whole_name"];
+      self.lastName = [dict objectForKey:@"last_name"];
+      NSNumber* railsrankNumber = [dict objectForKey:@"railsrank"];
+      self.railsrank = [railsrankNumber integerValue] < MAX_RANK ? [railsrankNumber stringValue] : @"Nil";
+      self.rank = [(NSNumber*)[dict objectForKey:@"rank"] stringValue];
+      self.imagePath = [dict objectForKey:@"image_path"];
+      NSNumberFormatter* nf = [[[NSNumberFormatter alloc] init] autorelease];
+      [nf setNumberStyle:NSNumberFormatterBehavior10_4];
+      self.fullRank = (NSNumber*)[dict objectForKey:@"full_rank"];
+      self.formattedFullRank = [nf stringFromNumber:self.fullRank];
+      self.city = [dict objectForKey:@"city"];
+      self.companyName = [dict objectForKey:@"company_name"];
+      self.githubWatchers = [(NSNumber*)[dict objectForKey:@"github_watchers"] stringValue];
+      self.website = [dict objectForKey:@"website"];
+      //NSLog(@"is available? %@",[dict objectForKey:@"is_available_for_hire"]);
+      if([[dict valueForKey:@"is_available_for_hire"] isMemberOfClass:[NSNumber class]] ) {
+        self.available = [(NSNumber*)[dict valueForKey:@"is_available_for_hire"] boolValue];      
+      }
+      
     }
+    @catch (NSException * e) {
+      NSLog(@"what happened? %@",[e description]);
+    }
+
   }
   return self;
   
@@ -60,11 +67,6 @@ formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, availabl
 }
 
 -(NSString*)wwrRecommendUrl{
-  
-  /*http://www.workingwithrails.com/recommendation/new/person/6415-john-nunemaker
-  http://www.workingwithrails.com/person/6415-john-nunemaker
-  */
-  
   if([self.wwrProfileUrl isKindOfClass:[NSString class]]) {
     return [self.wwrProfileUrl stringByReplacingCharactersInRange:NSMakeRange(31,8) withString:@"/recommendation/new/person/"];    
   }

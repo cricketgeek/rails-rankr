@@ -11,7 +11,7 @@
 
 @implementation CoderCell
 
-@synthesize nameLabel, rankLabel, cityLabel, profileImage, railsRankPointsLabel;
+@synthesize nameLabel,hasUpdatesLabel, rankLabel, cityLabel, profileImage, railsRankPointsLabel;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
   if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
