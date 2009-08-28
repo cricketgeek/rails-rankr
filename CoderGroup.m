@@ -23,8 +23,7 @@
     self.formattedPoints = [nf stringFromNumber:self.points];    
     self.name = [dict objectForKey:@"name"];
     NSString* origingalCoderNumbers = [dict objectForKey:@"count"];
-    NSString* coderSuffix = [Pluralizer coderSuffix:origingalCoderNumbers];
-    self.numberOfCoders = [NSString stringWithFormat:@"%@ %@", origingalCoderNumbers, coderSuffix];
+    self.numberOfCoders = [NSString stringWithFormat:@"%@", origingalCoderNumbers];
   }
   return self;
 }

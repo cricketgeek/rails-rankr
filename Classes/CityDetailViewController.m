@@ -24,6 +24,7 @@
 @synthesize city,cityTitle,numberOfCodersLabel,rankLabel,totalPointsLabel,resultsTable, data;
 
 -(IBAction)refreshData {
+  [spinner startAnimating];  
   [self.data removeAllObjects];
   [self grabCodersInTheBackground];
 }
@@ -33,6 +34,8 @@
 
 - (void)grabCodersInTheBackground
 {
+  [self.view addSubview:spinner];
+  [spinner startAnimating]; 
   NSLog(@"Making a request to %@",[NSString stringWithFormat:@"%@coders/get_coders_by_city.json?city=%@",HOST_SERVER,self.city.name]);
 	
   NSString *coderPath = [[NSString stringWithFormat:@"%@coders/get_coders_by_city.json?city=%@",
@@ -50,6 +53,7 @@
   [self.data addObjectsFromArray:[request getCoderCollection]];
   [self.resultsTable reloadData];
   gettingDataNow = NO;
+  [spinner stopAnimating];
   app.networkActivityIndicatorVisible = NO;
 }
 
@@ -58,6 +62,7 @@
   NSError *error = [request error];
   NSLog(@"error occurred %@",[error localizedDescription]);
   gettingDataNow = NO;
+  [spinner stopAnimating];
   app.networkActivityIndicatorVisible = NO;
 }
 
@@ -70,7 +75,7 @@
   //self.cityTitle.text = self.city.name;
   self.totalPointsLabel.text = self.city.formattedPoints;
   self.rankLabel.text = self.city.rank;
-  self.numberOfCodersLabel.text = self.city.numberOfCoders;
+  self.numberOfCodersLabel.text = [NSString stringWithFormat:@"%@ %@",self.city.numberOfCoders,[Pluralizer coderSuffix:self.city.numberOfCoders]];
   self.title = self.city.name;
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];

@@ -6,28 +6,48 @@
 //
 
 #import "Rails_RankrAppDelegate.h"
+#import <sys/socket.h>
+#import <netinet/in.h>
+#import <netinet6/in6.h>
+#import <arpa/inet.h>
+#import <ifaddrs.h>
+#import <netdb.h>
+
+#import <CoreFoundation/CoreFoundation.h>
+#define kShouldPrintReachabilityFlags 1
 
 @implementation Rails_RankrAppDelegate
 
 @synthesize window;
 @synthesize tabBarController;
 @synthesize coderFavoritesViewController;
+@synthesize coderResultsViewController;
+@synthesize companyResultsViewController;
+@synthesize cityResultsViewController;
 @synthesize favoritesTabBarItem;
 @synthesize syncManager;
+@synthesize hostReach;
+
+-(BOOL)haveNetworkAccess {
+  
+  return ([hostReach currentReachabilityStatus]  != NotReachable);
+  
+}
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-  self.syncManager = [[SyncManager alloc] init];
-  [self.syncManager syncFavorites:favoritesTabBarItem];
+  [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
+
+  hostReach = [[Reachability reachabilityWithHostName: HOST_SERVER_CONNECT] retain];
+	[hostReach startNotifer];
+
   // Add the tab bar controller's current view as a subview of the window
   [window addSubview:tabBarController.view];
-  
 }
 
 /**
  applicationWillTerminate: saves changes in the application's managed object context before the application terminates.
  */
 - (void)applicationWillTerminate:(UIApplication *)application {
-	
   NSError *error;
   if (managedObjectContext != nil) {
     if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
@@ -39,6 +59,35 @@
 }
 
 
+//Called by Reachability whenever status changes.
+- (void) reachabilityChanged: (NSNotification* )note
+{
+	Reachability* curReach = [note object];
+	NSParameterAssert([curReach isKindOfClass: [Reachability class]]);
+  NetworkStatus netStatus = [curReach currentReachabilityStatus];
+
+  if(netStatus == NotReachable) {
+    UIAlertView* errorView = [[UIAlertView alloc] 
+                              initWithTitle: @"Network Error" 
+                              message: @"Network is down at the moment. Stiff upper lip mate, favorites tab will work until you get back to civilization."
+                              delegate: self 
+                              cancelButtonTitle: @"Close" otherButtonTitles: nil];
+    [errorView show];
+    [errorView autorelease];
+    [self.coderResultsViewController showNetworkUnavailableView];
+    [self.companyResultsViewController showNetworkUnavailableView];
+    [self.cityResultsViewController showNetworkUnavailableView];
+  }
+  else {
+    [self.coderResultsViewController hideNetworkUnavailableView];
+    [self.companyResultsViewController hideNetworkUnavailableView];
+    [self.cityResultsViewController hideNetworkUnavailableView];
+    [self.coderResultsViewController grabCodersInTheBackground];
+    self.syncManager = [[SyncManager alloc] init];
+    [self.syncManager syncFavorites:favoritesTabBarItem];
+  }
+
+}
 
 
  // Optional UITabBarControllerDelegate method
@@ -130,7 +179,7 @@
 
 
 - (void)dealloc {
-  
+  [hostReach release];
   [managedObjectContext release];
   [managedObjectModel release];
   [persistentStoreCoordinator release];  

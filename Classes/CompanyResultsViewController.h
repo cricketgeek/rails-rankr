@@ -10,15 +10,15 @@
 //#import "BaseResultsViewController.h"
 #import "UIImage+Resizing.h"
 #import "UITableViewCell+CustomNib.h"
+#import "BaseResultsViewController.h"
 
 @class ASINetworkQueue;
 
-@interface CompanyResultsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface CompanyResultsViewController : BaseResultsViewController <UITableViewDelegate, UITableViewDataSource> {
   UITableView* resultsTable;
   NSMutableArray* data;
   NSInteger pageNumber;
   NSInteger searchPageNumber;
-  BOOL gettingDataNow;
   ASINetworkQueue *networkQueue;
   UIProgressView *progressView;
   UIApplication *app;  

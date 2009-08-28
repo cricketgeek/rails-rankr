@@ -11,7 +11,7 @@
 #import "CoderCell.h"
 #import "UIImage+Resizing.h"
 #import "UITableViewCell+CustomNib.h"
-
+#import "Reachability.h"
 
 @class ASINetworkQueue;
 
@@ -35,6 +35,7 @@
   UIApplication *app;
   BOOL searching;
   UIView* infoView;
+  Reachability* hostReach;
 }
 
 @property (nonatomic, retain) NSMutableArray *coders;
@@ -48,11 +49,12 @@
 
 -(NSArray*)resultsForTableView:(UITableView*)table;
 -(void)getNextPageOfCoderData:(UITableView*)aTableView;
-- (void)grabCodersInTheBackground;
+-(void)grabCodersInTheBackground;
 -(NSInteger)currentPageNumber:(UITableView*)aTableView;
 -(void)incrementCurrentPageNumber:(UITableView*)aTableView;
 -(void)showProgressIndicator:(BOOL)fast andLength:(NSInteger)lengthOfTime;
 -(IBAction)refreshData;
+
 //-(IBAction)showInfoView;
 //-(IBAction)closeInfoView;
 

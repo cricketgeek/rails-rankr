@@ -13,6 +13,7 @@
 #import "UIWebImageView.h"
 #import "Constants.h"
 
+
 @implementation CoderResultsViewController
 
 @synthesize resultsTableView, infoView, searchPredicate, coders, coderSearchResults, lastSearchString, actionSheet;
@@ -138,6 +139,7 @@
 }
 
 -(void)getNextPageOfCoderData:(UITableView*)aTableView {
+    [spinner startAnimating];
   gettingDataNow = YES;
   app.networkActivityIndicatorVisible = YES;
   NSInteger pageNumberToUse = [self currentPageNumber:aTableView];
@@ -147,7 +149,7 @@
                          queryString];
  	ASIHTTPRequestJSON *request;
 	request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:coderPath]] autorelease];
-	[networkQueue addOperation:request];
+  [networkQueue addOperation:request];
   [networkQueue go];
 }
 
@@ -156,6 +158,8 @@
 
 - (void)grabCodersInTheBackground
 {
+  [self.view addSubview:spinner];
+  [spinner startAnimating];
 	ASIHTTPRequestJSON *request;
   //NSLog(@"hitting: %@coders.json",HOST_SERVER);
   
@@ -178,7 +182,7 @@
     [self.resultsTableView reloadData];
     //NSLog(@"now we have %d coders",[self.coders count]);
   }
-  
+  [spinner stopAnimating];
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
 }
@@ -205,16 +209,20 @@
   self.coders = [[NSMutableArray alloc] initWithCapacity:10];
   self.coderSearchResults = [[NSMutableArray alloc] initWithCapacity:10];
   pageNumber = (int)1;  
-  [self grabCodersInTheBackground];
-  
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                                                  target:self action:@selector(refreshData)];
+  
+  self.navigationItem.rightBarButtonItem = refreshButton; 
+  
+  Rails_RankrAppDelegate* appDelegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
+  if([appDelegate haveNetworkAccess]) {
+    [self grabCodersInTheBackground];    
+  }
   
   //  UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize 
   //                                                target:self action:@selector(showInfoView)];
   //  
   //  self.navigationItem.leftBarButtonItem = infoButton;
-  self.navigationItem.rightBarButtonItem = refreshButton; 
   [self.resultsTableView setRowHeight:64.0f];
   [self.searchDisplayController.searchResultsTableView setRowHeight:64.0f];
 }
@@ -274,6 +282,7 @@
   }
   cell.railsRankPointsLabel.text = coder.formattedFullRank; //coder.fullRank; 
   [[cell.profileImage viewWithTag:57] removeFromSuperview];
+
   
   NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
   NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
@@ -285,12 +294,9 @@
     NSString *url = [[NSString alloc] initWithString:coder.imagePath];
     UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,60,56) andUrl:url];
     webImage.tag = 57;
-    //CGSize image_size = {50.0f, 50.0f};
     [cell.profileImage addSubview:webImage];
-    //cell.profileImage.image = [UIImage imageOfSize:image_size fromImage:profile_image];
   }
   cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-  
   return cell;
 }
 

@@ -12,8 +12,12 @@
 #import "Company.h"
 #import "CompanyCell.h"
 #import "Constants.h"
+#import "Rails_RankrAppDelegate.h"
+#import "Pluralizer.h"
 
 @implementation CompanyResultsViewController
+
+#define MARGIN 15.0
 
 @synthesize resultsTable, data, lastSearchString;
 
@@ -34,6 +38,8 @@
 
 - (void)grabCodersInTheBackground
 {
+  [self.view addSubview:spinner];
+  [spinner startAnimating];
 	ASIHTTPRequestJSON *request;
 	request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders/all_companies.json",HOST_SERVER]]] autorelease];
 	[networkQueue addOperation:request];
@@ -46,6 +52,7 @@
   NSLog(@"now we have %d",[self.data count]);
   [self.resultsTable reloadData];
   gettingDataNow = NO;
+  [spinner stopAnimating];
   app.networkActivityIndicatorVisible = NO;
 }
 
@@ -54,6 +61,7 @@
   NSError *error = [request error];
   NSLog(@"error occurred %@",[error localizedDescription]);
   gettingDataNow = NO;
+  [spinner stopAnimating];  
   app.networkActivityIndicatorVisible = NO;
 }
 
@@ -72,7 +80,7 @@
 
 -(void)getNextPageOfData:(UITableView*)aTableView {
   gettingDataNow = YES;
-  
+  [spinner startAnimating];
   app.networkActivityIndicatorVisible = YES;
   
   NSLog(@"getting more data");
@@ -106,8 +114,11 @@
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
 	[networkQueue setDelegate:self];
   self.data = [[NSMutableArray alloc] initWithCapacity:100];
-  [self grabCodersInTheBackground];
   
+  Rails_RankrAppDelegate* appDelegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
+  if([appDelegate haveNetworkAccess]) {
+    [self grabCodersInTheBackground];
+  }
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                                                  target:self action:@selector(refreshData)];
   
@@ -163,8 +174,26 @@
   cell.nameLabel.text = company.name;
   cell.rankLabel.text = company.rank;
   cell.railsRankPointsLabel.text = company.formattedPoints;
-  cell.coderNumberLabel.text = company.numberOfCoders;
+  cell.coderNumberLabel.text = [NSString stringWithFormat:@"%@ %@",company.numberOfCoders,[Pluralizer coderSuffix:company.numberOfCoders]];
 
+  
+//  UIFont* font = [UIFont fontWithName:@"Helvetica" size:12];
+//  CGSize size = [company.numberOfCoders sizeWithFont:font];
+
+  
+//  UIImage *image = [UIImage imageNamed:@"CountButtonBlue.png"];
+//  UIButton* counterButton = (UIButton*)[cell viewWithTag:(int)77];
+//  counterButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+//  counterButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+//  // Make a stretchable image from the original image
+//  UIImage *stretchImage = [image stretchableImageWithLeftCapWidth:15.0 topCapHeight:0.0];
+//  // Set the background to the stretchable image
+//  [counterButton setBackgroundImage:stretchImage forState:UIControlStateNormal];
+//  // Make the background color clear
+//  counterButton.backgroundColor = [UIColor clearColor];
+//  [counterButton setFrame:CGRectMake([counterButton frame].origin.x - (5 + size.width) , [counterButton frame].origin.y + 2, size.width + MARGIN, size.height)];
+//  [counterButton setTitle:company.numberOfCoders forState:UIControlStateNormal];
+//  [counterButton setNeedsDisplay];
   //CGSize image_size = {50.0f, 50.0f};
   //UIImage* profile_image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [NSString stringWithFormat:@"%@",coder.imagePath]]]];
   //cell.profileImage.image = [UIImage imageOfSize:image_size fromImage:profile_image];

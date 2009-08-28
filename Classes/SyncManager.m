@@ -106,7 +106,7 @@
   for (Coder* coder in self.data) {
     for (CoreCoder* coreCoder in [[self fetchedResultsController] fetchedObjects]) {
       if([coreCoder.coder_id isEqualToString:coder.coderId]) {
-        NSLog(@"updated date: %@",coder.updatedAt);
+        NSLog(@"***********updated date: %@",coder.updatedAt);
         NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];//%a, %d %b %Y %H:%M:%S %Z"];
         NSDate* serverDate = [dateFormatter dateFromString:coder.updatedAt];
@@ -120,7 +120,12 @@
           coreCoder.city = coder.city;
           coreCoder.wwrProfileUrl = coder.wwrProfileUrl;
           coreCoder.availability = [[NSNumber alloc] initWithBool:coder.available];
-          coreCoder.githubUrl = coder.githubUrl;
+          if([coder.githubUrl isMemberOfClass:[NSString class]]) {
+            coreCoder.githubUrl = coder.githubUrl;            
+          }
+          else {
+            coreCoder.githubUrl = [NSString string];
+          }
           coreCoder.githubWatchers = coder.githubWatchers;
           coreCoder.hasUpdates = [[NSNumber alloc] initWithBool:YES];
           

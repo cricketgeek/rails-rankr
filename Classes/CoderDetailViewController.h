@@ -50,5 +50,6 @@
 -(IBAction)goToGithubProfile:(id)sender;
 -(IBAction)recommendOnWWR:(id)sender;
 -(IBAction)saveAsFavorite;
+-(void)findCoreCoderAndMarkUpdated;
 
 @end

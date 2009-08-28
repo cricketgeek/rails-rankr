@@ -12,7 +12,7 @@
 #import "UIWebImageView.h"
 #import "CoderModelsConverter.h"
 #import "CoreCoder.h"
-
+#import "NSManagedObjectContext+Finder.h"
 
 @implementation CoderDetailViewController
 
@@ -78,37 +78,72 @@ lastUpdated;
 
 -(void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  self.title = self.coder.fullName;
-  self.coderName.text = self.coder.fullName;
+  self.title = self.coder.wholeName;
+  self.coderName.text = self.coder.wholeName;
   self.city.text = self.coder.city;
   self.railsRank.text = self.coder.railsrank;
   self.wwrRank.text = self.coder.rank;
   self.railsRankingsPoints.text = self.coder.formattedFullRank;
   self.githubWatchers.text = self.coder.githubWatchers;
+  NSDate* updatedDate;
   NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
   [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];//%a, %d %b %Y %H:%M:%S %Z"];
-  NSDate* updatedDate = [dateFormatter dateFromString:coder.updatedAt];
-  if(updatedDate == nil){
+  if([self.coder.updatedAt isMemberOfClass:[NSString class]]) {
+    updatedDate = [dateFormatter dateFromString:self.coder.updatedAt];
+    if(updatedDate == nil){
       [dateFormatter setDateFormat:@"“yyyy-MM-dd HH:MM:SS z"];
-      updatedDate = [dateFormatter dateFromString:coder.updatedAt];
+      updatedDate = [dateFormatter dateFromString:self.coder.updatedAt];
+    }    
   }
+  else {
+    updatedDate = [NSDate date];
+  }
+
   [dateFormatter setDateStyle:kCFDateFormatterShortStyle];
   self.lastUpdated.text = [NSString stringWithFormat:@"updated: %@", [dateFormatter stringFromDate:updatedDate]];
   [self setFavButtonState];
   
-  NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
+  NSString* rawImagePath = [[NSString alloc] initWithString:self.coder.imagePath];
   NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
   NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
   if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
     NSLog(@"just using background here now");
   }
   else{
-    NSString *url = [[NSString alloc] initWithString:coder.imagePath];
+    NSString *url = [[NSString alloc] initWithString:self.coder.imagePath];
     UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(20,23,82,84) andUrl:url];
     webImage.tag = 57;
     [self.view addSubview:webImage];
   }
   
+  [self findCoreCoderAndMarkUpdated];
+  
+}
+
+-(void)findCoreCoderAndMarkUpdated {
+  NSLog(@"CoderId = %@",self.coder.coderId);
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"coder_id LIKE %@",self.coder.coderId];
+  NSSet* coreCoders = (NSSet*)[[self managedObjectContext] fetchObjectsForEntityName:@"CoreCoder" withPredicate:predicate];
+  
+  for (CoreCoder* coderInDB  in coreCoders) {
+    if(coderInDB.coder_id == self.coder.coderId) {
+      coderInDB.updatedAt = [NSDate date];
+      coderInDB.hasUpdates = [[NSNumber alloc] initWithBool:NO];
+      //we are now synced with data on the server
+      NSLog(@"found coreCoder %@ updatedAt: %@",coderInDB.fullName,coderInDB.updatedAt);
+      NSError *error;
+      if (![[self managedObjectContext] save:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        exit(-1);  // Fail
+      }
+      else {
+        //turn fav button into unfavorite
+        NSLog(@"saved favorite");
+      }
+      break;
+    }
+  }
+
 }
 
 #pragma mark Table view methods

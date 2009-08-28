@@ -24,6 +24,7 @@
 @synthesize company,companyTitle,numberOfCodersLabel,rankLabel,totalPointsLabel,resultsTable, data;
 
 -(IBAction)refreshData {
+  [spinner startAnimating];  
   [self.data removeAllObjects];
   [self grabCodersInTheBackground];
 }
@@ -33,6 +34,8 @@
 
 - (void)grabCodersInTheBackground
 {
+  [self.view addSubview:spinner];
+  [spinner startAnimating];   
   NSLog(@"Making a request to %@",[NSString stringWithFormat:@"%@coders/get_coders_by_company.json?company=%@",HOST_SERVER,self.company.name]);
 	
   NSString *coderPath = [[NSString stringWithFormat:@"%@coders/get_coders_by_company.json?company=%@",
@@ -50,6 +53,7 @@
   [self.data addObjectsFromArray:[request getCoderCollection]];
   //NSLog(@"now we have %d",[self.data count]);
   [self.resultsTable reloadData];
+  [spinner stopAnimating];
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
 }
@@ -59,6 +63,7 @@
   NSError *error = [request error];
   NSLog(@"error occurred %@",[error localizedDescription]);
   gettingDataNow = NO;
+  [spinner stopAnimating];
   app.networkActivityIndicatorVisible = NO;
 }
 
@@ -71,7 +76,7 @@
   self.companyTitle.text = self.company.name;
   self.totalPointsLabel.text = self.company.formattedPoints;
   self.rankLabel.text = self.company.rank;
-  self.numberOfCodersLabel.text = self.company.numberOfCoders;
+  self.numberOfCodersLabel.text = [NSString stringWithFormat:@"%@ %@",self.company.numberOfCoders,[Pluralizer coderSuffix:self.company.numberOfCoders]];
   self.title = self.company.name;
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];

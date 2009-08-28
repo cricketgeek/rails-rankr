@@ -11,6 +11,11 @@
 
 @interface BaseResultsViewController : UIViewController {
   BOOL gettingDataNow;
+  UIActivityIndicatorView* spinner;
 }
 
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
+
+-(void)hideNetworkUnavailableView;
+-(void)showNetworkUnavailableView;
 @end

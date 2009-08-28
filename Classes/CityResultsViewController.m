@@ -11,6 +11,8 @@
 #import "Constants.h"
 #import "City.h"
 #import "CompanyCell.h"
+#import "Rails_RankrAppDelegate.h"
+#import "Pluralizer.h"
 
 @implementation CityResultsViewController
 
@@ -32,6 +34,8 @@
 
 - (void)grabCodersInTheBackground
 {
+  [self.view addSubview:spinner];
+  [spinner startAnimating];
 	ASIHTTPRequestJSON *request;
 	request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders/all_cities.json",HOST_SERVER]]] autorelease];
 	[networkQueue addOperation:request];
@@ -44,6 +48,7 @@
   //NSLog(@"now we have %d",[self.data count]);
   [self.resultsTable reloadData];
   gettingDataNow = NO;
+  [spinner stopAnimating];
   app.networkActivityIndicatorVisible = NO;
 }
 
@@ -52,12 +57,13 @@
   NSError *error = [request error];
   NSLog(@"error occurred %@",[error localizedDescription]);
   gettingDataNow = NO;
+  [spinner stopAnimating];
   app.networkActivityIndicatorVisible = NO;
 }
 
 -(void)getNextPageOfData:(UITableView*)aTableView {
   gettingDataNow = YES;
-  
+  [spinner startAnimating];
   app.networkActivityIndicatorVisible = YES;
   
   //NSLog(@"getting more data");
@@ -91,8 +97,11 @@
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
 	[networkQueue setDelegate:self];
   self.data = [[NSMutableArray alloc] initWithCapacity:10];
-  [self grabCodersInTheBackground];
   
+  Rails_RankrAppDelegate* appDelegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
+  if([appDelegate haveNetworkAccess]) {
+    [self grabCodersInTheBackground];
+  }
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                                                  target:self action:@selector(refreshData)];
   
@@ -123,9 +132,10 @@
   City* city = ((City *)[self.data objectAtIndex:indexPath.row]);
   cell.nameLabel.text = city.name;
   cell.railsRankPointsLabel.text = city.formattedPoints; 
-  cell.coderNumberLabel.text = city.numberOfCoders;
+  cell.coderNumberLabel.text = [NSString stringWithFormat:@"%@ %@",city.numberOfCoders,[Pluralizer coderSuffix:city.numberOfCoders]];
+
   cell.rankLabel.text = city.rank;
-  cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   
   //CGSize image_size = {50.0f, 50.0f};
   //UIImage* profile_image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [NSString stringWithFormat:@"%@",coder.imagePath]]]];

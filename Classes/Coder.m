@@ -25,7 +25,16 @@ formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, availabl
   if((self = [super init])) {
     @try {
       self.coderId = [(NSNumber*)[dict objectForKey:@"id"] stringValue];
-      self.updatedAt = [dict objectForKey:@"updated_at"];
+      if([dict objectForKey:@"scraperUpdateDate"] != nil) {
+//        NSDateFormatter* df = [[NSDateFormatter alloc] init];
+//        [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+//        self.updatedAt = [df dateFromString:[dict objectForKey:@"scraperUpdateDate"]];
+        self.updatedAt = [dict objectForKey:@"scraperUpdateDate"];
+      }
+      else {
+        NSDateFormatter* df = [[NSDateFormatter alloc] init];
+        self.updatedAt = [NSString stringWithFormat:@"%@",[df stringFromDate:[NSDate date]]];
+      }
       self.wwrProfileUrl = [dict objectForKey:@"profile_url"];
       self.githubUrl = [dict objectForKey:@"github_url"];
       self.firstName = [dict objectForKey:@"first_name"];
@@ -83,6 +92,22 @@ formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, availabl
     return [[NSString alloc] initWithString:@"Quite busy, sorry"];
   }
 
+}
+
+- (BOOL)isEqual:(id)anObject {
+  if([anObject isMemberOfClass:[Coder class]]) {
+    Coder* otherCoder = (Coder*)anObject;
+    if(self.coderId == otherCoder.coderId) {
+      return YES;      
+    }
+    else {
+      return NO;      
+    }
+  }
+  else {
+    
+    return NO;
+  }  
 }
 
 @end

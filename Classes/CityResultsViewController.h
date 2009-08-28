@@ -11,12 +11,12 @@
 #import "UITableViewCell+CustomNib.h"
 #import "ASIHTTPRequest+JSON.h"
 #import "ASINetworkQueue.h"
+#import "BaseResultsViewController.h"
 
-@interface CityResultsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface CityResultsViewController : BaseResultsViewController <UITableViewDelegate, UITableViewDataSource>{
   UITableView* resultsTable;
   NSMutableArray* data;
   NSInteger pageNumber;
-  BOOL gettingDataNow;
   ASINetworkQueue *networkQueue;
   UIProgressView *progressView;
   UIApplication *app;    

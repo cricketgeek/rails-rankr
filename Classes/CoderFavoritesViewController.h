@@ -12,7 +12,6 @@
 #import "ASIHTTPRequest+JSON.h"
 #import "ASINetworkQueue.h"
 #import "BaseResultsViewController.h"
-//#import "Rails_RankrAppDelegate.h"
 #import "CoreCoder.h"
 #import "CoderCell.h"
 

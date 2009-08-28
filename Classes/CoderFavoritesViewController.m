@@ -14,6 +14,7 @@
 #import "CoderModelsConverter.h"
 #import "Rails_RankrAppDelegate.h"
 
+
 @implementation CoderFavoritesViewController
 
 @synthesize resultsTable, data;
@@ -37,7 +38,7 @@
      cell.hasUpdatesLabel.text = @"has updates";
   }
   else {
-    
+    cell.hasUpdatesLabel.text = @"";
     
   }
   
@@ -51,6 +52,8 @@
 	ASIHTTPRequestJSON *request;
   NSLog(@"hitting: %@coders.json",HOST_SERVER);
   NSArray* existingFavorites = [[self fetchedResultsController] fetchedObjects];
+  
+  
   if(existingFavorites) {
     NSMutableArray* localCoders = [[NSMutableArray alloc] initWithCapacity:10];
     for (CoreCoder* coder in existingFavorites) {
@@ -58,9 +61,7 @@
     }
     
     NSString* coder_params = [localCoders componentsJoinedByString:@","];
-//    NSLog(@"passing params as %@",[NSString stringWithFormat:@"%@coders/get_coders_by_ids.json?coders=%@",
-//                                   HOST_SERVER,
-//                                   coder_params]);
+
     request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders/get_coders_by_ids.json?coders=%@",
                                                                              HOST_SERVER,
                                                                              coder_params]]] autorelease];
@@ -137,12 +138,14 @@
   [[(Rails_RankrAppDelegate*)[app delegate] syncManager] resetBadges];
   NSError* error;
   if([[self fetchedResultsController] performFetch:&error]) {
-    if([[self.fetchedResultsController sections] count] > 0){
+    Rails_RankrAppDelegate* appDelegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
+
+    if(([appDelegate haveNetworkAccess]) && ([[self.fetchedResultsController sections] count] > 0)){
       //NSLog(@"got results from core data");
       [self grabCodersInTheBackground];      
     } 
     else {
-      NSLog(@"no favs to sync up");
+      NSLog(@"no favs to sync up or no network access");
     }
   }
   else {

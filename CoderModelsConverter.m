@@ -11,7 +11,7 @@
 @implementation CoderModelsConverter
 
 +(void)coderFromCoreCoder:(Coder*)coder andCoreCoder:(CoreCoder*)coreCoder{
-  coder.fullName = coreCoder.fullName;
+  coder.wholeName = coreCoder.fullName;
   coder.railsrank = coreCoder.railsRank;
   coder.fullRank = coreCoder.railsRankPoints;
   coder.coderId = coreCoder.coder_id;
@@ -30,12 +30,13 @@
   coder.lastName = coreCoder.lastName;
   coder.website = coreCoder.webSite;
   NSDateFormatter* df = [[[NSDateFormatter alloc] init] autorelease];
-  [df setDateFormat:@"“yyyy-MM-dd HH:MM:SS z"];
+  [df setDateFormat:@"yyyy-MM-dd HH:MM:SS z"];
   coder.updatedAt = [df stringFromDate:coreCoder.updatedAt];
 }
 
 +(void)coreCoderFromCoder:(CoreCoder*)coreCoder andCoder:(Coder*)coder{
-  coreCoder.fullName = coder.fullName;
+  NSLog(@"Coder converting is named %@",coder.wholeName);
+  coreCoder.fullName = coder.wholeName;
   coreCoder.coder_id = coder.coderId;
   if([coder.githubUrl isMemberOfClass:[NSString class]]){
     coreCoder.githubUrl = coder.githubUrl;    
