@@ -707,7 +707,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark Christian Jones (8NKE9JCJS2)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -715,7 +715,7 @@
 				GCC_PREFIX_HEADER = Rails_Rankr_Prefix.pch;
 				INFOPLIST_FILE = "Rails_Rankr-Info.plist";
 				PRODUCT_NAME = "Rails Rankr";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BEC1ACD0-570F-4B2E-8CFD-A3C9AE7AB1EA";
 			};
 			name = Debug;
 		};

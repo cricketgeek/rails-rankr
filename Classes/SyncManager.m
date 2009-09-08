@@ -83,16 +83,17 @@
       [localCoders addObject:coder.coder_id];
     }
     
-    NSString* coder_params = [localCoders componentsJoinedByString:@","];
-    NSLog(@"passing params as %@",[NSString stringWithFormat:@"%@coders/get_coders_by_ids.json?coders=%@",
-                                   HOST_SERVER,
-                                   coder_params]);
-    request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders/get_coders_by_ids.json?coders=%@",
-                                                                             HOST_SERVER,
-                                                                             coder_params]]] autorelease];
-    [networkQueue addOperation:request];
-    [networkQueue go];
-    
+    if ([localCoders count] > 0) {
+      NSString* coder_params = [localCoders componentsJoinedByString:@","];
+      NSLog(@"passing params as %@",[NSString stringWithFormat:@"%@coders/get_coders_by_ids.json?coders=%@",
+                                     HOST_SERVER,
+                                     coder_params]);
+      request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders/get_coders_by_ids.json?coders=%@",
+                                                                               HOST_SERVER,
+                                                                               coder_params]]] autorelease];
+      [networkQueue addOperation:request];
+      [networkQueue go];
+    }    
   }
 }
 

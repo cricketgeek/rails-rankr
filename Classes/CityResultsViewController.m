@@ -80,18 +80,18 @@
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
+ - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+ if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+ // Custom initialization
+ }
+ return self;
+ }
+ */
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
@@ -129,14 +129,18 @@
     cell = (CompanyCell*)[[UITableViewCell alloc] initWithNibName:[NSString stringWithFormat:@"CompanyCell"] reuseIdentifier:[NSString stringWithFormat:@"City"]];
   }
   
-  City* city = ((City *)[self.data objectAtIndex:indexPath.row]);
-  cell.nameLabel.text = city.name;
-  cell.railsRankPointsLabel.text = city.formattedPoints; 
-  cell.coderNumberLabel.text = [NSString stringWithFormat:@"%@ %@",city.numberOfCoders,[Pluralizer coderSuffix:city.numberOfCoders]];
-
-  cell.rankLabel.text = city.rank;
-  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-  
+  @try {
+    City* city = ((City *)[self.data objectAtIndex:indexPath.row]);
+    cell.nameLabel.text = city.name;
+    cell.railsRankPointsLabel.text = city.formattedPoints; 
+    cell.coderNumberLabel.text = [NSString stringWithFormat:@"%@ %@",city.numberOfCoders,[Pluralizer coderSuffix:city.numberOfCoders]];
+    
+    cell.rankLabel.text = city.rank;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+  }
+  @catch (NSException * e) {
+    NSLog(@"error creating company cell for cityresults controller %@",[e description]);
+  }  
   //CGSize image_size = {50.0f, 50.0f};
   //UIImage* profile_image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [NSString stringWithFormat:@"%@",coder.imagePath]]]];
   //cell.profileImage.image = [UIImage imageOfSize:image_size fromImage:profile_image];
@@ -164,16 +168,16 @@
 
 
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+  [super didReceiveMemoryWarning];
 	
 	// Release any cached data, images, etc that aren't in use.
 }
@@ -185,7 +189,7 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+  [super dealloc];
 }
 
 

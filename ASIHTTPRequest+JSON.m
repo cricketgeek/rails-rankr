@@ -27,7 +27,7 @@
   NSError* errorForJSON;
   NSMutableDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:[self responseData] error:&errorForJSON];
   //NSLog(@"allkeys count: %d", [[dict allKeys] count]);
-  //NSLog(@"what we got JSON-wise: %@",[self responseString]);
+  NSLog(@"what we got JSON-wise: %@",[self responseString]);
   @try {
     for (NSDictionary* object in [dict objectForKey:[[dict allKeys] objectAtIndex:0]]) {
       NSDictionary* coderDict = (NSDictionary*)[object objectForKey:@"coder"];

@@ -13,11 +13,11 @@
 formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, available, wwrProfileUrl, githubUrl, updatedAt;
 
 - (NSString *)fullName {
-  if([self.wholeName isKindOfClass:[NSString class]]) {
+  if(self.wholeName != nil) {
     return [NSString stringWithFormat:@"%@",self.wholeName];
   }
   else {
-    return [NSString stringWithFormat:@"%@ %@",firstName,lastName];    
+    return [NSString stringWithFormat:@"%@ %@",self.firstName,self.lastName];    
   }
 }
 
@@ -39,6 +39,7 @@ formattedFullRank, rank, railsrank, githubWatchers, imagePath, website, availabl
       self.githubUrl = [dict objectForKey:@"github_url"];
       self.firstName = [dict objectForKey:@"first_name"];
       self.wholeName = [dict objectForKey:@"whole_name"];
+      NSLog(@"coder wholeName: %@",self.wholeName);
       self.lastName = [dict objectForKey:@"last_name"];
       NSNumber* railsrankNumber = [dict objectForKey:@"railsrank"];
       self.railsrank = [railsrankNumber integerValue] < MAX_RANK ? [railsrankNumber stringValue] : @"Nil";

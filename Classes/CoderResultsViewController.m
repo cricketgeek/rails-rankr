@@ -180,7 +180,7 @@
   else {
     [self.coders addObjectsFromArray:[request getCoderCollection]];
     [self.resultsTableView reloadData];
-    //NSLog(@"now we have %d coders",[self.coders count]);
+    NSLog(@"now we have %d coders",[self.coders count]);
   }
   [spinner stopAnimating];
   gettingDataNow = NO;
@@ -202,7 +202,7 @@
   gettingDataNow = NO;
   newSearchResults = NO;
   
-  //[networkQueue cancelAllOperations];
+  [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
 	[networkQueue setDelegate:self];
@@ -212,7 +212,15 @@
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                                                  target:self action:@selector(refreshData)];
   
-  self.navigationItem.rightBarButtonItem = refreshButton; 
+  self.navigationItem.rightBarButtonItem = refreshButton;
+  
+  UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+  [infoButton addTarget:self action:@selector(toggleView) forControlEvents:UIControlEventTouchUpInside];
+  
+
+  UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+  [self.navigationItem setLeftBarButtonItem:modalButton animated:YES];
+  [modalButton release]; 
   
   Rails_RankrAppDelegate* appDelegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
   if([appDelegate haveNetworkAccess]) {
@@ -222,9 +230,15 @@
   //  UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize 
   //                                                target:self action:@selector(showInfoView)];
   //  
-  //  self.navigationItem.leftBarButtonItem = infoButton;
+  //self.navigationItem.leftBarButtonItem = infoButton;
   [self.resultsTableView setRowHeight:64.0f];
   [self.searchDisplayController.searchResultsTableView setRowHeight:64.0f];
+}
+
+-(void)toggleView {
+  
+  NSLog(@"flip it!");
+  
 }
 
 /*
@@ -270,33 +284,46 @@
     cell = (CoderCell*)[[UITableViewCell alloc] initWithNibName:[NSString stringWithFormat:@"CoderCell"] reuseIdentifier:[NSString stringWithFormat:@"Coder"]];
   }
   
-  Coder* coder = ((Coder *)[[self resultsForTableView:atableView] objectAtIndex:indexPath.row]);
-  cell.nameLabel.text = coder.fullName;
-  //NSLog(@"coder ranked at %@",coder.railsrank);
-  cell.rankLabel.text = coder.railsrank;
-  if([coder.city isMemberOfClass:[NSString class]]) {
-    cell.cityLabel.text = coder.city;    
+  @try {
+    Coder* coder = ((Coder *)[[self resultsForTableView:atableView] objectAtIndex:indexPath.row]);
+    
+    if(coder != nil) {
+      
+      cell.nameLabel.text = coder.wholeName;
+      NSLog(@"coder %@ ranked at %@ from %@",coder.wholeName,coder.railsrank, coder.city);
+      cell.rankLabel.text = coder.railsrank;
+      if(coder.city != nil) {
+        cell.cityLabel.text = coder.city;    
+      }
+      else {
+        cell.cityLabel.text = [NSString string];
+      }
+      cell.railsRankPointsLabel.text = coder.formattedFullRank; //coder.fullRank; 
+      [[cell.profileImage viewWithTag:57] removeFromSuperview];
+      
+      if(coder.imagePath != nil) {
+        NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
+        NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
+        //NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
+        if( rawImagePath != nil && [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
+          cell.profileImage.image = [UIImage imageNamed:@"profile_small.png"];
+        }
+        else{
+          NSString *url = [[NSString alloc] initWithString:coder.imagePath];
+          UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,60,56) andUrl:url];
+          webImage.tag = 57;
+          [cell.profileImage addSubview:webImage];
+        }
+        
+      }
+      cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+      
+    }
+    
   }
-  else {
-    cell.cityLabel.text = [NSString string];
+  @catch (NSException * e) {
+    NSLog(@"error building cell %@",[e description]);
   }
-  cell.railsRankPointsLabel.text = coder.formattedFullRank; //coder.fullRank; 
-  [[cell.profileImage viewWithTag:57] removeFromSuperview];
-
-  
-  NSString* rawImagePath = [[NSString alloc] initWithString:coder.imagePath];
-  NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
-  //NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
-  if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
-    cell.profileImage.image = [UIImage imageNamed:@"profile_small.png"];
-  }
-  else{
-    NSString *url = [[NSString alloc] initWithString:coder.imagePath];
-    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(0,0,60,56) andUrl:url];
-    webImage.tag = 57;
-    [cell.profileImage addSubview:webImage];
-  }
-  cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
   return cell;
 }
 

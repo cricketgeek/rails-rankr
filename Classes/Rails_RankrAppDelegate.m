@@ -29,9 +29,7 @@
 @synthesize hostReach;
 
 -(BOOL)haveNetworkAccess {
-  
   return ([hostReach currentReachabilityStatus]  != NotReachable);
-  
 }
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {

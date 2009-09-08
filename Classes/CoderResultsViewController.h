@@ -54,6 +54,7 @@
 -(void)incrementCurrentPageNumber:(UITableView*)aTableView;
 -(void)showProgressIndicator:(BOOL)fast andLength:(NSInteger)lengthOfTime;
 -(IBAction)refreshData;
+-(void)toggleView;
 
 //-(IBAction)showInfoView;
 //-(IBAction)closeInfoView;

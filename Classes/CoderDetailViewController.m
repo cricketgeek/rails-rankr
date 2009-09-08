@@ -78,45 +78,52 @@ lastUpdated;
 
 -(void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  self.title = self.coder.wholeName;
-  self.coderName.text = self.coder.wholeName;
-  self.city.text = self.coder.city;
-  self.railsRank.text = self.coder.railsrank;
-  self.wwrRank.text = self.coder.rank;
-  self.railsRankingsPoints.text = self.coder.formattedFullRank;
-  self.githubWatchers.text = self.coder.githubWatchers;
-  NSDate* updatedDate;
-  NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-  [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];//%a, %d %b %Y %H:%M:%S %Z"];
-  if([self.coder.updatedAt isMemberOfClass:[NSString class]]) {
-    updatedDate = [dateFormatter dateFromString:self.coder.updatedAt];
-    if(updatedDate == nil){
-      [dateFormatter setDateFormat:@"“yyyy-MM-dd HH:MM:SS z"];
+  if(self.coder != nil) {
+    self.title = self.coder.wholeName;
+    self.coderName.text = self.coder.wholeName;
+    self.city.text = self.coder.city;
+    self.railsRank.text = self.coder.railsrank;
+    self.wwrRank.text = self.coder.rank;
+    self.railsRankingsPoints.text = self.coder.formattedFullRank;
+    self.githubWatchers.text = self.coder.githubWatchers;
+    NSDate* updatedDate;
+    NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];//%a, %d %b %Y %H:%M:%S %Z"];
+    if([self.coder.updatedAt isMemberOfClass:[NSString class]]) {
       updatedDate = [dateFormatter dateFromString:self.coder.updatedAt];
-    }    
+      if(updatedDate == nil){
+        [dateFormatter setDateFormat:@"“yyyy-MM-dd HH:MM:SS z"];
+        updatedDate = [dateFormatter dateFromString:self.coder.updatedAt];
+      }    
+    }
+    else {
+      updatedDate = [NSDate date];
+    }
+    
+    [dateFormatter setDateStyle:kCFDateFormatterShortStyle];
+    self.lastUpdated.text = [NSString stringWithFormat:@"updated: %@", [dateFormatter stringFromDate:updatedDate]];
+    [self setFavButtonState];
+    
+    NSString* rawImagePath = [[NSString alloc] initWithString:self.coder.imagePath];
+    NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
+    NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
+    if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
+      NSLog(@"just using background here now");
+    }
+    else{
+      NSString *url = [[NSString alloc] initWithString:self.coder.imagePath];
+      UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(20,23,82,84) andUrl:url];
+      webImage.tag = 57;
+      [self.view addSubview:webImage];
+    }
+    
+    [self findCoreCoderAndMarkUpdated];    
   }
   else {
-    updatedDate = [NSDate date];
+    self.title = @"No Coder Found";
+    self.coderName.text = @"No Coder Found";
   }
 
-  [dateFormatter setDateStyle:kCFDateFormatterShortStyle];
-  self.lastUpdated.text = [NSString stringWithFormat:@"updated: %@", [dateFormatter stringFromDate:updatedDate]];
-  [self setFavButtonState];
-  
-  NSString* rawImagePath = [[NSString alloc] initWithString:self.coder.imagePath];
-  NSString* defaultImage = [[NSString alloc] initWithString:@"/images/profile.png"];
-  NSLog(@"matcher string %@",[rawImagePath substringToIndex:19]);
-  if( [[rawImagePath substringToIndex:19] isEqualToString:defaultImage]) {
-    NSLog(@"just using background here now");
-  }
-  else{
-    NSString *url = [[NSString alloc] initWithString:self.coder.imagePath];
-    UIWebImageView *webImage = [[UIWebImageView alloc] initWithFrame:CGRectMake(20,23,82,84) andUrl:url];
-    webImage.tag = 57;
-    [self.view addSubview:webImage];
-  }
-  
-  [self findCoreCoderAndMarkUpdated];
   
 }
 
