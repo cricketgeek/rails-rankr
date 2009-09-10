@@ -201,7 +201,7 @@
   progressBarDisplayed = NO;
   gettingDataNow = NO;
   newSearchResults = NO;
-  
+  mainViewFlipped = NO;
   [networkQueue cancelAllOperations];
 	[networkQueue setDownloadProgressDelegate:progressView];
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
@@ -211,6 +211,12 @@
   pageNumber = (int)1;  
   UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                                                  target:self action:@selector(refreshData)];
+  NSArray* views = [[NSBundle mainBundle] loadNibNamed:@"SuccessFormula" owner:self options:nil];
+  UIView* successFormulaView = [views objectAtIndex:0];
+  successFormulaView.tag = 55;
+  
+  UIImageView* backgroundView = (UIImageView*)[self.view viewWithTag:23];
+  [self.view insertSubview:successFormulaView belowSubview:backgroundView];
   
   self.navigationItem.rightBarButtonItem = refreshButton;
   
@@ -227,10 +233,7 @@
     [self grabCodersInTheBackground];    
   }
   
-  //  UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize 
-  //                                                target:self action:@selector(showInfoView)];
-  //  
-  //self.navigationItem.leftBarButtonItem = infoButton;
+  
   [self.resultsTableView setRowHeight:64.0f];
   [self.searchDisplayController.searchResultsTableView setRowHeight:64.0f];
 }
@@ -238,6 +241,27 @@
 -(void)toggleView {
   
   NSLog(@"flip it!");
+  [UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:1];
+  
+  UIViewAnimationTransition direction;
+  
+  if(mainViewFlipped) {
+    direction = UIViewAnimationTransitionFlipFromLeft;
+    mainViewFlipped = NO;
+  }
+  else {
+    direction = UIViewAnimationTransitionFlipFromRight;
+    mainViewFlipped = YES;
+  }
+ // 
+//  NSLog(@"view at pos 1 is %@",[[[self.view subviews] objectAtIndex:1] tag]);
+//  NSLog(@"view at pos 2 is %@",[[[self.view subviews] objectAtIndex:2] tag]);
+//
+//  
+  [self.view exchangeSubviewAtIndex:1 withSubviewAtIndex:4];
+  [UIView setAnimationTransition:direction forView:self.view cache:YES];
+  [UIView commitAnimations];
   
 }
 

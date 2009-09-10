@@ -36,6 +36,7 @@
   BOOL searching;
   UIView* infoView;
   Reachability* hostReach;
+  BOOL mainViewFlipped;
 }
 
 @property (nonatomic, retain) NSMutableArray *coders;

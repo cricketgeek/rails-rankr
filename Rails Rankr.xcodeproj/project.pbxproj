@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		F12F44251035A571006CD41A /* orangeback.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F44241035A571006CD41A /* orangeback.png */; };
 		F12F44CF1035B887006CD41A /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F12F44CE1035B887006CD41A /* InfoView.m */; };
 		F12F45171035C46C006CD41A /* bluebackline.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F45161035C46C006CD41A /* bluebackline.png */; };
+		F14252471057EF9A00A3108D /* formula_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = F14252461057EF9A00A3108D /* formula_portrait.png */; };
 		F1613F731030BE32005DDC51 /* CityResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1613F721030BE32005DDC51 /* CityResultsViewController.xib */; };
 		F16140261030C3E4005DDC51 /* CoderFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F16140251030C3E4005DDC51 /* CoderFavoritesViewController.xib */; };
 		F1682AA41042F55C00AA4EEB /* NSManagedObjectContext+Finder.m in Sources */ = {isa = PBXBuildFile; fileRef = F1682AA31042F55C00AA4EEB /* NSManagedObjectContext+Finder.m */; };
@@ -141,6 +142,7 @@
 		F12F44CD1035B887006CD41A /* InfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoView.h; sourceTree = "<group>"; };
 		F12F44CE1035B887006CD41A /* InfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoView.m; sourceTree = "<group>"; };
 		F12F45161035C46C006CD41A /* bluebackline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluebackline.png; sourceTree = "<group>"; };
+		F14252461057EF9A00A3108D /* formula_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = formula_portrait.png; sourceTree = "<group>"; };
 		F1613F721030BE32005DDC51 /* CityResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityResultsViewController.xib; sourceTree = "<group>"; };
 		F16140251030C3E4005DDC51 /* CoderFavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoderFavoritesViewController.xib; sourceTree = "<group>"; };
 		F1682AA21042F55C00AA4EEB /* NSManagedObjectContext+Finder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Finder.h"; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F14252461057EF9A00A3108D /* formula_portrait.png */,
 				F1682DBA10432A8400AA4EEB /* networkNotAvailable.png */,
 				F1E623C51039F5A000490571 /* CountButtonBlue.png */,
 				06804A76103714CD0086680C /* activity_base.png */,
@@ -575,7 +578,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Rails Rankr" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Rails Rankr */;
 			projectDirPath = "";
@@ -641,6 +644,7 @@
 				F1E623C61039F5A000490571 /* CountButtonBlue.png in Resources */,
 				F1682BFE10430BC300AA4EEB /* NoNetworkAccessView.xib in Resources */,
 				F1682DBB10432A8400AA4EEB /* networkNotAvailable.png in Resources */,
+				F14252471057EF9A00A3108D /* formula_portrait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
