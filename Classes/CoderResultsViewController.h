@@ -37,6 +37,8 @@
   UIView* infoView;
   Reachability* hostReach;
   BOOL mainViewFlipped;
+  UIBarButtonItem *doneBarButtonItem;
+  UIBarButtonItem *infoBarButtonItem;
 }
 
 @property (nonatomic, retain) NSMutableArray *coders;
@@ -47,6 +49,8 @@
 @property (nonatomic, retain) NSString *lastSearchString;
 @property (retain) UIActionSheet *actionSheet;
 @property (nonatomic, retain) IBOutlet UIView *infoView;
+@property (nonatomic, retain) UIBarButtonItem* doneBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem* infoBarButtonItem;
 
 -(NSArray*)resultsForTableView:(UITableView*)table;
 -(void)getNextPageOfCoderData:(UITableView*)aTableView;

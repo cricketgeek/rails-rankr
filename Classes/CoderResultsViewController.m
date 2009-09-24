@@ -17,6 +17,7 @@
 @implementation CoderResultsViewController
 
 @synthesize resultsTableView, infoView, searchPredicate, coders, coderSearchResults, lastSearchString, actionSheet;
+@synthesize doneBarButtonItem, infoBarButtonItem;
 
 - (void)awakeFromNib
 {
@@ -224,9 +225,11 @@
   [infoButton addTarget:self action:@selector(toggleView) forControlEvents:UIControlEventTouchUpInside];
   
 
-  UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-  [self.navigationItem setLeftBarButtonItem:modalButton animated:YES];
-  [modalButton release]; 
+  self.infoBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+  [self.navigationItem setLeftBarButtonItem:infoBarButtonItem animated:YES];
+
+  
+  self.doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(toggleView)];
   
   Rails_RankrAppDelegate* appDelegate = (Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate];
   if([appDelegate haveNetworkAccess]) {
@@ -249,10 +252,12 @@
   if(mainViewFlipped) {
     direction = UIViewAnimationTransitionFlipFromLeft;
     mainViewFlipped = NO;
+    [self.navigationItem setLeftBarButtonItem:self.infoBarButtonItem animated:NO];
   }
   else {
     direction = UIViewAnimationTransitionFlipFromRight;
     mainViewFlipped = YES;
+    [self.navigationItem setLeftBarButtonItem:self.doneBarButtonItem animated:NO];
   }
  // 
 //  NSLog(@"view at pos 1 is %@",[[[self.view subviews] objectAtIndex:1] tag]);
@@ -416,6 +421,8 @@
   [coders release];
   [lastSearchString release];
   [coderSearchResults release];
+  [self.infoBarButtonItem release];
+  [self.doneBarButtonItem release];
   [networkQueue release];
   [searchPredicate release];
   [super dealloc];
