@@ -29,34 +29,8 @@
   pageNumber = (int)1;
   [self.coders removeAllObjects];
   [self grabCodersInTheBackground];
+  
 }
-
-//-(IBAction)showInfoView {
-//  NSLog(@"showing info view");
-//  
-//  [UIView beginAnimations:nil	context:NULL];
-//	[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:[self view] cache:YES];
-//	[UIView setAnimationDuration:1.0];
-//  
-//  UIView* baseImageView = [self.view viewWithTag:23];
-//  
-//  [[self view] bringSubviewToFront:infoView];
-//  [[self view] sendSubviewToBack:baseImageView];
-//  
-//  //[[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
-//	[UIView commitAnimations];
-//}
-//
-//-(IBAction)closeInfoView {
-//  NSLog(@"closing info view");
-//  
-//  [UIView beginAnimations:nil	context:NULL];
-//	[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:[self view] cache:YES];
-//	[UIView setAnimationDuration:1.0];
-//  [[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
-//	[UIView commitAnimations];
-//  
-//}
 
 -(NSArray*)searchResults {
   return self.coderSearchResults;      
@@ -77,6 +51,7 @@
       [self getNextPageOfCoderData:(UITableView*)scrollView];     
     }
   }
+  
 }
 
 // This callback fakes progress via setProgress:
@@ -162,7 +137,6 @@
   [self.view addSubview:spinner];
   [spinner startAnimating];
 	ASIHTTPRequestJSON *request;
-  //NSLog(@"hitting: %@coders.json",HOST_SERVER);
   
 	request = [[[ASIHTTPRequestJSON alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@coders.json",HOST_SERVER]]] autorelease];
 	[request setTimeOutSeconds:20];
@@ -181,7 +155,7 @@
   else {
     [self.coders addObjectsFromArray:[request getCoderCollection]];
     [self.resultsTableView reloadData];
-    NSLog(@"now we have %d coders",[self.coders count]);
+    //NSLog(@"now we have %d coders",[self.coders count]);
   }
   [spinner stopAnimating];
   gettingDataNow = NO;
@@ -226,7 +200,7 @@
   
 
   self.infoBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-  [self.navigationItem setLeftBarButtonItem:infoBarButtonItem animated:YES];
+  [self.navigationItem setLeftBarButtonItem:infoBarButtonItem animated:NO];
 
   
   self.doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(toggleView)];
@@ -243,6 +217,8 @@
 
 -(void)toggleView {
   
+  BOOL showDoneButton;
+  
   NSLog(@"flip it!");
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:1];
@@ -252,22 +228,26 @@
   if(mainViewFlipped) {
     direction = UIViewAnimationTransitionFlipFromLeft;
     mainViewFlipped = NO;
-    [self.navigationItem setLeftBarButtonItem:self.infoBarButtonItem animated:NO];
+    showDoneButton = NO;
   }
   else {
     direction = UIViewAnimationTransitionFlipFromRight;
     mainViewFlipped = YES;
-    [self.navigationItem setLeftBarButtonItem:self.doneBarButtonItem animated:NO];
+    showDoneButton = YES;
+    
   }
- // 
-//  NSLog(@"view at pos 1 is %@",[[[self.view subviews] objectAtIndex:1] tag]);
-//  NSLog(@"view at pos 2 is %@",[[[self.view subviews] objectAtIndex:2] tag]);
-//
-//  
   [self.view exchangeSubviewAtIndex:1 withSubviewAtIndex:4];
   [UIView setAnimationTransition:direction forView:self.view cache:YES];
   [UIView commitAnimations];
   
+  if (showDoneButton) {
+    [self.navigationItem setLeftBarButtonItem:self.doneBarButtonItem animated:YES];
+  }
+  else {
+    [self.navigationItem setLeftBarButtonItem:self.infoBarButtonItem animated:YES];
+  }
+  
+
 }
 
 /*

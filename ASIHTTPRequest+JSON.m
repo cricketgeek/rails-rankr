@@ -13,6 +13,7 @@
 #import "Coder.h"
 #import "Company.h"
 #import "City.h"
+#import "Location.h"
 
 @implementation ASIHTTPRequestJSON
 
@@ -42,6 +43,22 @@
   }
 
 	return responseCollection;
+}
+
+-(NSMutableArray*)getLocationCollection {
+  responseCollection	= [[NSMutableArray alloc] init];
+  NSError* errorForJSON;
+  NSMutableDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:[self responseData] error:&errorForJSON];
+
+  for (NSDictionary* object in [dict objectForKey:[[dict allKeys] objectAtIndex:0]]) {
+    NSDictionary* locationDict = (NSDictionary*)[object objectForKey:@"location"];
+    [responseCollection addObject:locationDict];
+  }
+  
+  
+	return responseCollection;
+  
+  
 }
 
 

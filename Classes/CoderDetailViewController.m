@@ -45,7 +45,9 @@ lastUpdated;
   NSError *error;
   if (![[self managedObjectContext] save:&error]) {
     NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-    exit(-1);  // Fail
+    //exit(-1);  // Fail
+    //TODO add alert message
+    
   }
   else {
     //turn fav button into unfavorite

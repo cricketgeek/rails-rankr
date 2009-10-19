@@ -44,5 +44,7 @@
 @property (nonatomic, retain) Reachability *hostReach;
 
 -(BOOL)haveNetworkAccess;
+-(NSString*)udid;
+-(NSString*)getBaseUrl:(NSString*)entityName;
 
 @end

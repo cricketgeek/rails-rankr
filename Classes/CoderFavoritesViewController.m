@@ -13,7 +13,7 @@
 #import "Coder.h"
 #import "CoderModelsConverter.h"
 #import "Rails_RankrAppDelegate.h"
-
+#import "FlurryAPI.h"
 
 @implementation CoderFavoritesViewController
 
@@ -121,6 +121,8 @@
   NSLog(@"error occurred %@",[error localizedDescription]);
   gettingDataNow = NO;
   app.networkActivityIndicatorVisible = NO;
+  NSException* exception = [[NSException alloc] initWithName:@"ASIHTTPRequestFailure" reason:[error localizedDescription] userInfo:nil];
+  [FlurryAPI logError:@"ASIHTTPRequestError" message:@"Failure to get data in CoderFavoritesViewController" exception:exception];
 }
 
 
@@ -135,6 +137,7 @@
  */
 
 -(void)viewWillAppear:(BOOL)animated {
+  
   [[(Rails_RankrAppDelegate*)[app delegate] syncManager] resetBadges];
   NSError* error;
   if([[self fetchedResultsController] performFetch:&error]) {
@@ -151,6 +154,7 @@
   else {
     NSLog(@"somefink went wrong Horace!");
   }
+  [FlurryAPI logEvent:@"Viewing Favorites screen"];
   
 }
 

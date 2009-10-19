@@ -12,6 +12,7 @@
 #import <arpa/inet.h>
 #import <ifaddrs.h>
 #import <netdb.h>
+#import "FlurryAPI.h"
 
 #import <CoreFoundation/CoreFoundation.h>
 #define kShouldPrintReachabilityFlags 1
@@ -32,12 +33,38 @@
   return ([hostReach currentReachabilityStatus]  != NotReachable);
 }
 
+-(NSString*)udid {
+  NSString* UDID = [NSString stringWithFormat:@"%@",[UIDevice currentDevice].uniqueIdentifier];
+  if (UDID != nil) {
+    return UDID;
+  }
+  else {
+    NSLog(@"unable to find udid for phone");
+    return [NSString string];
+  }
+
+}
+
+-(NSString*)getBaseUrl:(NSString*)entityName {
+  
+  NSString* urlBase = [NSString stringWithFormat:@"%@%@.json",HOST_SERVER,entityName];
+  return urlBase;
+  
+}
+
+void uncaughtExceptionHandler(NSException *exception) {
+  [FlurryAPI logError:@"Uncaught" message:@"Crash!" exception:exception];
+} 
+
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
 
   hostReach = [[Reachability reachabilityWithHostName: HOST_SERVER_CONNECT] retain];
 	[hostReach startNotifer];
-
+  NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+  
+  [FlurryAPI startSessionWithLocationServices:FLURRY_API_KEY];
+  [FlurryAPI setSessionReportsOnCloseEnabled:YES];
   // Add the tab bar controller's current view as a subview of the window
   [window addSubview:tabBarController.view];
 }
@@ -90,11 +117,10 @@
 
  // Optional UITabBarControllerDelegate method
  - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-   NSLog(@"in didSelectViewController %@", [viewController class]);
+   //NSLog(@"in didSelectViewController %@", [viewController class]);
    //UIViewController* view = [(UINavigationController*)viewController v
-   if([viewController isMemberOfClass:[CoderFavoritesViewController class]]) {
-     
-   }
+   NSLog(@"%@ tab",[[tabBarController selectedViewController] class]);
+   
  }
  
 

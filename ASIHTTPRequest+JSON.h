@@ -18,5 +18,6 @@
 -(NSMutableArray*)getCoderCollection;
 -(NSMutableArray*)getCompanyCollection;
 -(NSMutableArray*)getCityCollection;
+-(NSMutableArray*)getLocationCollection;
 
 @end
