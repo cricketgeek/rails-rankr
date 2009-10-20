@@ -201,6 +201,7 @@
   if (self.nameForLocation != nil) {
     location.name = self.nameForLocation;
   }
+  location.udid = [(Rails_RankrAppDelegate*)[[UIApplication sharedApplication] delegate] udid]; 
   
   [self saveLocationInCoreData];
   [self saveLocationInTheBackground:location];

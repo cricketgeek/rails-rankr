@@ -23,15 +23,18 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
-		F1014D89108D0350000B6E13 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F1014D88108D0350000B6E13 /* Location.m */; };
 		F12F441A10359F37006CD41A /* CityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F12F441810359F37006CD41A /* CityDetailViewController.m */; };
 		F12F441B10359F37006CD41A /* CityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F12F441910359F37006CD41A /* CityDetailViewController.xib */; };
 		F12F44251035A571006CD41A /* orangeback.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F44241035A571006CD41A /* orangeback.png */; };
 		F12F44CF1035B887006CD41A /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F12F44CE1035B887006CD41A /* InfoView.m */; };
 		F12F45171035C46C006CD41A /* bluebackline.png in Resources */ = {isa = PBXBuildFile; fileRef = F12F45161035C46C006CD41A /* bluebackline.png */; };
+		F13D12B0108DFD9C009ACC30 /* CoderCoreModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F13D12AF108DFD9C009ACC30 /* CoderCoreModels.xcdatamodeld */; };
+		F13D12BF108DFF70009ACC30 /* CoreCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D12BC108DFF70009ACC30 /* CoreCoder.m */; };
+		F13D12C0108DFF70009ACC30 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D12BE108DFF70009ACC30 /* Location.m */; };
+		F13D12DF108E00CC009ACC30 /* v1_to_v2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = F13D12DE108E00CC009ACC30 /* v1_to_v2.xcmappingmodel */; };
+		F13D1313108E1747009ACC30 /* MapPointsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13D1312108E1747009ACC30 /* MapPointsTableViewController.m */; };
 		F13EB521107F8FDD00EC7EB4 /* Locator.m in Sources */ = {isa = PBXBuildFile; fileRef = F13EB520107F8FDD00EC7EB4 /* Locator.m */; };
 		F14252471057EF9A00A3108D /* formula_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = F14252461057EF9A00A3108D /* formula_portrait.png */; };
-		F15AC884108507340010636F /* CoreCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F15AC883108507340010636F /* CoreCoder.m */; };
 		F1613F731030BE32005DDC51 /* CityResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1613F721030BE32005DDC51 /* CityResultsViewController.xib */; };
 		F16140261030C3E4005DDC51 /* CoderFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F16140251030C3E4005DDC51 /* CoderFavoritesViewController.xib */; };
 		F1682AA41042F55C00AA4EEB /* NSManagedObjectContext+Finder.m in Sources */ = {isa = PBXBuildFile; fileRef = F1682AA31042F55C00AA4EEB /* NSManagedObjectContext+Finder.m */; };
@@ -84,7 +87,6 @@
 		F1A523BE102FB84300F72FE1 /* TwoLabelTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A523BD102FB84300F72FE1 /* TwoLabelTableCell.m */; };
 		F1A524B010308A9D00F72FE1 /* CityResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A524AE10308A9D00F72FE1 /* CityResultsViewController.m */; };
 		F1A524B510308AB300F72FE1 /* CoderFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A524B310308AB300F72FE1 /* CoderFavoritesViewController.m */; };
-		F1A524DE10308E5500F72FE1 /* CoderCoreModels.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = F1A524DD10308E5500F72FE1 /* CoderCoreModels.xcdatamodel */; };
 		F1A5252F1030954700F72FE1 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A5252D1030954700F72FE1 /* heart.png */; };
 		F1A525301030954700F72FE1 /* suitcase.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A5252E1030954700F72FE1 /* suitcase.png */; };
 		F1A5258E1030ABE800F72FE1 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A5258D1030ABE800F72FE1 /* City.m */; };
@@ -150,8 +152,6 @@
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Rails_Rankr-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Rails_Rankr-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		F1014D87108D0350000B6E13 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = "../ShootQ_ver1/core data models/Location.h"; sourceTree = SOURCE_ROOT; };
-		F1014D88108D0350000B6E13 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = "../ShootQ_ver1/core data models/Location.m"; sourceTree = SOURCE_ROOT; };
 		F12E90AC1035F5A200CE7987 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		F12F441710359F37006CD41A /* CityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDetailViewController.h; sourceTree = "<group>"; };
 		F12F441810359F37006CD41A /* CityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDetailViewController.m; sourceTree = "<group>"; };
@@ -160,11 +160,17 @@
 		F12F44CD1035B887006CD41A /* InfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoView.h; sourceTree = "<group>"; };
 		F12F44CE1035B887006CD41A /* InfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoView.m; sourceTree = "<group>"; };
 		F12F45161035C46C006CD41A /* bluebackline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluebackline.png; sourceTree = "<group>"; };
+		F13D12B1108DFD9C009ACC30 /* CoderCoreModels 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CoderCoreModels 2.xcdatamodel"; sourceTree = "<group>"; };
+		F13D12BB108DFF70009ACC30 /* CoreCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreCoder.h; path = "../ShootQ_ver1/core data models/CoreCoder.h"; sourceTree = SOURCE_ROOT; };
+		F13D12BC108DFF70009ACC30 /* CoreCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreCoder.m; path = "../ShootQ_ver1/core data models/CoreCoder.m"; sourceTree = SOURCE_ROOT; };
+		F13D12BD108DFF70009ACC30 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = "../ShootQ_ver1/core data models/Location.h"; sourceTree = SOURCE_ROOT; };
+		F13D12BE108DFF70009ACC30 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = "../ShootQ_ver1/core data models/Location.m"; sourceTree = SOURCE_ROOT; };
+		F13D12DE108E00CC009ACC30 /* v1_to_v2.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; name = v1_to_v2.xcmappingmodel; path = Classes/v1_to_v2.xcmappingmodel; sourceTree = "<group>"; };
+		F13D1311108E1747009ACC30 /* MapPointsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPointsTableViewController.h; sourceTree = "<group>"; };
+		F13D1312108E1747009ACC30 /* MapPointsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPointsTableViewController.m; sourceTree = "<group>"; };
 		F13EB51F107F8FDD00EC7EB4 /* Locator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Locator.h; sourceTree = "<group>"; };
 		F13EB520107F8FDD00EC7EB4 /* Locator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Locator.m; sourceTree = "<group>"; };
 		F14252461057EF9A00A3108D /* formula_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = formula_portrait.png; sourceTree = "<group>"; };
-		F15AC882108507340010636F /* CoreCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreCoder.h; path = Classes/CoreCoder.h; sourceTree = "<group>"; };
-		F15AC883108507340010636F /* CoreCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreCoder.m; path = Classes/CoreCoder.m; sourceTree = "<group>"; };
 		F1613F721030BE32005DDC51 /* CityResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityResultsViewController.xib; sourceTree = "<group>"; };
 		F16140251030C3E4005DDC51 /* CoderFavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoderFavoritesViewController.xib; sourceTree = "<group>"; };
 		F1682AA21042F55C00AA4EEB /* NSManagedObjectContext+Finder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Finder.h"; sourceTree = "<group>"; };
@@ -385,6 +391,8 @@
 				F1D885EA107E59D30075F0F9 /* MapViewController.h */,
 				F1D885EB107E59D30075F0F9 /* MapViewController.m */,
 				F1D885EC107E59D30075F0F9 /* MapViewController.xib */,
+				F13D1311108E1747009ACC30 /* MapPointsTableViewController.h */,
+				F13D1312108E1747009ACC30 /* MapPointsTableViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -481,7 +489,8 @@
 				F181BFE6102F41AF00E06C6B /* CompanyCell.xib */,
 				F1A523B4102FB69500F72FE1 /* TwoLabelTableCell.xib */,
 				F1A523B6102FB6B800F72FE1 /* LabelAndLinkTableCell.xib */,
-				F1A524DD10308E5500F72FE1 /* CoderCoreModels.xcdatamodel */,
+				F13D12DE108E00CC009ACC30 /* v1_to_v2.xcmappingmodel */,
+				F13D12AF108DFD9C009ACC30 /* CoderCoreModels.xcdatamodeld */,
 				064628361034817500EFDAFA /* SuccessFormula.xib */,
 				F1682BFD10430BC300AA4EEB /* NoNetworkAccessView.xib */,
 			);
@@ -505,10 +514,10 @@
 		F16145821031B620005DDC51 /* CoreModels */ = {
 			isa = PBXGroup;
 			children = (
-				F15AC882108507340010636F /* CoreCoder.h */,
-				F15AC883108507340010636F /* CoreCoder.m */,
-				F1014D87108D0350000B6E13 /* Location.h */,
-				F1014D88108D0350000B6E13 /* Location.m */,
+				F13D12BB108DFF70009ACC30 /* CoreCoder.h */,
+				F13D12BC108DFF70009ACC30 /* CoreCoder.m */,
+				F13D12BD108DFF70009ACC30 /* Location.h */,
+				F13D12BE108DFF70009ACC30 /* Location.m */,
 			);
 			name = CoreModels;
 			sourceTree = "<group>";
@@ -776,7 +785,7 @@
 				F1A523BE102FB84300F72FE1 /* TwoLabelTableCell.m in Sources */,
 				F1A524B010308A9D00F72FE1 /* CityResultsViewController.m in Sources */,
 				F1A524B510308AB300F72FE1 /* CoderFavoritesViewController.m in Sources */,
-				F1A524DE10308E5500F72FE1 /* CoderCoreModels.xcdatamodel in Sources */,
+				F13D12B0108DFD9C009ACC30 /* CoderCoreModels.xcdatamodeld in Sources */,
 				F1A5258E1030ABE800F72FE1 /* City.m in Sources */,
 				F16D6B341032EE1B0042BFB4 /* Pluralizer.m in Sources */,
 				F16D6B701032FF510042BFB4 /* CoderGroup.m in Sources */,
@@ -789,8 +798,10 @@
 				F1D885ED107E59D30075F0F9 /* MapViewController.m in Sources */,
 				F1D886A1107E6BDB0075F0F9 /* MapLocation.m in Sources */,
 				F13EB521107F8FDD00EC7EB4 /* Locator.m in Sources */,
-				F15AC884108507340010636F /* CoreCoder.m in Sources */,
-				F1014D89108D0350000B6E13 /* Location.m in Sources */,
+				F13D12BF108DFF70009ACC30 /* CoreCoder.m in Sources */,
+				F13D12C0108DFF70009ACC30 /* Location.m in Sources */,
+				F13D12DF108E00CC009ACC30 /* v1_to_v2.xcmappingmodel in Sources */,
+				F13D1313108E1747009ACC30 /* MapPointsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,6 +934,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F13D12AF108DFD9C009ACC30 /* CoderCoreModels.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F1A524DD10308E5500F72FE1 /* CoderCoreModels.xcdatamodel */,
+				F13D12B1108DFD9C009ACC30 /* CoderCoreModels 2.xcdatamodel */,
+			);
+			currentVersion = F13D12B1108DFD9C009ACC30 /* CoderCoreModels 2.xcdatamodel */;
+			path = CoderCoreModels.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

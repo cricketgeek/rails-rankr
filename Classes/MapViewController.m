@@ -26,6 +26,7 @@
 @implementation MapViewController
 
 @synthesize mapView, locations;
+@synthesize mapPointsTableViewController;
 
 -(IBAction)mapLocation {
   
@@ -86,10 +87,10 @@
   
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView 
+- (MKAnnotationView *)mapView:(MKMapView *)pmapView 
             viewForAnnotation:(id <MKAnnotation>)annotation {
   MKAnnotationView *view = nil;
-  if(annotation != mapView.userLocation) {
+  if(annotation != pmapView.userLocation) {
 		MapLocation *mapLoc = (MapLocation*)annotation;
 		view = [self.mapView dequeueReusableAnnotationViewWithIdentifier:@"coderLoc"];
 		if(nil == view) {
@@ -107,7 +108,7 @@
   return view;
 }
 
-- (void)mapView:(MKMapView *)mapView 
+- (void)mapView:(MKMapView *)pmapView 
  annotationView:(MKAnnotationView *)view 
 calloutAccessoryControlTapped:(UIControl *)control {
   //EarthquakeAnnotation *eqAnn = (EarthquakeAnnotation *)[view annotation];
@@ -119,20 +120,30 @@ calloutAccessoryControlTapped:(UIControl *)control {
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-  UIBarButtonItem *saveLocationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave 
+  UIBarButtonItem *saveLocationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
                                                                                       target:self 
                                                                                       action:@selector(mapLocation)];
+  
+  UIBarButtonItem *editLocations = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleToEditView)];
+  
   
   networkQueue = [[ASINetworkQueue alloc] init];
   [networkQueue cancelAllOperations];
 	[networkQueue setRequestDidFinishSelector:@selector(requestDone:)];
 	[networkQueue setDelegate:self];
   self.navigationItem.rightBarButtonItem = saveLocationButton;
+  self.navigationItem.leftBarButtonItem = editLocations;
   app = [UIApplication sharedApplication];
   delegate = (Rails_RankrAppDelegate*)[app delegate];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationsUpdated:) name:LOCATIONS_UPDATED object:nil];
 }
 
+
+-(void)toggleToEditView {
+  
+  [self.navigationController pushViewController:self.mapPointsTableViewController animated:YES];
+    
+}
 
 -(void)locationsUpdated:(NSNotification*)notification {
   
@@ -225,7 +236,7 @@ calloutAccessoryControlTapped:(UIControl *)control {
 
 
 - (void)dealloc {
-    [_mapView release];
+    [self.mapView release];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }

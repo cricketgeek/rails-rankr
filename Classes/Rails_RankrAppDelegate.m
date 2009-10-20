@@ -179,8 +179,11 @@ void uncaughtExceptionHandler(NSException *exception) {
   NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: [NSString stringWithFormat:@"CoreCoders_%@.sqlite",APP_VERSION]]];
 	
 	NSError *error;
+  NSMutableDictionary* optionsDict = [NSMutableDictionary dictionary];
+  [optionsDict setObject:[NSNumber numberWithBool:YES] forKey:NSMigratePersistentStoresAutomaticallyOption];
+  
   persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
-  if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
+  if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:optionsDict error:&error]) {
     // Handle error
   }    
 	
